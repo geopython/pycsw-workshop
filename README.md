@@ -1,0 +1,4 @@
+pycsw-workshop
+==============
+
+pycsw Workshop
