@@ -25,7 +25,7 @@ import sys, os, sphinx_bootstrap_theme
 
 # Add any Sphinx extension module names here, as strings. They can be extensions
 # coming with Sphinx (named 'sphinx.ext.*') or your custom ones.
-extensions = ['sphinx.ext.autodoc', 'sphinx.ext.viewcode']
+extensions = ['sphinx.ext.autodoc', 'sphinx.ext.viewcode', 'rst2pdf.pdfbuilder']
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -48,7 +48,7 @@ copyright = u'2013, Jeff McKenna, Tom Kralidis, and Angelos Tzotsos'
 # built documents.
 #
 # The short X.Y version.
-version = '1.4.1'
+version = '1.4'
 # The full version, including alpha/beta/rc tags.
 release = '1.4.1'
 
@@ -112,12 +112,12 @@ html_theme_path = sphinx_bootstrap_theme.get_html_theme_path()
 
 # The name of an image file (relative to this directory) to place at the top
 # of the sidebar.
-#html_logo = None
+html_logo = './_static/pycsw-logo-small.png'
 
 # The name of an image file (within the static path) to use as favicon of the
 # docs.  This file should be a Windows icon file (.ico) being 16x16 or 32x32
 # pixels large.
-#html_favicon = None
+html_favicon = 'favicon.ico'
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
@@ -191,11 +191,14 @@ latex_documents = [
 
 # The name of an image file (relative to this directory) to place at the top of
 # the title page.
-#latex_logo = None
+latex_logo = './_static/pycsw-logo.png'
 
 # For "manual" documents, if this is true, then toplevel headings are parts,
 # not chapters.
-#latex_use_parts = False
+latex_use_parts = False
+
+# Additional stuff for the LaTeX preamble.
+latex_preamble = '\setcounter{tocdepth}{3}'
 
 # If true, show page references after internal links.
 #latex_show_pagerefs = False
@@ -285,3 +288,38 @@ epub_copyright = u'2013, Jeff McKenna, Tom Kralidis, and Angelos Tzotsos'
 
 # Allow duplicate toc entries.
 #epub_tocdup = True
+
+# -- Options for PDF output ---------------------------------------
+
+    # Grouping the document tree into PDF files. List of tuples
+    # (source start file, target name, title, author).
+pdf_documents = [
+    ('index', u'pycsw-Workshop', u'pycsw Workshop', u'The pycsw Team'),
+]
+
+# A comma-separated list of custom stylesheets. Example:
+pdf_stylesheets = ['sphinx','kerning','a4']
+
+# Create a compressed PDF
+# Use True/False or 1/0
+# Example: compressed=True
+#pdf_compressed=False
+
+# A colon-separated list of folders to search for fonts. Example:
+# pdf_font_path=['/usr/share/fonts', '/usr/share/texmf-dist/fonts/']
+
+# Language to be used for hyphenation support
+#pdf_language="en_EN"
+
+# If false, no index is generated.
+#pdf_use_index = True
+
+# If false, no modindex is generated.
+#pdf_use_modindex = True
+
+# If false, no coverpage is generated.
+#pdf_use_coverpage = True 
+
+# Attempt to remove blank pages (seems to fail however)
+pdf_break_level = 1
+pdf_breakside = 'any'
