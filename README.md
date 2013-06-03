@@ -17,6 +17,10 @@ through the Sphinx documentation utility.
 Installation
 ------------
 
+*Note: the following steps assume that [Python](http://www.python.org/) and
+Python's [setuptools package](https://pypi.python.org/pypi/setuptools) are installed 
+and available in your PATH*
+
 1. Install [Sphinx](http://sphinx-doc.org/)
 
      `easy_install Sphinx`
