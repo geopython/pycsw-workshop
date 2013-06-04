@@ -210,7 +210,7 @@ if "%1" == "gh-pages" (
 	cd %GH_PAGES%
 	git add .
 	git commit -am "Update live docs"
-	git push origin gh-pages
+	REM git push origin gh-pages
 	if errorlevel 1 exit /b 1
 	goto end
 )
