@@ -1,0 +1,4 @@
+Sphinx
+sphinx_bootstrap_theme
+rst2pdf
+pil
