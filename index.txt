@@ -11,7 +11,7 @@ publishing software.
     The workshop instructions are also available as a single
     `PDF document <./pycsw-Workshop.pdf>`__ |image|
 
-.. |image| image:: _static/pdf.png
+.. |image| image:: _static/pdf.jpg
    :height: 15
    :width: 15
    :alt: PDF icon
