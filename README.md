@@ -36,6 +36,8 @@ and available in your PATH*
 4. Install the Python Imaging Library
 
      `easy_install pil`
+     
+   Note that you can optionally use the *pillow* library, which seems to work better on Ubuntu
        
 5. Clone the pycsw repository locally
 
