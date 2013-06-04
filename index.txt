@@ -7,6 +7,16 @@ Welcome to the pycsw workshop.  This workshop is a hands-on workshop that will
 give you an introduction to the popular `pycsw <http://www.pycsw.org/>`__ metadata 
 publishing software.
 
+.. note::
+    The workshop instructions are also available as a single
+    `PDF document <./pycsw-Workshop.pdf>`__ |image|
+
+.. |image| image:: _static/pdf.png
+   :height: 15
+   :width: 15
+   :alt: PDF icon
+   :target: /pycsw-Workshop.pdf
+
 .. toctree::
    :maxdepth: 2
 

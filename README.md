@@ -32,8 +32,12 @@ and available in your PATH*
 3. Install rst2pdf
 
      `easy_install rst2pdf`
+     
+4. Install the Python Imaging Library
+
+     `easy_install pil`
        
-4. Clone the pycsw repository locally
+5. Clone the pycsw repository locally
 
      `git clone git@github.com:geopython/pycsw-workshop.git pycsw-workshop`
        
@@ -55,9 +59,9 @@ Generating PDF Output
 
 2. execute:
 
-     `sphinx-build -b pdf . _build`
+     `sphinx-build -b pdf . _build/html`
      
-3. *pycsw-Workshop.pdf* should have been created in the *_build* directory
+3. *pycsw-Workshop.pdf* should have been created in the *_build/html/* directory
 
 Useful External References
 --------------------------
