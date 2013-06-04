@@ -1,6 +1,8 @@
 pycsw-workshop
 ==============
 
+[![Build Status](https://travis-ci.org/geopython/pycsw-workshop.png?branch=master)](https://travis-ci.org/geopython/pycsw-workshop)
+
 Background
 ----------
 
@@ -16,6 +18,8 @@ through the Sphinx documentation utility.
 
 Installation
 ------------
+
+### Using easy_install
 
 *Note: the following steps assume that [Python](http://www.python.org/) and
 Python's [setuptools package](https://pypi.python.org/pypi/setuptools) are installed 
@@ -42,6 +46,21 @@ and available in your PATH*
 5. Clone the pycsw repository locally
 
      `git clone git@github.com:geopython/pycsw-workshop.git pycsw-workshop`
+     
+### Using virtualenv / pip
+
+You can also use [virtualenv](http://www.virtualenv.org/) and [pip](http://www.pip-installer.org/) as follows:
+
+```
+
+$ virtualenv venv
+$ cd venv
+$ git clone git@github.com:geopython/pycsw-workshop.git
+$ cd pycsw-workshop
+$ pip install -r requirements.txt
+
+```
+
        
 Generating HTML Output
 ----------------------
