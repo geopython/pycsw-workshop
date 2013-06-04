@@ -3,6 +3,11 @@
 pycsw and Open Data
 ===================
 
+- pycsw is embedded in various Open Data portal software
+- metadata editing / management done with portal
+- portal exposes CSW service automagically
+- easy integration into existing apps/workflows
+
 Contents:
 
 .. toctree::

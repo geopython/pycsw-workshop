@@ -3,3 +3,12 @@
 GeoNode
 =======
 
+- Open Source Geospatial Content Management System
+
+ - geospatial data / metadata management
+ - interactive mapping
+ - collaboration
+
+- pycsw enabled out of the box
+
+ - embedded CSW

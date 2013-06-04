@@ -3,3 +3,10 @@
 Open Data Catalog
 =================
 
+- `Code for America`_ app
+- open data publishing
+- pycsw enabled out of the box
+
+ - CSW embdedded
+
+.. _`Code for America`: http://commons.codeforamerica.org/apps/open-data-catalog
