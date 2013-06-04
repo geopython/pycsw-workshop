@@ -201,8 +201,8 @@ if "%1" == "gh-pages" (
 	for /d %%i in (%BUILDDIR%\*) do rmdir /q /s %%i
 	del /q /s %BUILDDIR%\*
 	%SPHINXBUILD -W -b pdf . %BUILDDIR%/html 
-        %SPHINXBUILD% -b html %ALLSPHINXOPTS% %BUILDDIR%/html
-        if errorlevel 1 exit /b 1
+	%SPHINXBUILD% -b html %ALLSPHINXOPTS% %BUILDDIR%/html
+	if errorlevel 1 exit /b 1
 	git clone git@github.com:geopython/pycsw-workshop.git -b gh-pages %GH_PAGES%
 	xcopy %THIS_DIR%/%BUILDDIR%/html/ %GH_PAGES% /E /Y
 	cd %GH_PAGES%
