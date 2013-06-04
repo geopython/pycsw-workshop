@@ -155,11 +155,14 @@ doctest:
 	@echo "Testing of doctests in the sources finished, look at the " \
 	      "results in $(BUILDDIR)/doctest/output.txt."
 
-gh-pages: clean html
+pdf:
+	$(SPHINXBUILD) -W -b pdf . $(BUILDDIR)/html
+
+gh-pages: clean html pdf
 	git clone git@github.com:geopython/pycsw-workshop.git $(GH_PAGES)
 	cd $(GH_PAGES); \
 	git checkout gh-pages
-	/bin/cp -rp $(THIS_DIR)/_build/html/* $(GH_PAGES)
+	/bin/cp -rp $(THIS_DIR)/$(BUILDDIR)/html/* $(GH_PAGES)
 	cd $(GH_PAGES); \
 	git add . ; \
 	git commit -am "Update live docs" ; \
