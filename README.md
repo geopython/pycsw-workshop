@@ -84,6 +84,17 @@ Generating PDF Output
      
 3. *pycsw-Workshop.pdf* should have been created in the *_build/html/* directory
 
+Publishing to Live Site (Committers)
+------------------------------------
+
+To publish to the live site, simply run `make gh-pages`.
+
+Contributions
+-------------
+
+Contributions, fixes, improvements and Pull Requests are always welcome.
+
+
 Useful External References
 --------------------------
 
