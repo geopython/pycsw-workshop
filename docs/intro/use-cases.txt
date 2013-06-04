@@ -1,5 +1,0 @@
-.. _usecases:
-
-Use Cases
-=========
-

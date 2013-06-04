@@ -1,7 +1,0 @@
-.. _requirements:
-
-Requirements
-============
-
-(OSGeo-Live VM setup instructions)
-

@@ -1,5 +1,0 @@
-.. _harvesting:
-
-Harvesting
-==========
-

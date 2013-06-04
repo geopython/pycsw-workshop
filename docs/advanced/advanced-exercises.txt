@@ -1,5 +1,0 @@
-.. _advexercies:
-
-Exercises
-=========
-
