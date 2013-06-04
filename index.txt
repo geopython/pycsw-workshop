@@ -7,8 +7,6 @@ Welcome to the pycsw workshop.  This workshop is a hands-on workshop that will
 give you an introduction to the popular `pycsw <http://www.pycsw.org/>`__ metadata 
 publishing software.
 
-Contents:
-
 .. toctree::
    :maxdepth: 2
 
