@@ -5,6 +5,10 @@ REM Command file for Sphinx documentation
 if "%SPHINXBUILD%" == "" (
 	set SPHINXBUILD=sphinx-build
 )
+
+set THIS_DIR=%cd%
+set GH_PAGES=\windows\temp
+
 set BUILDDIR=_build
 set ALLSPHINXOPTS=-W -d %BUILDDIR%/doctrees %SPHINXOPTS% .
 set I18NSPHINXOPTS=%SPHINXOPTS% .
@@ -187,4 +191,27 @@ results in %BUILDDIR%/doctest/output.txt.
 	goto end
 )
 
+if "%1" == "pdf" (
+	%SPHINXBUILD -W -b pdf . %BUILDDIR%/html 
+	if errorlevel 1 exit /b 1
+	goto end
+)
+
+if "%1" == "gh-pages" (
+	for /d %%i in (%BUILDDIR%\*) do rmdir /q /s %%i
+	del /q /s %BUILDDIR%\*
+	%SPHINXBUILD -W -b pdf . %BUILDDIR%/html 
+        %SPHINXBUILD% -b html %ALLSPHINXOPTS% %BUILDDIR%/html
+        if errorlevel 1 exit /b 1
+	git clone git@github.com:geopython/pycsw-workshop.git %GH_PAGES%
+	cd %GH_PAGES%
+	git checkout gh-pages
+	xcopy %THIS_DIR%/%BUILDDIR%/html/ %GH_PAGES% /E /Y
+	cd %GH_PAGES%
+	git add .
+	git commit -am "Update live docs"
+	git push origin gh-pages
+	if errorlevel 1 exit /b 1
+	goto end
+)
 :end
