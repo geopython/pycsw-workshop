@@ -159,9 +159,7 @@ pdf:
 	$(SPHINXBUILD) -W -b pdf . $(BUILDDIR)/html
 
 gh-pages: clean html pdf
-	git clone git@github.com:geopython/pycsw-workshop.git $(GH_PAGES)
-	cd $(GH_PAGES); \
-	git checkout gh-pages
+	git clone git@github.com:geopython/pycsw-workshop.git -b gh-pages $(GH_PAGES)
 	/bin/cp -rp $(THIS_DIR)/$(BUILDDIR)/html/* $(GH_PAGES)
 	cd $(GH_PAGES); \
 	git add . ; \
