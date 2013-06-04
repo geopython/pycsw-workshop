@@ -1,6 +1,8 @@
 # Makefile for Sphinx documentation
 #
 
+GH_PAGES=/tmp/pycsw-workshop
+
 # You can set these variables from the command line.
 SPHINXOPTS    =
 SPHINXBUILD   = sphinx-build
@@ -39,7 +41,7 @@ help:
 	@echo "  doctest    to run all doctests embedded in the documentation (if enabled)"
 
 clean:
-	-rm -rf $(BUILDDIR)/* gh-pages/
+	-rm -rf $(BUILDDIR)/* $(GH_PAGES)
 
 html:
 	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
@@ -153,13 +155,13 @@ doctest:
 	      "results in $(BUILDDIR)/doctest/output.txt."
 
 gh-pages: clean html
-	git clone git@github.com:geopython/pycsw-workshop.git gh-pages
-	cd gh-pages
+	git clone git@github.com:geopython/pycsw-workshop.git $(GH_PAGES)
+	cd $(GH_PAGES)
 	git checkout gh-pages
 	/bin/cp -rp ../_build/html/* .
 	git add .
 	git commit -am "Update live docs"
 	git push origin gh-pages
 	cd ..
-	rm -fr gh-pages
+	rm -fr $(GH_PAGES)
 
