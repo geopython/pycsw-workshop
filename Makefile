@@ -157,12 +157,11 @@ doctest:
 
 gh-pages: clean html
 	git clone git@github.com:geopython/pycsw-workshop.git $(GH_PAGES)
-	cd $(GH_PAGES)
+	cd $(GH_PAGES); \
 	git checkout gh-pages
-	/bin/cp -rp $(THISDIR)/_build/html/* .
-	git add .
-	git commit -am "Update live docs"
+	/bin/cp -rp $(THIS_DIR)/_build/html/* $(GH_PAGES)
+	cd $(GH_PAGES); \
+	git add . ; \
+	git commit -am "Update live docs" ; \
 	git push origin gh-pages
-	cd ..
-	rm -fr $(GH_PAGES)
 
