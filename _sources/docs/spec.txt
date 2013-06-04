@@ -1,0 +1,12 @@
+.. _spec:
+
+OGC CSW Specification
+=====================
+
+Purpose
+-------
+
+Example Requests
+----------------
+
+

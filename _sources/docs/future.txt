@@ -1,0 +1,13 @@
+.. _future:
+
+pycsw Future Development
+========================
+
+- CKAN integration
+- native spatial databases
+- backends (GeoCouch)
+- PostgreSQL full text search (FTS)
+- enhanced harvesting / additional formats / APIs
+- search engine libraries
+- CSW 3.0
+

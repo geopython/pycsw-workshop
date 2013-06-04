@@ -1,0 +1,17 @@
+.. _introduction:
+
+Introduction to pycsw
+=====================
+
+Contents:
+
+.. toctree::
+   :maxdepth: 2
+
+   intro/purpose
+   intro/features
+   intro/use-cases
+   intro/install
+   intro/configure
+   intro/intro-exercises
+
