@@ -1,6 +1,7 @@
 # Makefile for Sphinx documentation
 #
 
+THIS_DIR=`pwd`
 GH_PAGES=/tmp/pycsw-workshop
 
 # You can set these variables from the command line.
@@ -158,7 +159,7 @@ gh-pages: clean html
 	git clone git@github.com:geopython/pycsw-workshop.git $(GH_PAGES)
 	cd $(GH_PAGES)
 	git checkout gh-pages
-	/bin/cp -rp ../_build/html/* .
+	/bin/cp -rp $(THISDIR)/_build/html/* .
 	git add .
 	git commit -am "Update live docs"
 	git push origin gh-pages
