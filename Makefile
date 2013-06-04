@@ -39,7 +39,7 @@ help:
 	@echo "  doctest    to run all doctests embedded in the documentation (if enabled)"
 
 clean:
-	-rm -rf $(BUILDDIR)/*
+	-rm -rf $(BUILDDIR)/* gh-pages/
 
 html:
 	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
@@ -151,3 +151,15 @@ doctest:
 	$(SPHINXBUILD) -b doctest $(ALLSPHINXOPTS) $(BUILDDIR)/doctest
 	@echo "Testing of doctests in the sources finished, look at the " \
 	      "results in $(BUILDDIR)/doctest/output.txt."
+
+gh-pages: clean html
+	git clone git@github.com:geopython/pycsw-workshop.git gh-pages
+	cd gh-pages
+	git checkout gh-pages
+	/bin/cp -rp ../_build/html/* .
+	git add .
+	git commit -am "Update live docs"
+	git push origin gh-pages
+	cd ..
+	rm -fr gh-pages
+
