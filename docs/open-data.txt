@@ -1,0 +1,13 @@
+.. _opendata:
+
+pycsw and Open Data
+===================
+
+Contents:
+
+.. toctree::
+   :maxdepth: 2
+
+   open-data/geonode
+   open-data/open-data-catalog
+

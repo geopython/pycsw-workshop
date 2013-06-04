@@ -1,22 +1,22 @@
-.. pycsw Workshop documentation master file, created by
-   sphinx-quickstart on Mon Jun 03 14:06:32 2013.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
+.. _home:
 
-Welcome to pycsw Workshop's documentation!
-==========================================
+pycsw Workshop
+==============
+
+Welcome to the pycsw workshop.  This workshop is a hands-on workshop that will
+give you an introduction to the popular `pycsw <http://www.pycsw.org/>`__ metadata 
+publishing software.
 
 Contents:
 
 .. toctree::
    :maxdepth: 2
 
-
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
-
+   docs/background
+   docs/requirements
+   docs/metadata
+   docs/spec
+   docs/introduction
+   docs/advanced
+   docs/open-data
+   docs/future
