@@ -39,6 +39,8 @@ if "%1" == "help" (
 	echo.  changes    to make an overview over all changed/added/deprecated items
 	echo.  linkcheck  to check all external links for integrity
 	echo.  doctest    to run all doctests embedded in the documentation if enabled
+	echo.  pdf        to make a single large PDF file
+	echo.  gh-pages   to publish documentation to live site
 	goto end
 )
 
