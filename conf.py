@@ -323,3 +323,6 @@ pdf_stylesheets = ['sphinx','kerning','a4']
 # Attempt to remove blank pages (seems to fail however)
 pdf_break_level = 1
 pdf_breakside = 'any'
+
+# Set the default DPI for images
+pdf_default_dpi = 72
