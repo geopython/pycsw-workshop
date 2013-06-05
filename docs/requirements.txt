@@ -53,16 +53,23 @@ Extract
 - click on the *New* button to create a VM
 
   .. image:: ../_static/virtualbox-new.jpg
-     :height: 400px
-     :width: 600px
+     :height: 577px
+     :width: 774px
+     :scale: 75
      
 - enter "osgeo-live" for the name, and select *Type: Linux* and *Version: Ubuntu*
 
-  .. image:: ../_static/virtualbox-create.jpg 
+  .. image:: ../_static/virtualbox-create.jpg
+     :height: 421px
+     :width: 354px
+     :scale: 100
   
 - In the next screen set the memory to 1024 MB (or more if your host computer has more than 4GB).
 
   .. image:: ../_static/virtualbox-memory.jpg
+     :height: 421px
+     :width: 354px
+     :scale: 100 
   
 - Continue to the next screen and choose "Use existing hard disk". Then click on the button 
   (a folder icon) to browse to where you saved the \*.vmdk file. Select this file, press *Next* 
