@@ -1,7 +1,145 @@
 .. _requirements:
 
-Requirements
-============
+Workshop Requirements
+=====================
 
-(OSGeo-Live VM setup instructions)
+The pycsw workshop requires the following installed locally:
 
+- `7-Zip <http://www.7-zip.org/>`__ (ability to extract *.7z* files)
+- `VirtualBox <http://www.virtualbox.org/>`__ (virtual machine software, ability to 
+  load virtual disk \*.vmdk files)
+- OSGeo-Live `Virtual Machine <http://live.osgeo.org/en/download.html>`__ (which 
+  contains pycsw)
+
+.. NOTE::
+   We recommend using the OSGeo-Live Virtual Machine method, although OSGeo-Live
+   is available also through a bootable DVD or USB drive.
+   
+1. Install VirtualBox
+---------------------
+
+- download the `VirtualBox platform package <https://www.virtualbox.org/wiki/Downloads>`__ 
+  for your local machine
+- run the installer, and select the default setup options (approve any device 
+  security questions)
+
+2. Download OSGeo-Live
+----------------------
+
+.. CAUTION::
+   You'll need a minimum of 10GB of free hard disk space, as well as a machine with 
+   2GB of RAM.
+   
+Download
+********
+   
+- download the OSGeo-Live Virtual Machine (\*.7z) file.  It will likely take you ~1 
+  hour to download the 3GB file.  There are several sites you can download this from:
+  
+  - official `site <http://live.osgeo.org/en/download.html>`__
+  - UC Davis `mirror <http://osprey.ucdavis.edu/downloads/osgeo/gisvm/latest/>`__
+  - University of Athens `mirror <http://aiolos.survey.ntua.gr/gisvm/6.5/>`__
+  
+Extract
+*******
+
+- using `7-Zip <http://www.7-zip.org/>`__, open the *.7z* archive and extract the 
+  *.vmdk* file onto your hard disk (the extracted file is ~10GB in size)
+  
+3. Create Virtual Machine
+-------------------------
+
+- start VirtualBox ("Oracle VM VirtualBox)
+- click on the *New* button to create a VM
+
+  .. image:: ../_static/virtualbox-new.jpg
+     :height: 400px
+     :width: 600px
+     
+- enter "osgeo-live" for the name, and select *Type: Linux* and *Version: Ubuntu*
+
+  .. image:: ../_static/virtualbox-create.jpg 
+  
+- In the next screen set the memory to 1024 MB (or more if your host computer has more than 4GB).
+
+  .. image:: ../_static/virtualbox-memory.jpg
+  
+- Continue to the next screen and choose "Use existing hard disk". Then click on the button 
+  (a folder icon) to browse to where you saved the \*.vmdk file. Select this file, press *Next* 
+  and *Create*.
+  
+  .. image:: ../_static/virtualbox-drive.jpg
+  
+- Once the VM is created, click on the Settings button. In the "General" section, go to the 
+  Advanced tab, and click to select "Show at top of screen" for the Mini toolbar.
+  
+  .. image:: ../_static/virtualbox-toolbar.jpg
+     :height: 400px
+     :width: 600px
+     
+- In the "Display" section and increase video memory to 32 or 64 MB.
+
+  .. image:: ../_static/virtualbox-display.jpg
+     :height: 400px
+     :width: 600px
+     
+- In the "Shared Folders" section, click the "Add folder" (green + icon on the right) to find a 
+  directory on your machine that you wish to share inside the VM.     
+  
+  .. image:: ../_static/virtualbox-shared.jpg
+     :height: 400px
+     :width: 600px
+     
+  Once the "Folder path" and "Folder name" are defined, click OK, and close the settings window.
+  
+4. Run the Virtual Machine
+--------------------------
+
+- Now bootup the VM by clicking the Start (green arrow) button. OK any warning messages.
+
+  .. image:: ../_static/virtualbox-osgeo-live.jpg
+     :height: 400px
+     :width: 600px
+
+
+- To improve video performance and enable the shared folders, open the Devices menu and click 
+  "Install Guest Additions".
+  
+  .. image:: ../_static/virtualbox-guestadditions.jpg
+     :height: 400px
+     :width: 600px  
+     
+- Next, on the desktop you will see an icon named "VBOXADDITIONS_4.2.12_84980", click it (this mounts 
+  the drive).  You can then close this window.
+
+- Open a Terminal window (in top left click "Applications" / "Accessories" / "Terminal Emulator"
+
+- In the Terminal, execute the following:
+
+  ::
+  
+    user@osgeolive:~$ sudo apt-get install linux-headers-`uname -r`
+    
+       password: user
+    
+    user@osgeolive:~$ cd /media/VBOXADDITIONS_4.2.12_84980
+    
+    user@osgeolive:/media/VBOXADDITIONS_4.2.12_84980$ sudo ./VBoxLinuxAdditions.run
+    
+- reboot the machine (click on "user" in top-right of desktop, and select "Reboot")
+
+- Open a Terminal window again, and execute the following (where "osgeo-live-shared" is the
+  name you entered earlier in the Settings for the shared folder):
+
+  ::
+  
+    user@osgeolive:~$ mkdir shared
+    
+    user@osgeolive:~$ sudo mount -t vboxsf -o uid=user,rw osgeo-live-shared /home/user/shared
+
+  You can now create a test folder on your local machine (in my case "ttt") and then view it
+  within the virtual machine.
+  
+  .. image:: ../_static/virtualbox-shared-test.jpg
+     :height: 400px
+     :width: 600px    

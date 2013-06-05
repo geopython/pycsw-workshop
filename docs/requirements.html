@@ -5,7 +5,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Requirements &mdash; pycsw Workshop 1.4.1 documentation</title>
+    <title>Workshop Requirements &mdash; pycsw Workshop 1.4.1 documentation</title>
     
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -65,7 +65,7 @@
   <ul class="dropdown-menu globaltoc"
     ><ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="background.html">Background</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">Requirements</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Workshop Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="metadata.html">Metadata Background</a></li>
 <li class="toctree-l1"><a class="reference internal" href="spec.html">OGC CSW Specification</a></li>
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction to pycsw</a></li>
@@ -78,7 +78,17 @@
               <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
   <ul class="dropdown-menu localtoc"><ul>
-<li><a class="reference internal" href="#">Requirements</a></li>
+<li><a class="reference internal" href="#">Workshop Requirements</a><ul>
+<li><a class="reference internal" href="#install-virtualbox">1. Install VirtualBox</a></li>
+<li><a class="reference internal" href="#download-osgeo-live">2. Download OSGeo-Live</a><ul>
+<li><a class="reference internal" href="#download">Download</a></li>
+<li><a class="reference internal" href="#extract">Extract</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#create-virtual-machine">3. Create Virtual Machine</a></li>
+<li><a class="reference internal" href="#run-the-virtual-machine">4. Run the Virtual Machine</a></li>
+</ul>
+</li>
 </ul>
 </ul>
 </li>
@@ -112,9 +122,129 @@
 
 <div class="container">
   
-  <div class="section" id="requirements">
-<span id="id1"></span><h1>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h1>
-<p>(OSGeo-Live VM setup instructions)</p>
+  <div class="section" id="workshop-requirements">
+<span id="requirements"></span><h1>Workshop Requirements<a class="headerlink" href="#workshop-requirements" title="Permalink to this headline">¶</a></h1>
+<p>The pycsw workshop requires the following installed locally:</p>
+<ul class="simple">
+<li><a class="reference external" href="http://www.7-zip.org/">7-Zip</a> (ability to extract <em>.7z</em> files)</li>
+<li><a class="reference external" href="http://www.virtualbox.org/">VirtualBox</a> (virtual machine software, ability to
+load virtual disk *.vmdk files)</li>
+<li>OSGeo-Live <a class="reference external" href="http://live.osgeo.org/en/download.html">Virtual Machine</a> (which
+contains pycsw)</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">We recommend using the OSGeo-Live Virtual Machine method, although OSGeo-Live
+is available also through a bootable DVD or USB drive.</p>
+</div>
+<div class="section" id="install-virtualbox">
+<h2>1. Install VirtualBox<a class="headerlink" href="#install-virtualbox" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>download the <a class="reference external" href="https://www.virtualbox.org/wiki/Downloads">VirtualBox platform package</a>
+for your local machine</li>
+<li>run the installer, and select the default setup options (approve any device
+security questions)</li>
+</ul>
+</div>
+<div class="section" id="download-osgeo-live">
+<h2>2. Download OSGeo-Live<a class="headerlink" href="#download-osgeo-live" title="Permalink to this headline">¶</a></h2>
+<div class="admonition caution">
+<p class="first admonition-title">Caution</p>
+<p class="last">You&#8217;ll need a minimum of 10GB of free hard disk space, as well as a machine with
+2GB of RAM.</p>
+</div>
+<div class="section" id="download">
+<h3>Download<a class="headerlink" href="#download" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>download the OSGeo-Live Virtual Machine (*.7z) file.  It will likely take you ~1
+hour to download the 3GB file.  There are several sites you can download this from:<ul>
+<li>official <a class="reference external" href="http://live.osgeo.org/en/download.html">site</a></li>
+<li>UC Davis <a class="reference external" href="http://osprey.ucdavis.edu/downloads/osgeo/gisvm/latest/">mirror</a></li>
+<li>University of Athens <a class="reference external" href="http://aiolos.survey.ntua.gr/gisvm/6.5/">mirror</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="extract">
+<h3>Extract<a class="headerlink" href="#extract" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>using <a class="reference external" href="http://www.7-zip.org/">7-Zip</a>, open the <em>.7z</em> archive and extract the
+<em>.vmdk</em> file onto your hard disk (the extracted file is ~10GB in size)</li>
+</ul>
+</div>
+</div>
+<div class="section" id="create-virtual-machine">
+<h2>3. Create Virtual Machine<a class="headerlink" href="#create-virtual-machine" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p class="first">start VirtualBox (&#8220;Oracle VM VirtualBox)</p>
+</li>
+<li><p class="first">click on the <em>New</em> button to create a VM</p>
+<a class="reference internal image-reference" href="../_images/virtualbox-new.jpg"><img alt="../_images/virtualbox-new.jpg" src="../_images/virtualbox-new.jpg" style="width: 600px; height: 400px;" /></a>
+</li>
+<li><p class="first">enter &#8220;osgeo-live&#8221; for the name, and select <em>Type: Linux</em> and <em>Version: Ubuntu</em></p>
+<img alt="../_images/virtualbox-create.jpg" src="../_images/virtualbox-create.jpg" />
+</li>
+<li><p class="first">In the next screen set the memory to 1024 MB (or more if your host computer has more than 4GB).</p>
+<img alt="../_images/virtualbox-memory.jpg" src="../_images/virtualbox-memory.jpg" />
+</li>
+<li><p class="first">Continue to the next screen and choose &#8220;Use existing hard disk&#8221;. Then click on the button
+(a folder icon) to browse to where you saved the *.vmdk file. Select this file, press <em>Next</em>
+and <em>Create</em>.</p>
+<img alt="../_images/virtualbox-drive.jpg" src="../_images/virtualbox-drive.jpg" />
+</li>
+<li><p class="first">Once the VM is created, click on the Settings button. In the &#8220;General&#8221; section, go to the
+Advanced tab, and click to select &#8220;Show at top of screen&#8221; for the Mini toolbar.</p>
+<a class="reference internal image-reference" href="../_images/virtualbox-toolbar.jpg"><img alt="../_images/virtualbox-toolbar.jpg" src="../_images/virtualbox-toolbar.jpg" style="width: 600px; height: 400px;" /></a>
+</li>
+<li><p class="first">In the &#8220;Display&#8221; section and increase video memory to 32 or 64 MB.</p>
+<a class="reference internal image-reference" href="../_images/virtualbox-display.jpg"><img alt="../_images/virtualbox-display.jpg" src="../_images/virtualbox-display.jpg" style="width: 600px; height: 400px;" /></a>
+</li>
+<li><p class="first">In the &#8220;Shared Folders&#8221; section, click the &#8220;Add folder&#8221; (green + icon on the right) to find a
+directory on your machine that you wish to share inside the VM.</p>
+<a class="reference internal image-reference" href="../_images/virtualbox-shared.jpg"><img alt="../_images/virtualbox-shared.jpg" src="../_images/virtualbox-shared.jpg" style="width: 600px; height: 400px;" /></a>
+<p>Once the &#8220;Folder path&#8221; and &#8220;Folder name&#8221; are defined, click OK, and close the settings window.</p>
+</li>
+</ul>
+</div>
+<div class="section" id="run-the-virtual-machine">
+<h2>4. Run the Virtual Machine<a class="headerlink" href="#run-the-virtual-machine" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p class="first">Now bootup the VM by clicking the Start (green arrow) button. OK any warning messages.</p>
+<a class="reference internal image-reference" href="../_images/virtualbox-osgeo-live.jpg"><img alt="../_images/virtualbox-osgeo-live.jpg" src="../_images/virtualbox-osgeo-live.jpg" style="width: 600px; height: 400px;" /></a>
+</li>
+<li><p class="first">To improve video performance and enable the shared folders, open the Devices menu and click
+&#8220;Install Guest Additions&#8221;.</p>
+<a class="reference internal image-reference" href="../_images/virtualbox-guestadditions.jpg"><img alt="../_images/virtualbox-guestadditions.jpg" src="../_images/virtualbox-guestadditions.jpg" style="width: 600px; height: 400px;" /></a>
+</li>
+<li><p class="first">Next, on the desktop you will see an icon named &#8220;VBOXADDITIONS_4.2.12_84980&#8221;, click it (this mounts
+the drive).  You can then close this window.</p>
+</li>
+<li><p class="first">Open a Terminal window (in top left click &#8220;Applications&#8221; / &#8220;Accessories&#8221; / &#8220;Terminal Emulator&#8221;</p>
+</li>
+<li><p class="first">In the Terminal, execute the following:</p>
+<div class="highlight-python"><pre>user@osgeolive:~$ sudo apt-get install linux-headers-`uname -r`
+
+   password: user
+
+user@osgeolive:~$ cd /media/VBOXADDITIONS_4.2.12_84980
+
+user@osgeolive:/media/VBOXADDITIONS_4.2.12_84980$ sudo ./VBoxLinuxAdditions.run</pre>
+</div>
+</li>
+<li><p class="first">reboot the machine (click on &#8220;user&#8221; in top-right of desktop, and select &#8220;Reboot&#8221;)</p>
+</li>
+<li><p class="first">Open a Terminal window again, and execute the following (where &#8220;osgeo-live-shared&#8221; is the
+name you entered earlier in the Settings for the shared folder):</p>
+<div class="highlight-python"><pre>user@osgeolive:~$ mkdir shared
+
+user@osgeolive:~$ sudo mount -t vboxsf -o uid=user,rw osgeo-live-shared /home/user/shared</pre>
+</div>
+<p>You can now create a test folder on your local machine (in my case &#8220;ttt&#8221;) and then view it
+within the virtual machine.</p>
+<a class="reference internal image-reference" href="../_images/virtualbox-shared-test.jpg"><img alt="../_images/virtualbox-shared-test.jpg" src="../_images/virtualbox-shared-test.jpg" style="width: 600px; height: 400px;" /></a>
+</li>
+</ul>
+</div>
 </div>
 
 
