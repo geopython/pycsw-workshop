@@ -38,7 +38,7 @@ Download
   
   - official `site <http://live.osgeo.org/en/download.html>`__
   - UC Davis `mirror <http://osprey.ucdavis.edu/downloads/osgeo/gisvm/latest/>`__
-  - University of Athens `mirror <http://aiolos.survey.ntua.gr/gisvm/6.5/>`__
+  - National Technical University of Athens `mirror <http://aiolos.survey.ntua.gr/gisvm/6.5/>`__
   
 Extract
 *******
