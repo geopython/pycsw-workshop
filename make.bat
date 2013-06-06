@@ -206,11 +206,11 @@ if "%1" == "gh-pages" (
 	%SPHINXBUILD% -b html %ALLSPHINXOPTS% %BUILDDIR%/html
 	if errorlevel 1 exit /b 1
 	git clone git@github.com:geopython/pycsw-workshop.git -b gh-pages %GH_PAGES%/pycsw-workshop-temp
-	xcopy %THIS_DIR%/%BUILDDIR%/html/ %GH_PAGES%/pycsw-workshop-temp /E /Y
+	xcopy "%THIS_DIR%\%BUILDDIR%\html" "%GH_PAGES%\pycsw-workshop-temp" /E /Y
 	cd %GH_PAGES%/pycsw-workshop-temp
 	git add .
 	git commit -am "Update live docs"
-	REM git push origin gh-pages
+	git push origin gh-pages
 	REM if errorlevel 1 exit /b 1
         cd %THIS_DIR%
 	rmdir /q /s %GH_PAGES%\pycsw-workshop-temp        
