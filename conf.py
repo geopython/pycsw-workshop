@@ -41,7 +41,8 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'pycsw Workshop'
-copyright = u'2013, Jeff McKenna, Tom Kralidis, and Angelos Tzotsos'
+authors = u'Jeff McKenna, Tom Kralidis, Angelos Tzotsos'
+copyright = u'2013, ' + authors
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -64,7 +65,7 @@ release = '1.4.1'
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
-exclude_patterns = ['_build', 'requirements.txt']
+exclude_patterns = ['_build', 'requirements.txt', 'LICENSE.txt']
 
 # The reST default role (used for this markup: `text`) to use for all documents.
 #default_role = None
@@ -186,7 +187,7 @@ latex_elements = {
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
   ('index', 'pycswWorkshop.tex', u'pycsw Workshop Documentation',
-   u'Jeff McKenna, Tom Kralidis, and Angelos Tzotsos', 'manual'),
+   authors, 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
@@ -219,7 +220,7 @@ latex_preamble = '\setcounter{tocdepth}{3}'
 # (source start file, name, description, authors, manual section).
 man_pages = [
     ('index', 'pycswworkshop', u'pycsw Workshop Documentation',
-     [u'Jeff McKenna, Tom Kralidis, and Angelos Tzotsos'], 1)
+     [authors], 1)
 ]
 
 # If true, show URL addresses after external links.
@@ -233,7 +234,7 @@ man_pages = [
 #  dir menu entry, description, category)
 texinfo_documents = [
   ('index', 'pycswWorkshop', u'pycsw Workshop Documentation',
-   u'Jeff McKenna, Tom Kralidis, and Angelos Tzotsos', 'pycswWorkshop', 'One line description of project.',
+   authors, 'pycswWorkshop', 'One line description of project.',
    'Miscellaneous'),
 ]
 
@@ -251,9 +252,9 @@ texinfo_documents = [
 
 # Bibliographic Dublin Core info.
 epub_title = u'pycsw Workshop'
-epub_author = u'Jeff McKenna, Tom Kralidis, and Angelos Tzotsos'
-epub_publisher = u'Jeff McKenna, Tom Kralidis, and Angelos Tzotsos'
-epub_copyright = u'2013, Jeff McKenna, Tom Kralidis, and Angelos Tzotsos'
+epub_author = authors
+epub_publisher = authors
+epub_copyright = copyright
 
 # The language of the text. It defaults to the language option
 # or en if the language is not set.
@@ -294,7 +295,7 @@ epub_copyright = u'2013, Jeff McKenna, Tom Kralidis, and Angelos Tzotsos'
     # Grouping the document tree into PDF files. List of tuples
     # (source start file, target name, title, author).
 pdf_documents = [
-    ('index', u'pycsw-Workshop', u'pycsw Workshop', u'The pycsw Team'),
+    ('index', u'pycsw-Workshop', u'pycsw Workshop', authors),
 ]
 
 # A comma-separated list of custom stylesheets. Example:

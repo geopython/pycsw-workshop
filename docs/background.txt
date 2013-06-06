@@ -21,3 +21,4 @@ Assumptions
 License
 -------
 
+.. include:: ../LICENSE.txt
