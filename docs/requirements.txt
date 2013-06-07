@@ -6,7 +6,7 @@ Workshop Requirements
 The pycsw workshop requires the following installed locally:
 
 - `7-Zip <http://www.7-zip.org/>`__ (ability to extract *.7z* files)
-- `VirtualBox <http://www.virtualbox.org/>`__ (virtual machine software, ability to 
+- `VirtualBox <https://www.virtualbox.org/>`__ (virtual machine software, ability to 
   load virtual disk \*.vmdk files)
 - OSGeo-Live `Virtual Machine <http://live.osgeo.org/en/download.html>`__ (which 
   contains pycsw)

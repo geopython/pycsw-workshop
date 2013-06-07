@@ -8,6 +8,7 @@ install:
 
 script:
   - make html
+  - make linkcheck
   - make pdf
 
 notifications:
