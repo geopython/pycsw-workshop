@@ -40,10 +40,10 @@ Example Live Requests
 ---------------------
 
 - `GetCapabilities <http://labs.gatewaygeomatics.com/csw?service=CSW&version=2.0.2&request=GetCapabilities>`__
-- DescribeRecord
-- GetRecords
-- GetRecordById
-- GetDomain
+- `DescribeRecord <http://labs.gatewaygeomatics.com/csw?service=CSW&version=2.0.2&request=DescribeRecord&TypeName=csw:Record>`__
+- `GetRecords <http://labs.gatewaygeomatics.com/csw?service=CSW&version=2.0.2&request=GetRecords&ElementSetName=full&typenames=csw:Record>`__
+- `GetRecordById <http://labs.gatewaygeomatics.com/csw?service=CSW&version=2.0.2&request=GetRecordById&ElementSetName=full&Id=urn:uuid:9a669547-b69b-469f-a11f-2d875366bbdc>`__
+- `GetDomain <http://labs.gatewaygeomatics.com/csw?service=CSW&version=2.0.2&request=GetDomain&parametername=GetRecords.resultType>`__
 - Harvest
 - Transaction
 
