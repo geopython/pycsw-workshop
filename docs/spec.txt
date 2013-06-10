@@ -3,10 +3,48 @@
 OGC CSW Specification
 =====================
 
-Purpose
--------
+The Open Geospatial Consortium (OGC) `OpenGIS Catalog Service Implementation Specification <http://www.opengeospatial.org/standards/specifications/catalog>`__,
+currently at version 2.0.2, is a standard for discovering and retrieving spatial data
+and metadata.  Catalog Services for the Web (CSW) if a profile/part of the Catalog Service
+Implementation Specificaton that allows for publishing and searching of metadata.
 
-Example Requests
-----------------
+Operations
+----------
+
+  .. image:: ../_static/csw-operations.jpg
+     :width: 564px
+     :height: 286px
+
+CSW defines serval possible operations to discover and retrieve metadata, and 
+groups these operations into 3 "classes":
+
+Service Class
+  - GetCapabilities (mandatory) - allow clients to retrieve information describing the 
+    service instance
+  
+Discovery Class
+  - DescribeRecord (mandatory) - allows a client to discover elements of the
+    information model supported by the target catalog service	
+  - GetRecords (mandatory) - get metadata records		
+  - GetRecordById (optional) - get metadata records by ID	
+  - GetDomain (optional) - obtain runtime information about the range of values 
+    of a metadata record element or request parameter.
+  
+Management Class
+  - Harvest (optional) - references the data to be inserted or updated in the catalog	
+  - Transaction (optional) - defines an interface for creating, modifying and
+    deleting catalog records.  
+  
+  
+Example Live Requests
+---------------------
+
+- `GetCapabilities <http://labs.gatewaygeomatics.com/csw?service=CSW&version=2.0.2&request=GetCapabilities>`__
+- DescribeRecord
+- GetRecords
+- GetRecordById
+- GetDomain
+- Harvest
+- Transaction
 
 
