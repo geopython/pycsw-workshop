@@ -3,10 +3,18 @@
 Background
 ==========
 
+Home
+----
+
+All workshop materials are maintained openly through a GitHub repository: 
+`https://github.com/geopython/pycsw-workshop <https://github.com/geopython/pycsw-workshop>`__.
+Contributions are always welcome.
+
 History
 -------
 
 Initial workshop structure was created by Jeff McKenna of `Gateway Geomatics <http://www.gatewaygeomatics.com>`__.
+
 
 Acknowledgements
 ----------------

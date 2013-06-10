@@ -3,8 +3,112 @@
 Metadata Background
 ===================
 
-Types
------
+  .. image:: ../_static/arnulf-metadata.jpg
+     :width: 411px
+     :height: 599px     
+     :scale: 50
+     :align: right
 
-History
--------
+Metadata is often described as "data about data", or the *who*, *what*, *where*, 
+and *when*.  In the spatial world, for each dataset we maintain, we should record 
+information about the data such as:
+
+- general description
+- location
+- usage restrictions
+- projection
+- technical contact
+- date created
+- date modified
+- version
+
+Benefits
+--------
+
+Maintaining metadata for your datasets is important for several reasons:
+
+1. Internal: local management
+
+   - tracking dataset management
+   - scheduling data updates
+   
+2. External: discovery
+
+   - allowing your dataset to be used outside your organization
+
+Standardized Metadata
+---------------------
+
+With the growth of geographic information systems (GIS) in the 80's and 90's, geographic
+datasets became a requirement for decision makers across the world.  The expansion of
+the Internet to share information through the late 90's and 2000's has now brought 
+'discovery' of geographic data into the hands of the average citizen.
+
+.. note::
+    Metadata standards have been introduced since the mid-90's with the goals of:
+
+    - outlining specific required parameters
+    - common terminology
+    - consistency
+    - interoperability 
+    
+Dublin Core
+***********
+
+  .. image:: ../_static/dublin-core.jpg
+     :width: 410px
+     :height: 59px     
+     :align: right
+     :target: http://dublincore.org/
+
+- named from workshop in Dublin, Ohio in 1995
+- established a core/common group of 15 metadata elements
+
+Example:
+
+.. code-block:: xml
+
+  <head profile="http://dublincore.org">
+  ..
+  <meta name="DC.Identifier" schema="DCterms:URI"
+  content="http://tutorialsonline.info/Common/DublinCore.html" />
+  <meta name="DC.Format" schema="DCterms:IMT" content="text/html" /> <meta name="DC.Title" xml:lang="EN" content="Dublin Core Tutorial" />
+  <meta name="DC.Creator" content="Alan Kelsey" />
+  <meta name="DC.Subject" xml:lang="EN" content="Dublin Core Meta Tags" />
+  <meta name="DC.Publisher" content="Alan Kelsey, Ltd." />
+  <meta name="DC.Publisher.Address" content="alan@tutorialsonline.info" />
+  <meta name="DC.Contributor" content="Alan Kelsey" />
+  <meta name="DC.Date" scheme="ISO8601" content="2007-01-06" />
+  <meta name="DC.Type" content="text/html" />
+  <meta name="DC.Description" xml:lang="EN"
+    content="Learning Advanced Web Design can be fun and easy! Look at a site designed specifically to help you learn how to design web pages with proper tags, styles, and scripting." />
+  <meta name="DC.Identifier" content="http://tutorialsonline.info/Common/DublinCore.html" />
+  <meta name="DC.Relation" content="TutorialOnline.info" scheme="IsPartOf" />
+  <meta name="DC.Coverage" content="Hennepin Technical College" />
+  <meta name="DC.Rights" content="Copyright 2011, Alan Kelsey, Ltd.  All rights reserved." />
+  <meta name="DC.Date.X-MetadataLastModified" scheme="ISO8601" content="2007-01-06" />
+  <meta name="DC.Language" scheme="dcterms:RFC1766" content="EN" />
+  
+FGDC Content Standard for Digital Geospatial Metadata (CSDGM)
+*************************************************************
+
+- approved by the U.S. Federal Geographic Data Committee originally in 1994
+- composed of Sections, Compound Elements, Data Elements
+
+  .. image:: ../_static/fgdc-csdgm.jpg
+     :width: 489px
+     :height: 483px  
+     :target: http://www.fgdc.gov/csdgmgraphical/index.html
+     
+ISO 19115
+*********
+
+- Internation Standards Organization's TC211 committee created this in 2003
+- consisting of more than 400 "Core", "Mandatory", and "Optional" elements
+
+  .. image:: ../_static/iso_19115.png
+     :width: 527px
+     :height: 580px  
+     :scale: 50  
+
+
