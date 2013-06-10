@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 
 
@@ -80,8 +79,8 @@
   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
   <ul class="dropdown-menu localtoc"><ul>
 <li><a class="reference internal" href="#">OGC CSW Specification</a><ul>
-<li><a class="reference internal" href="#purpose">Purpose</a></li>
-<li><a class="reference internal" href="#example-requests">Example Requests</a></li>
+<li><a class="reference internal" href="#operations">Operations</a></li>
+<li><a class="reference internal" href="#example-live-requests">Example Live Requests</a></li>
 </ul>
 </li>
 </ul>
@@ -119,11 +118,54 @@
   
   <div class="section" id="ogc-csw-specification">
 <span id="spec"></span><h1>OGC CSW Specification<a class="headerlink" href="#ogc-csw-specification" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="purpose">
-<h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">¶</a></h2>
+<p>The Open Geospatial Consortium (OGC) <a class="reference external" href="http://www.opengeospatial.org/standards/specifications/catalog">OpenGIS Catalog Service Implementation Specification</a>,
+currently at version 2.0.2, is a standard for discovering and retrieving spatial data
+and metadata.  Catalog Services for the Web (CSW) if a profile/part of the Catalog Service
+Implementation Specificaton that allows for publishing and searching of metadata.</p>
+<div class="section" id="operations">
+<h2>Operations<a class="headerlink" href="#operations" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/csw-operations.jpg"><img alt="../_images/csw-operations.jpg" src="../_images/csw-operations.jpg" style="width: 564px; height: 286px;" /></a>
+</div></blockquote>
+<p>CSW defines serval possible operations to discover and retrieve metadata, and
+groups these operations into 3 &#8220;classes&#8221;:</p>
+<dl class="docutils">
+<dt>Service Class</dt>
+<dd><ul class="first last simple">
+<li>GetCapabilities (mandatory) - allow clients to retrieve information describing the
+service instance</li>
+</ul>
+</dd>
+<dt>Discovery Class</dt>
+<dd><ul class="first last simple">
+<li>DescribeRecord (mandatory) - allows a client to discover elements of the
+information model supported by the target catalog service</li>
+<li>GetRecords (mandatory) - get metadata records</li>
+<li>GetRecordById (optional) - get metadata records by ID</li>
+<li>GetDomain (optional) - obtain runtime information about the range of values
+of a metadata record element or request parameter.</li>
+</ul>
+</dd>
+<dt>Management Class</dt>
+<dd><ul class="first last simple">
+<li>Harvest (optional) - references the data to be inserted or updated in the catalog</li>
+<li>Transaction (optional) - defines an interface for creating, modifying and
+deleting catalog records.</li>
+</ul>
+</dd>
+</dl>
 </div>
-<div class="section" id="example-requests">
-<h2>Example Requests<a class="headerlink" href="#example-requests" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="example-live-requests">
+<h2>Example Live Requests<a class="headerlink" href="#example-live-requests" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference external" href="http://labs.gatewaygeomatics.com/csw?service=CSW&amp;version=2.0.2&amp;request=GetCapabilities">GetCapabilities</a></li>
+<li><a class="reference external" href="http://labs.gatewaygeomatics.com/csw?service=CSW&amp;version=2.0.2&amp;request=DescribeRecord&amp;TypeName=csw:Record">DescribeRecord</a></li>
+<li><a class="reference external" href="http://labs.gatewaygeomatics.com/csw?service=CSW&amp;version=2.0.2&amp;request=GetRecords&amp;ElementSetName=full&amp;typenames=csw:Record">GetRecords</a></li>
+<li><a class="reference external" href="http://labs.gatewaygeomatics.com/csw?service=CSW&amp;version=2.0.2&amp;request=GetRecordById&amp;ElementSetName=full&amp;Id=urn:uuid:9a669547-b69b-469f-a11f-2d875366bbdc">GetRecordById</a></li>
+<li><a class="reference external" href="http://labs.gatewaygeomatics.com/csw?service=CSW&amp;version=2.0.2&amp;request=GetDomain&amp;parametername=GetRecords.resultType">GetDomain</a></li>
+<li>Harvest</li>
+<li>Transaction</li>
+</ul>
 </div>
 </div>
 
@@ -137,7 +179,7 @@
     </p>
     <p>
         &copy; Copyright 2013, Jeff McKenna, Tom Kralidis, Angelos Tzotsos.<br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2b1.<br/>
     </p>
   </div>
 </footer>
