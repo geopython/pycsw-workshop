@@ -6,7 +6,7 @@ Workshop Requirements
 The pycsw workshop requires the following installed locally:
 
 - `7-Zip <http://www.7-zip.org/>`__ (ability to extract *.7z* files)
-- `VirtualBox <http://www.virtualbox.org/>`__ (virtual machine software, ability to 
+- `VirtualBox <https://www.virtualbox.org/>`__ (virtual machine software, ability to 
   load virtual disk \*.vmdk files)
 - OSGeo-Live `Virtual Machine <http://live.osgeo.org/en/download.html>`__ (which 
   contains pycsw)
@@ -53,22 +53,22 @@ Extract
 - click on the *New* button to create a VM
 
   .. image:: ../_static/virtualbox-new.jpg
-     :height: 577px
      :width: 774px
+     :height: 577px     
      :scale: 75
      
 - enter "osgeo-live" for the name, and select *Type: Linux* and *Version: Ubuntu*
 
   .. image:: ../_static/virtualbox-create.jpg
-     :height: 421px
      :width: 354px
+     :height: 421px     
      :scale: 100
   
 - In the next screen set the memory to 1024 MB (or more if your host computer has more than 4GB).
 
   .. image:: ../_static/virtualbox-memory.jpg
-     :height: 421px
      :width: 354px
+     :height: 421px     
      :scale: 100 
   
 - Continue to the next screen and choose "Use existing hard disk". Then click on the button 
@@ -81,21 +81,21 @@ Extract
   Advanced tab, and click to select "Show at top of screen" for the Mini toolbar.
   
   .. image:: ../_static/virtualbox-toolbar.jpg
-     :height: 400px
      :width: 600px
+     :height: 400px     
      
 - In the "Display" section and increase video memory to 32 or 64 MB.
 
   .. image:: ../_static/virtualbox-display.jpg
-     :height: 400px
      :width: 600px
+     :height: 400px     
      
 - In the "Shared Folders" section, click the "Add folder" (green + icon on the right) to find a 
   directory on your machine that you wish to share inside the VM.     
   
   .. image:: ../_static/virtualbox-shared.jpg
-     :height: 400px
      :width: 600px
+     :height: 400px     
      
   Once the "Folder path" and "Folder name" are defined, click OK, and close the settings window.
   
@@ -105,16 +105,16 @@ Extract
 - Now bootup the VM by clicking the Start (green arrow) button. OK any warning messages.
 
   .. image:: ../_static/virtualbox-osgeo-live.jpg
-     :height: 400px
      :width: 600px
+     :height: 400px     
 
 
 - To improve video performance and enable the shared folders, open the Devices menu and click 
   "Install Guest Additions".
   
   .. image:: ../_static/virtualbox-guestadditions.jpg
+     :width: 600px
      :height: 400px
-     :width: 600px  
      
 - Next, on the desktop you will see an icon named "VBOXADDITIONS_4.2.12_84980", click it (this mounts 
   the drive).  You can then close this window.
@@ -148,5 +148,5 @@ Extract
   within the virtual machine.
   
   .. image:: ../_static/virtualbox-shared-test.jpg
+     :width: 600px
      :height: 400px
-     :width: 600px    

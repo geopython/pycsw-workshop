@@ -80,8 +80,13 @@
   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
   <ul class="dropdown-menu localtoc"><ul>
 <li><a class="reference internal" href="#">Metadata Background</a><ul>
-<li><a class="reference internal" href="#types">Types</a></li>
-<li><a class="reference internal" href="#history">History</a></li>
+<li><a class="reference internal" href="#benefits">Benefits</a></li>
+<li><a class="reference internal" href="#standardized-metadata">Standardized Metadata</a><ul>
+<li><a class="reference internal" href="#dublin-core">Dublin Core</a></li>
+<li><a class="reference internal" href="#fgdc-content-standard-for-digital-geospatial-metadata-csdgm">FGDC Content Standard for Digital Geospatial Metadata (CSDGM)</a></li>
+<li><a class="reference internal" href="#iso-19115">ISO 19115</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -119,11 +124,106 @@
   
   <div class="section" id="metadata-background">
 <span id="metadata"></span><h1>Metadata Background<a class="headerlink" href="#metadata-background" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="types">
-<h2>Types<a class="headerlink" href="#types" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/arnulf-metadata.jpg"><img alt="../_images/arnulf-metadata.jpg" class="align-right" src="../_images/arnulf-metadata.jpg" style="width: 205.5px; height: 299.5px;" /></a>
+</div></blockquote>
+<p>Metadata is often described as &#8220;data about data&#8221;, or the <em>who</em>, <em>what</em>, <em>where</em>,
+and <em>when</em>.  In the spatial world, for each dataset we maintain, we should record
+information about the data such as:</p>
+<ul class="simple">
+<li>general description</li>
+<li>location</li>
+<li>usage restrictions</li>
+<li>projection</li>
+<li>technical contact</li>
+<li>date created</li>
+<li>date modified</li>
+<li>version</li>
+</ul>
+<div class="section" id="benefits">
+<h2>Benefits<a class="headerlink" href="#benefits" title="Permalink to this headline">¶</a></h2>
+<p>Maintaining metadata for your datasets is important for several reasons:</p>
+<ol class="arabic simple">
+<li>Internal: local management<ul>
+<li>tracking dataset management</li>
+<li>scheduling data updates</li>
+</ul>
+</li>
+<li>External: discovery<ul>
+<li>allowing your dataset to be used outside your organization</li>
+</ul>
+</li>
+</ol>
 </div>
-<div class="section" id="history">
-<h2>History<a class="headerlink" href="#history" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="standardized-metadata">
+<h2>Standardized Metadata<a class="headerlink" href="#standardized-metadata" title="Permalink to this headline">¶</a></h2>
+<p>With the growth of geographic information systems (GIS) in the 80&#8217;s and 90&#8217;s, geographic
+datasets became a requirement for decision makers across the world.  The expansion of
+the Internet to share information through the late 90&#8217;s and 2000&#8217;s has now brought
+&#8216;discovery&#8217; of geographic data into the hands of the average citizen.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>Metadata standards have been introduced since the mid-90&#8217;s with the goals of:</p>
+<ul class="last simple">
+<li>outlining specific required parameters</li>
+<li>common terminology</li>
+<li>consistency</li>
+<li>interoperability</li>
+</ul>
+</div>
+<div class="section" id="dublin-core">
+<h3>Dublin Core<a class="headerlink" href="#dublin-core" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><a class="reference external image-reference" href="http://dublincore.org/"><img alt="../_images/dublin-core.jpg" class="align-right" src="../_images/dublin-core.jpg" style="width: 410px; height: 59px;" /></a>
+</div></blockquote>
+<ul class="simple">
+<li>named from workshop in Dublin, Ohio in 1995</li>
+<li>established a core/common group of 15 metadata elements</li>
+</ul>
+<p>Example:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;head</span> <span class="na">profile=</span><span class="s">&quot;http://dublincore.org&quot;</span><span class="nt">&gt;</span>
+..
+<span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;DC.Identifier&quot;</span> <span class="na">schema=</span><span class="s">&quot;DCterms:URI&quot;</span>
+<span class="na">content=</span><span class="s">&quot;http://tutorialsonline.info/Common/DublinCore.html&quot;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;DC.Format&quot;</span> <span class="na">schema=</span><span class="s">&quot;DCterms:IMT&quot;</span> <span class="na">content=</span><span class="s">&quot;text/html&quot;</span> <span class="nt">/&gt;</span> <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;DC.Title&quot;</span> <span class="na">xml:lang=</span><span class="s">&quot;EN&quot;</span> <span class="na">content=</span><span class="s">&quot;Dublin Core Tutorial&quot;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;DC.Creator&quot;</span> <span class="na">content=</span><span class="s">&quot;Alan Kelsey&quot;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;DC.Subject&quot;</span> <span class="na">xml:lang=</span><span class="s">&quot;EN&quot;</span> <span class="na">content=</span><span class="s">&quot;Dublin Core Meta Tags&quot;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;DC.Publisher&quot;</span> <span class="na">content=</span><span class="s">&quot;Alan Kelsey, Ltd.&quot;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;DC.Publisher.Address&quot;</span> <span class="na">content=</span><span class="s">&quot;alan@tutorialsonline.info&quot;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;DC.Contributor&quot;</span> <span class="na">content=</span><span class="s">&quot;Alan Kelsey&quot;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;DC.Date&quot;</span> <span class="na">scheme=</span><span class="s">&quot;ISO8601&quot;</span> <span class="na">content=</span><span class="s">&quot;2007-01-06&quot;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;DC.Type&quot;</span> <span class="na">content=</span><span class="s">&quot;text/html&quot;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;DC.Description&quot;</span> <span class="na">xml:lang=</span><span class="s">&quot;EN&quot;</span>
+  <span class="na">content=</span><span class="s">&quot;Learning Advanced Web Design can be fun and easy! Look at a site designed specifically to help you learn how to design web pages with proper tags, styles, and scripting.&quot;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;DC.Identifier&quot;</span> <span class="na">content=</span><span class="s">&quot;http://tutorialsonline.info/Common/DublinCore.html&quot;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;DC.Relation&quot;</span> <span class="na">content=</span><span class="s">&quot;TutorialOnline.info&quot;</span> <span class="na">scheme=</span><span class="s">&quot;IsPartOf&quot;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;DC.Coverage&quot;</span> <span class="na">content=</span><span class="s">&quot;Hennepin Technical College&quot;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;DC.Rights&quot;</span> <span class="na">content=</span><span class="s">&quot;Copyright 2011, Alan Kelsey, Ltd.  All rights reserved.&quot;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;DC.Date.X-MetadataLastModified&quot;</span> <span class="na">scheme=</span><span class="s">&quot;ISO8601&quot;</span> <span class="na">content=</span><span class="s">&quot;2007-01-06&quot;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;DC.Language&quot;</span> <span class="na">scheme=</span><span class="s">&quot;dcterms:RFC1766&quot;</span> <span class="na">content=</span><span class="s">&quot;EN&quot;</span> <span class="nt">/&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="fgdc-content-standard-for-digital-geospatial-metadata-csdgm">
+<h3>FGDC Content Standard for Digital Geospatial Metadata (CSDGM)<a class="headerlink" href="#fgdc-content-standard-for-digital-geospatial-metadata-csdgm" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p class="first">approved by the U.S. Federal Geographic Data Committee originally in 1994</p>
+</li>
+<li><p class="first">composed of Sections, Compound Elements, Data Elements</p>
+<a class="reference external image-reference" href="http://www.fgdc.gov/csdgmgraphical/index.html"><img alt="../_images/fgdc-csdgm.jpg" src="../_images/fgdc-csdgm.jpg" style="width: 489px; height: 483px;" /></a>
+</li>
+</ul>
+</div>
+<div class="section" id="iso-19115">
+<h3>ISO 19115<a class="headerlink" href="#iso-19115" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p class="first">International Standards Organization&#8217;s TC211 committee created this in 2003</p>
+</li>
+<li><p class="first">consisting of more than 400 &#8220;Core&#8221;, &#8220;Mandatory&#8221;, and &#8220;Optional&#8221; elements</p>
+<a class="reference internal image-reference" href="../_images/iso_19115.png"><img alt="../_images/iso_19115.png" src="../_images/iso_19115.png" style="width: 263.5px; height: 290.0px;" /></a>
+</li>
+</ul>
+</div>
 </div>
 </div>
 

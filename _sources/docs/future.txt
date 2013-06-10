@@ -3,11 +3,22 @@
 pycsw Future Development
 ========================
 
+1.6.0 (June 2013)
+^^^^^^^^^^^^^^^^^
+- extended harvesting (WAF, SOS, RDF)
+- ISO 19115-2 (gmi) support
+- spatial relevance ranking
+- enhanced OGC filter support
+- flexible administation enhancements
+
+1.8 / 2.0
+^^^^^^^^^
+- CSW 3.0
+- OpenDAP / THREDDS harvesting
 - CKAN integration
 - native spatial databases
 - backends (GeoCouch)
 - PostgreSQL full text search (FTS)
 - enhanced harvesting / additional formats / APIs
 - search engine libraries
-- CSW 3.0
 
