@@ -103,7 +103,7 @@ FGDC Content Standard for Digital Geospatial Metadata (CSDGM)
 ISO 19115
 *********
 
-- Internation Standards Organization's TC211 committee created this in 2003
+- International Standards Organization's TC211 committee created this in 2003
 - consisting of more than 400 "Core", "Mandatory", and "Optional" elements
 
   .. image:: ../_static/iso_19115.png
