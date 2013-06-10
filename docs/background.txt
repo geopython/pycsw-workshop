@@ -6,7 +6,7 @@ Background
 History
 -------
 
-(high-level history of how/why pycsw was created...use IRC discussions)
+Initial workshop structure was created by Jeff McKenna of `Gateway Geomatics <http://www.gatewaygeomatics.com>`__.
 
 Acknowledgements
 ----------------
@@ -17,6 +17,9 @@ through an FGDC CAP grant, in 2013.
 
 Assumptions
 -----------
+
+As this workshop is designed for use with the `OSGeo-Live <http://live.osgeo.org/en/index.html>`__ virtual 
+machine, basic knowledge of Unix commands is assumed.
 
 License
 -------
