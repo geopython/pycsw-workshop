@@ -3,7 +3,10 @@
 Introduction to pycsw
 =====================
 
-Contents:
+pycsw is a lightweight metadata publisher, written in Python.  It is easily
+configured, and can plug into your architecture.
+
+The following sections will introduce your to the powers of pycsw.
 
 .. toctree::
    :maxdepth: 2
@@ -14,4 +17,6 @@ Contents:
    intro/install
    intro/configure
    intro/intro-exercises
+   
+   
 
