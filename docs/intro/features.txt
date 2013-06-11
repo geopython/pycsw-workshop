@@ -3,3 +3,10 @@
 Features
 ========
 
+Component Architecture
+----------------------
+
+  .. image:: ../../_static/pycsw-component-architecture.jpg
+     :width: 960px
+     :height: 720px     
+     :scale: 50
