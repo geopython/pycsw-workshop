@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 
 
@@ -65,13 +64,13 @@
      class="dropdown-toggle"
      data-toggle="dropdown">Site <b class="caret"></b></a>
   <ul class="dropdown-menu globaltoc"
-    ><ul>
+    ><ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../background.html">Background</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../requirements.html">Workshop Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../metadata.html">Metadata Background</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../spec.html">OGC CSW Specification</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction to pycsw</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../advanced.html">Advanced pycsw</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../advanced.html">Advanced pycsw</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../open-data.html">pycsw and Open Data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../future.html">pycsw Future Development</a></li>
 </ul>
@@ -80,7 +79,15 @@
               <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
   <ul class="dropdown-menu localtoc"><ul>
-<li><a class="reference internal" href="#">Tips and Tricks</a></li>
+<li><a class="reference internal" href="#">Tips and Tricks</a><ul>
+<li><a class="reference internal" href="#importing-metadata-recursively">Importing Metadata Recursively</a></li>
+<li><a class="reference internal" href="#making-csw-xml-post-requests">Making CSW XML POST requests</a></li>
+<li><a class="reference internal" href="#json-output">JSON Output</a></li>
+<li><a class="reference internal" href="#get-raw-metadata">Get Raw Metadata</a></li>
+<li><a class="reference internal" href="#dependency-tracing">Dependency Tracing</a></li>
+<li><a class="reference internal" href="#debugging-issues">Debugging Issues</a></li>
+</ul>
+</li>
 </ul>
 </ul>
 </li>
@@ -116,6 +123,68 @@
   
   <div class="section" id="tips-and-tricks">
 <span id="tipstricks"></span><h1>Tips and Tricks<a class="headerlink" href="#tips-and-tricks" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="importing-metadata-recursively">
+<h2>Importing Metadata Recursively<a class="headerlink" href="#importing-metadata-recursively" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>use the <tt class="docutils literal"><span class="pre">pycsw-admin.py</span></tt> <tt class="docutils literal"><span class="pre">-r</span></tt> switch</li>
+</ul>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>pycsw-admin.py -c load_records -f path/to/default.cfg -p /path/to/metadata -r
+</pre></div>
+</div>
+</div>
+<div class="section" id="making-csw-xml-post-requests">
+<h2>Making CSW XML POST requests<a class="headerlink" href="#making-csw-xml-post-requests" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>different from traditional HTTP POST</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>no form key/value pairs</li>
+<li>client opens HTTP connection and send XML directly</li>
+</ul>
+</div></blockquote>
+<p>Using <tt class="docutils literal"><span class="pre">pycsw-admin.py</span></tt>:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>pycsw-admin.py -c post_xml -u http://labs.gatewaygeomatics.com/csw -x /path/to/request.xml
+</pre></div>
+</div>
+<p>Using curl:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>curl -H <span class="s2">&quot;Content-Type: text/xml&quot;</span> -X POST -d @request_file.xml http://labs.gatewaygeomatics.com/csw
+</pre></div>
+</div>
+</div>
+<div class="section" id="json-output">
+<h2>JSON Output<a class="headerlink" href="#json-output" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>for DescribeRecord, GetRecordById, GetRecords</li>
+<li>set <tt class="docutils literal"><span class="pre">outputformat</span></tt> to <tt class="docutils literal"><span class="pre">application/json</span></tt> as part of request</li>
+</ul>
+</div>
+<div class="section" id="get-raw-metadata">
+<h2>Get Raw Metadata<a class="headerlink" href="#get-raw-metadata" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>use <tt class="docutils literal"><span class="pre">GetRepositoryItem</span></tt> (based on ebRIM profile)</li>
+</ul>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>GET <span class="s2">&quot;http://labs.gatewaygeomatics.com/csw?service=CSW&amp;version=2.0.2&amp;request=GetRepositoryItem&amp;id=urn:uuid:9a669547-b69b-469f-a11f-2d875366bbdc&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="dependency-tracing">
+<h2>Dependency Tracing<a class="headerlink" href="#dependency-tracing" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>use <tt class="docutils literal"><span class="pre">pycsw-admin.py</span> <span class="pre">-c</span> <span class="pre">get_sysprof</span></tt></li>
+<li>valuable when multiple versions of pycsw and / or supporting libraries are on the same system</li>
+</ul>
+</div>
+<div class="section" id="debugging-issues">
+<h2>Debugging Issues<a class="headerlink" href="#debugging-issues" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>turn on logging (set <tt class="docutils literal"><span class="pre">server.loglevel</span></tt> to <tt class="docutils literal"><span class="pre">DEBUG</span></tt> and <tt class="docutils literal"><span class="pre">server.logfile</span></tt> to a writable file)</li>
+<li>set <tt class="docutils literal"><span class="pre">server.pretty_print</span></tt> to <tt class="docutils literal"><span class="pre">true</span></tt></li>
+<li>monitor logfile when testing (i.e. <tt class="docutils literal"><span class="pre">tailf</span> <span class="pre">/path/to/pycsw-log.txt</span></tt>)</li>
+<li>report issues / bugs to pycsw issue tracker / mailing list</li>
+<li>specify environment and supporting libraries (i.e. <tt class="docutils literal"><span class="pre">pycsw-admin.py</span> <span class="pre">-c</span> <span class="pre">get_sysprof</span></tt>)</li>
+</ul>
+</div>
 </div>
 
 
@@ -128,7 +197,7 @@
     </p>
     <p>
         &copy; Copyright 2013, Jeff McKenna, Tom Kralidis, Angelos Tzotsos.<br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2b1.<br/>
     </p>
   </div>
 </footer>
