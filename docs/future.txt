@@ -22,4 +22,4 @@ pycsw Future Development
 - PostgreSQL full text search (FTS)
 - enhanced harvesting / additional formats / APIs
 - search engine libraries
-
+- Open Data `metadata <http://project-open-data.github.io/schema/>`_ `JSON <http://project-open-data.github.io/metadata-resources/>`_ summary format
