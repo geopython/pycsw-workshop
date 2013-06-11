@@ -5,7 +5,7 @@ OGC CSW Specification
 
 The Open Geospatial Consortium (OGC) `OpenGIS Catalog Service Implementation Specification <http://www.opengeospatial.org/standards/specifications/catalog>`__,
 currently at version 2.0.2, is a standard for discovering and retrieving spatial data
-and metadata.  Catalog Services for the Web (CSW) if a profile/part of the Catalog Service
+and metadata.  Catalog Services for the Web (CSW) is a profile/part of the Catalog Service
 Implementation Specificaton that allows for publishing and searching of metadata.
 
 Operations
@@ -15,7 +15,7 @@ Operations
      :width: 564px
      :height: 286px
 
-CSW defines serval possible operations to discover and retrieve metadata, and 
+CSW defines several possible operations to discover and retrieve metadata, and 
 groups these operations into 3 "classes":
 
 Service Class

@@ -111,4 +111,8 @@ ISO 19115
      :height: 580px  
      :scale: 50  
 
+ISO 19139
+*********
 
+- the XML implementation schema for ISO 19115 specifying the metadata record format 
+- may be used to describe, validate, and exchange geospatial metadata prepared in XML

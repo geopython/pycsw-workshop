@@ -3,3 +3,19 @@
 Exporting
 =========
 
+- dump all records in pycsw repository
+- use ``pycsw-admin.py`` to export all records to XML files on disk
+
+.. code-block:: bash
+
+  $ pycsw-admin.py -c export_records -f /path/to/default.cfg -p /tmp/metadata
+
+- creates files in /tmp/metadata
+- files are named by metadata record identifier
+
+- want to import them back into another repository?
+
+.. code-block:: bash
+
+  $ pycsw-admin.py -c setup_db -f /path/to/default.cfg
+  $ pycsw-admin.py -c load_records -f /path/to/default.cfg -p /tmp/metadata

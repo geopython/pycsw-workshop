@@ -115,10 +115,32 @@
   
   <div class="section" id="exporting">
 <span id="export"></span><h1>Exporting<a class="headerlink" href="#exporting" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li>dump all records in pycsw repository</li>
+<li>use <tt class="docutils literal"><span class="pre">pycsw-admin.py</span></tt> to export all records to XML files on disk</li>
+</ul>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>pycsw-admin.py -c export_records -f /path/to/default.cfg -p /tmp/metadata
+</pre></div>
+</div>
+<ul class="simple">
+<li>creates files in /tmp/metadata</li>
+<li>files are named by metadata record identifier</li>
+<li>want to import them back into another repository?</li>
+</ul>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>pycsw-admin.py -c setup_db -f /path/to/default.cfg
+<span class="nv">$ </span>pycsw-admin.py -c load_records -f /path/to/default.cfg -p /tmp/metadata
+</pre></div>
+</div>
 </div>
 
 
 </div>
+    <div class="container note">
+      <p class="pull-left">
+        Want to make this workshop better?  Visit us on <a href="https://github.com/geopython/pycsw-workshop">GitHub</a>
+      </p>
+    </div>
+    
 <footer class="footer">
   <div class="container">
     <p class="pull-right">
@@ -131,5 +153,38 @@
     </p>
   </div>
 </footer>
+
+    <style type="text/css" media="screen">
+      .ribbon {
+        background-color: #007200;
+        overflow: hidden;
+        /* top left corner */
+        position: fixed;
+        right: -3em;
+        bottom: 2.5em;
+        /* 45 deg ccw rotation */
+        -moz-transform: rotate(-45deg);
+        -webkit-transform: rotate(-45deg);
+        /* shadow */
+        -moz-box-shadow: 0 0 1em #888;
+        -webkit-box-shadow: 0 0 1em #888;
+      }
+      .ribbon a {
+        border: 1px solid #faa;
+        color: #fff;
+        display: block;
+        font: bold 87% 'Helvetiva Neue', Helvetica, Arial, sans-serif;
+        margin: 0.05em 0 0.075em 0;
+        padding: 0.5em 3.5em;
+        text-align: center;
+        text-decoration: none;
+        /* shadow */
+        text-shadow: 0 0 0.5em #444;
+      }
+    </style>
+
+<div class="ribbon"><a href="https://github.com/geopython/pycsw-workshop">Fork me on GitHub</a></div>
+
+
   </body>
 </html>
