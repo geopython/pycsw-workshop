@@ -1,0 +1,61 @@
+.. _transactions:
+
+Transactions
+============
+
+- 'push' metadata into repository
+- pycsw does no application level backup/versioning
+
+.. note::
+
+  Always optimize your database accordingly (``pycsw-admin.py -c optimize_db``, ``VACUUM ANALYZE``, etc.) when making changes to the repository
+
+Insert
+------
+
+- inserts a record into the repository
+
+  - like ``insert into table values (...);``
+
+- pycsw honours the identifier in the metadata
+
+  - if absent, pycsw sets identifier
+
+- example: https://raw.github.com/geopython/pycsw/master/tests/suites/manager/post/Transaction-dc-01-insert.xml
+
+.. note::
+
+  Always ensure your metadata has an identifier
+
+Update (full)
+-------------
+
+- full update of metadata record
+- will update based on identifier found in XML
+
+  - if no identifier, pycsw will insert as a new record
+
+- example: https://raw.github.com/geopython/pycsw/master/tests/suites/manager/post/Transaction-dc-02-update-full.xml
+
+Update (property)
+-----------------
+
+- partial update of metadata record(s)
+
+  - like ``update table set foo="bar"``
+
+- you can apply an OGC filter to make updates on specific records
+
+  - like ``update table set foo="bar" where identifier=12345``
+
+- example: https://raw.github.com/geopython/pycsw/master/tests/suites/manager/post/Transaction-iso-03-update-recprop.xml
+
+Delete
+------
+
+- deletes record(s) from the repository
+
+  - like ``delete from table where identifier=12345``
+
+- example: https://raw.github.com/geopython/pycsw/master/tests/suites/manager/post/Transaction-iso-05-delete.xml
+
