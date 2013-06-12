@@ -8,14 +8,54 @@ Features / Design
      :height: 46px
      :align: left
      
-pycsw is not a metadata editor or publisher.
+pycsw is not a metadata editor.
 
   .. image:: ../../_static/green_check.png
+     :width: 40px
+     :height: 40px
+     :align: left
+     
+pycsw is a fully compliant CSW server.
+
+  .. image:: ../../_static/green_check.png
+     :width: 40px
+     :height: 40px
+     :align: left
+     
+pycsw is able to pull and store ("harvest") layer information from other remote
+OGC services (WMS, WFS, WCS, WPS, WAF, CSW, SOS).
+
+  .. image:: ../../_static/x_mark.png
      :width: 40px
      :height: 46px
      :align: left
      
-pycsw is a fully compliant CSW server.
+pycsw avoids any stylesheet conversions by storing metadata elements 
+in a local database.
+
+  .. image:: ../../_static/green_check.png
+     :width: 40px
+     :height: 40px
+     :align: left
+     
+pycsw allows for remote updates to the local repository ("transactions"),
+through CSW-T.
+
+  .. image:: ../../_static/green_check.png
+     :width: 40px
+     :height: 40px
+     :align: left
+     
+pycsw allows for additional profiles/metadata formats to be plugged in.
+
+  .. image:: ../../_static/green_check.png
+     :width: 40px
+     :height: 40px
+     :align: left
+     
+pycsw includes a commandline utility to administer the metadata repository.
+
+.
 
 Component Architecture
 ----------------------
@@ -25,6 +65,5 @@ Component Architecture
      :height: 720px     
      :scale: 50
      
-.. note::
-    pycsw avoids any stylesheet conversions by storing metadata elements 
-    in a local database.
+
+    
