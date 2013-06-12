@@ -80,7 +80,13 @@
               <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
   <ul class="dropdown-menu localtoc"><ul>
-<li><a class="reference internal" href="#">Exercises</a></li>
+<li><a class="reference internal" href="#">Exercises</a><ul>
+<li><a class="reference internal" href="#qgis-csw-client-installation">QGIS CSW Client Installation</a></li>
+<li><a class="reference internal" href="#data-discovery-in-qgis">Data Discovery in QGIS</a></li>
+<li><a class="reference internal" href="#owslib-csw-client-installation">OWSLib CSW client installation</a></li>
+<li><a class="reference internal" href="#data-discovery-through-owslib-and-python">Data Discovery through OWSLib and Python</a></li>
+</ul>
+</li>
 </ul>
 </ul>
 </li>
@@ -116,6 +122,154 @@
   
   <div class="section" id="exercises">
 <span id="advexercies"></span><h1>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="qgis-csw-client-installation">
+<h2>QGIS CSW Client Installation<a class="headerlink" href="#qgis-csw-client-installation" title="Permalink to this headline">¶</a></h2>
+<p>The HTTP request/response mechanism is not friendly enough to the end user in order to perform queries to the Catalogue Service.
+For this workshop, we will use the <cite>QGIS &lt;http://www.qgis.org/&gt;</cite> <a class="reference external" href="https://sourceforge.net/apps/trac/qgiscommunitypl/wiki/qgcsw">OGC Catalogue Service Client</a> plugin.</p>
+<p>To install the plugin in OSGeoLive:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span><span class="nb">cd</span> /usr/share/qgis/python/plugins
+<span class="nv">$ </span>sudo svn co https://qgiscommunitypl.svn.sourceforge.net/svnroot/qgiscommunitypl/python/plugins/qgcsw/trunk/ qgcsw
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Remember that the root password in OSGeoLive is &#8220;user&#8221;.</p>
+</div>
+</div>
+<div class="section" id="data-discovery-in-qgis">
+<h2>Data Discovery in QGIS<a class="headerlink" href="#data-discovery-in-qgis" title="Permalink to this headline">¶</a></h2>
+<p>Start QGIS from the Desktop GIS group and go to &#8220;Manage Plugins&#8221;.</p>
+<p>Enable the CSW plugin (version 0.0.9) from the list</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/pycsw_qgis_install_csw.png"><img alt="../../_images/pycsw_qgis_install_csw.png" src="../../_images/pycsw_qgis_install_csw.png" /></a>
+</div></blockquote>
+<p>Then select the CSW button from the toolbar and launch CSW Client</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/pycsw_qgis_start.png"><img alt="../../_images/pycsw_qgis_start.png" src="../../_images/pycsw_qgis_start.png" /></a>
+</div></blockquote>
+<p>Add the pycsw server by pressing the &#8220;New&#8221; button and type in <tt class="docutils literal"><span class="pre">http://localhost/pycsw/csw.py</span></tt></p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/pycsw_qgis_add.png"><img alt="../../_images/pycsw_qgis_add.png" src="../../_images/pycsw_qgis_add.png" /></a>
+</div></blockquote>
+<p>The user can add some default servers using the &#8220;Add default servers&#8221; button and also get the capabilities of the server using &#8220;Server info&#8221; button</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/pycsw_qgis_capabilities.png"><img alt="../../_images/pycsw_qgis_capabilities.png" src="../../_images/pycsw_qgis_capabilities.png" /></a>
+</div></blockquote>
+<p>Raw server responces are available through the &#8220;GetCapabilities&#8221; button.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/pycsw_qgis_capabilities2.png"><img alt="../../_images/pycsw_qgis_capabilities2.png" src="../../_images/pycsw_qgis_capabilities2.png" /></a>
+</div></blockquote>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The button name is not correct right now. It will show the last server responce even if it is not a GetCapabilities responce.</p>
+</div>
+<p>Perform search using the catalogue, either by a string value or with a bounding box</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/pycsw_qgis_search.png"><img alt="../../_images/pycsw_qgis_search.png" src="../../_images/pycsw_qgis_search.png" /></a>
+</div></blockquote>
+<p>Discovery of data can be also performed through the Tester application by setting the appropriate requests eg. any text search with the string &#8220;imagery&#8221; leads to discovering XML metadata including the word &#8220;imagery&#8221;.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/pycsw_tester_any_text.png"><img alt="../../_images/pycsw_tester_any_text.png" src="../../_images/pycsw_tester_any_text.png" /></a>
+</div></blockquote>
+</div>
+<div class="section" id="owslib-csw-client-installation">
+<h2>OWSLib CSW client installation<a class="headerlink" href="#owslib-csw-client-installation" title="Permalink to this headline">¶</a></h2>
+<p>For this exercise we will use the <a class="reference external" href="http://geopython.github.io/OWSLib/">OWSLib</a> Python library.</p>
+<p>OWSLib is a Python package for client programming with Open Geospatial Consortium (OGC) web service (hence OWS) interface standards, and their related content models.</p>
+<p>OWSLib is already installed in OSGeoLive as a pycsw dependency.</p>
+<p>For installation on another system:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>easy_install OWSLib
+</pre></div>
+</div>
+<p>or in Ubuntu:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>sudo apt-get install python-owslib
+</pre></div>
+</div>
+</div>
+<div class="section" id="data-discovery-through-owslib-and-python">
+<h2>Data Discovery through OWSLib and Python<a class="headerlink" href="#data-discovery-through-owslib-and-python" title="Permalink to this headline">¶</a></h2>
+<p>Connect to local pycsw server, and inspect its properties:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">owslib.csw</span> <span class="kn">import</span> <span class="n">CatalogueServiceWeb</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">csw</span> <span class="o">=</span> <span class="n">CatalogueServiceWeb</span><span class="p">(</span><span class="s">&#39;http://localhost/pycsw/csw.py&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">csw</span><span class="o">.</span><span class="n">identification</span><span class="o">.</span><span class="n">type</span>
+<span class="go">&#39;CSW&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">[</span><span class="n">op</span><span class="o">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">op</span> <span class="ow">in</span> <span class="n">csw</span><span class="o">.</span><span class="n">operations</span><span class="p">]</span>
+<span class="go">[&#39;GetCapabilities&#39;, &#39;GetRecords&#39;, &#39;GetRecordById&#39;, &#39;DescribeRecord&#39;, &#39;GetDomain&#39;]</span>
+</pre></div>
+</div>
+<p>Get supported resultType&#8217;s:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">csw</span><span class="o">.</span><span class="n">getdomain</span><span class="p">(</span><span class="s">&#39;GetRecords.resultType&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">csw</span><span class="o">.</span><span class="n">results</span>
+<span class="go">{&#39;values&#39;: [&#39;results&#39;, &#39;validate&#39;, &#39;hits&#39;], &#39;parameter&#39;: &#39;GetRecords.resultType&#39;, &#39;type&#39;: &#39;csw:DomainValuesType&#39;}</span>
+<span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+<p>Search for casino data:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">csw</span><span class="o">.</span><span class="n">getrecords</span><span class="p">(</span><span class="n">keywords</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;casino&#39;</span><span class="p">],</span> <span class="n">maxrecords</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">csw</span><span class="o">.</span><span class="n">results</span>
+<span class="go">{&#39;matches&#39;: 5, &#39;nextrecord&#39;: 0, &#39;returned&#39;: 5}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">rec</span> <span class="ow">in</span> <span class="n">csw</span><span class="o">.</span><span class="n">records</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="k">print</span> <span class="n">csw</span><span class="o">.</span><span class="n">records</span><span class="p">[</span><span class="n">rec</span><span class="p">]</span><span class="o">.</span><span class="n">title</span>
+<span class="gp">...</span>
+<span class="go">CasinoSites</span>
+<span class="go">Parcels_North</span>
+<span class="go">Parcels</span>
+<span class="go">Parcels_East</span>
+<span class="go">Parcels_South</span>
+<span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+<p>Search for casino data in Canada:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">csw</span><span class="o">.</span><span class="n">getrecords</span><span class="p">(</span><span class="n">keywords</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;casino&#39;</span><span class="p">],</span><span class="n">bbox</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">141</span><span class="p">,</span><span class="mi">42</span><span class="p">,</span><span class="o">-</span><span class="mi">52</span><span class="p">,</span><span class="mi">84</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">csw</span><span class="o">.</span><span class="n">results</span>
+<span class="go">{&#39;matches&#39;: 0, &#39;nextrecord&#39;: 0, &#39;returned&#39;: 0}</span>
+<span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+<p>Search for &#8216;casino&#8217; or &#8216;bar&#8217;</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">csw</span><span class="o">.</span><span class="n">getrecords</span><span class="p">(</span><span class="n">keywords</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;casino&#39;</span><span class="p">,</span> <span class="s">&#39;bar&#39;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">csw</span><span class="o">.</span><span class="n">results</span>
+<span class="go">{&#39;matches&#39;: 11, &#39;nextrecord&#39;: 11, &#39;returned&#39;: 10}</span>
+<span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+<p>Search for a specific record:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">csw</span><span class="o">.</span><span class="n">getrecordbyid</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;http://capita.wustl.edu/DataspaceMetadata_ISO/CIRA.VIEWS.dv.xml&#39;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">csw</span><span class="o">.</span><span class="n">records</span><span class="p">[</span><span class="s">&#39;http://capita.wustl.edu/DataspaceMetadata_ISO/CIRA.VIEWS.dv.xml&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">title</span>
+<span class="go">&#39;VIEWS.dv&#39;</span>
+</pre></div>
+</div>
+<p>Search with a CQL query</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">csw</span><span class="o">.</span><span class="n">getrecords</span><span class="p">(</span><span class="n">cql</span><span class="o">=</span><span class="s">&#39;csw:AnyText like &quot;%bar%&quot;&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Transaction: insert</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">csw</span><span class="o">.</span><span class="n">transaction</span><span class="p">(</span><span class="n">ttype</span><span class="o">=</span><span class="s">&#39;insert&#39;</span><span class="p">,</span> <span class="n">typename</span><span class="o">=</span><span class="s">&#39;gmd:MD_Metadata&#39;</span><span class="p">,</span> <span class="n">record</span><span class="o">=</span><span class="nb">open</span><span class="p">(</span><span class="nb">file</span><span class="o">.</span><span class="n">xml</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+</pre></div>
+</div>
+<p>Transaction: update</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="c"># update ALL records</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">csw</span><span class="o">.</span><span class="n">transaction</span><span class="p">(</span><span class="n">ttype</span><span class="o">=</span><span class="s">&#39;update&#39;</span><span class="p">,</span> <span class="n">typename</span><span class="o">=</span><span class="s">&#39;csw:Record&#39;</span><span class="p">,</span> <span class="n">propertyname</span><span class="o">=</span><span class="s">&#39;dc:title&#39;</span><span class="p">,</span> <span class="n">propertyvalue</span><span class="o">=</span><span class="s">&#39;New Title&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c"># update records satisfying keywords filter</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">csw</span><span class="o">.</span><span class="n">transaction</span><span class="p">(</span><span class="n">ttype</span><span class="o">=</span><span class="s">&#39;update&#39;</span><span class="p">,</span> <span class="n">typename</span><span class="o">=</span><span class="s">&#39;csw:Record&#39;</span><span class="p">,</span> <span class="n">propertyname</span><span class="o">=</span><span class="s">&#39;dc:title&#39;</span><span class="p">,</span> <span class="n">propertyvalue</span><span class="o">=</span><span class="s">&#39;New Title&#39;</span><span class="p">,</span> <span class="n">keywords</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;casino&#39;</span><span class="p">,</span><span class="s">&#39;bar&#39;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c"># update records satisfying BBOX filter</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">csw</span><span class="o">.</span><span class="n">transaction</span><span class="p">(</span><span class="n">ttype</span><span class="o">=</span><span class="s">&#39;update&#39;</span><span class="p">,</span> <span class="n">typename</span><span class="o">=</span><span class="s">&#39;csw:Record&#39;</span><span class="p">,</span> <span class="n">propertyname</span><span class="o">=</span><span class="s">&#39;dc:title&#39;</span><span class="p">,</span> <span class="n">propertyvalue</span><span class="o">=</span><span class="s">&#39;New Title&#39;</span><span class="p">,</span> <span class="n">bbox</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">141</span><span class="p">,</span><span class="mi">42</span><span class="p">,</span><span class="o">-</span><span class="mi">52</span><span class="p">,</span><span class="mi">84</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>Transaction: delete</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="c"># delete ALL records</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">csw</span><span class="o">.</span><span class="n">transaction</span><span class="p">(</span><span class="n">ttype</span><span class="o">=</span><span class="s">&#39;delete&#39;</span><span class="p">,</span> <span class="n">typename</span><span class="o">=</span><span class="s">&#39;gmd:MD_Metadata&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c"># delete records satisfying keywords filter</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">csw</span><span class="o">.</span><span class="n">transaction</span><span class="p">(</span><span class="n">ttype</span><span class="o">=</span><span class="s">&#39;delete&#39;</span><span class="p">,</span> <span class="n">typename</span><span class="o">=</span><span class="s">&#39;gmd:MD_Metadata&#39;</span><span class="p">,</span> <span class="n">keywords</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;casino&#39;</span><span class="p">,</span><span class="s">&#39;bar&#39;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c"># delete records satisfying BBOX filter</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">csw</span><span class="o">.</span><span class="n">transaction</span><span class="p">(</span><span class="n">ttype</span><span class="o">=</span><span class="s">&#39;delete&#39;</span><span class="p">,</span> <span class="n">typename</span><span class="o">=</span><span class="s">&#39;gmd:MD_Metadata&#39;</span><span class="p">,</span> <span class="n">bbox</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">141</span><span class="p">,</span><span class="mi">42</span><span class="p">,</span><span class="o">-</span><span class="mi">52</span><span class="p">,</span><span class="mi">84</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>Harvest a resource</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">csw</span><span class="o">.</span><span class="n">harvest</span><span class="p">(</span><span class="s">&#39;http://host/url.xml&#39;</span><span class="p">,</span> <span class="s">&#39;http://www.isotc211.org/2005/gmd&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
 </div>
 
 

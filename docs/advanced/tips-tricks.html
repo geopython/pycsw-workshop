@@ -87,6 +87,7 @@
 <li><a class="reference internal" href="#get-raw-metadata">Get Raw Metadata</a></li>
 <li><a class="reference internal" href="#optimizing-the-repository">Optimizing the Repository</a></li>
 <li><a class="reference internal" href="#dependency-tracing">Dependency Tracing</a></li>
+<li><a class="reference internal" href="#multiple-configurations">Multiple Configurations</a></li>
 <li><a class="reference internal" href="#debugging-issues">Debugging Issues</a></li>
 </ul>
 </li>
@@ -182,6 +183,11 @@
 <li>use <tt class="docutils literal"><span class="pre">pycsw-admin.py</span> <span class="pre">-c</span> <span class="pre">get_sysprof</span></tt></li>
 <li>valuable when multiple versions of pycsw and / or supporting libraries are on the same system</li>
 </ul>
+</div>
+<div class="section" id="multiple-configurations">
+<h2>Multiple Configurations<a class="headerlink" href="#multiple-configurations" title="Permalink to this headline">¶</a></h2>
+<p>By default, pycsw loads <tt class="docutils literal"><span class="pre">default.cfg</span></tt> at runtime.  To load an alternate configuration, modify <tt class="docutils literal"><span class="pre">csw.py</span></tt> to point to the desired configuration.  Alternatively, pycsw supports explicitly specifiying a configuration by appending <tt class="docutils literal"><span class="pre">config=/path/to/default.cfg</span></tt> to the base URL of the service (e.g. <tt class="docutils literal"><span class="pre">http://localhost/pycsw/csw.py?config=tests/suites/default/default.cfg&amp;service=CSW&amp;version=2.0.2&amp;request=GetCapabilities</span></tt>).  When the <tt class="docutils literal"><span class="pre">config</span></tt> parameter is passed by a CSW client, pycsw will override the default configuration location and subsequent settings with those of the specified configuration.</p>
+<p>This also provides the functionality to deploy numerous CSW servers with a single pycsw installation.</p>
 </div>
 <div class="section" id="debugging-issues">
 <h2>Debugging Issues<a class="headerlink" href="#debugging-issues" title="Permalink to this headline">¶</a></h2>

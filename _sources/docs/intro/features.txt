@@ -1,7 +1,21 @@
 .. _features:
 
-Features
-========
+Features / Design
+=================
+
+  .. image:: ../../_static/x_mark.png
+     :width: 40px
+     :height: 46px
+     :align: left
+     
+pycsw is not a metadata editor or publisher.
+
+  .. image:: ../../_static/green_check.png
+     :width: 40px
+     :height: 46px
+     :align: left
+     
+pycsw is a fully compliant CSW server.
 
 Component Architecture
 ----------------------
@@ -10,3 +24,7 @@ Component Architecture
      :width: 960px
      :height: 720px     
      :scale: 50
+     
+.. note::
+    pycsw avoids any stylesheet conversions by storing metadata elements 
+    in a local database.

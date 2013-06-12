@@ -3,3 +3,196 @@
 Exercises
 =========
 
+QGIS CSW Client Installation
+----------------------------
+
+The HTTP request/response mechanism is not friendly enough to the end user in order to perform queries to the Catalogue Service.
+For this workshop, we will use the `QGIS <http://www.qgis.org/>` `OGC Catalogue Service Client <https://sourceforge.net/apps/trac/qgiscommunitypl/wiki/qgcsw>`_ plugin.
+
+To install the plugin in OSGeoLive:
+
+.. code-block:: bash
+
+  $ cd /usr/share/qgis/python/plugins
+  $ sudo svn co https://qgiscommunitypl.svn.sourceforge.net/svnroot/qgiscommunitypl/python/plugins/qgcsw/trunk/ qgcsw
+
+.. note::
+  Remember that the root password in OSGeoLive is "user".
+
+
+Data Discovery in QGIS
+----------------------
+
+Start QGIS from the Desktop GIS group and go to "Manage Plugins".
+
+Enable the CSW plugin (version 0.0.9) from the list
+
+  .. image:: ../../_static/pycsw_qgis_install_csw.png
+     :scale: 60 %
+
+Then select the CSW button from the toolbar and launch CSW Client
+
+  .. image:: ../../_static/pycsw_qgis_start.png
+     :scale: 60 %
+
+Add the pycsw server by pressing the "New" button and type in ``http://localhost/pycsw/csw.py``
+
+  .. image:: ../../_static/pycsw_qgis_add.png
+     :scale: 60 %
+
+The user can add some default servers using the "Add default servers" button and also get the capabilities of the server using "Server info" button
+
+  .. image:: ../../_static/pycsw_qgis_capabilities.png
+     :scale: 60 %
+
+Raw server responces are available through the "GetCapabilities" button.
+
+  .. image:: ../../_static/pycsw_qgis_capabilities2.png
+     :scale: 60 %
+
+.. note::
+  The button name is not correct right now. It will show the last server responce even if it is not a GetCapabilities responce.
+
+Perform search using the catalogue, either by a string value or with a bounding box
+
+  .. image:: ../../_static/pycsw_qgis_search.png
+     :scale: 60 %
+
+Discovery of data can be also performed through the Tester application by setting the appropriate requests eg. any text search with the string "imagery" leads to discovering XML metadata including the word "imagery". 
+
+  .. image:: ../../_static/pycsw_tester_any_text.png
+     :scale: 60 %
+
+
+OWSLib CSW client installation
+------------------------------
+
+For this exercise we will use the `OWSLib <http://geopython.github.io/OWSLib/>`_ Python library.
+
+OWSLib is a Python package for client programming with Open Geospatial Consortium (OGC) web service (hence OWS) interface standards, and their related content models.
+
+OWSLib is already installed in OSGeoLive as a pycsw dependency.
+
+For installation on another system:
+
+.. code-block:: bash
+
+  $ easy_install OWSLib
+
+or in Ubuntu:
+
+.. code-block:: bash
+
+  $ sudo apt-get install python-owslib
+
+
+Data Discovery through OWSLib and Python
+----------------------------------------
+
+Connect to local pycsw server, and inspect its properties:
+
+.. code-block:: python
+
+  >>> from owslib.csw import CatalogueServiceWeb
+  >>> csw = CatalogueServiceWeb('http://localhost/pycsw/csw.py')
+  >>> csw.identification.type
+  'CSW'
+  >>> [op.name for op in csw.operations]
+  ['GetCapabilities', 'GetRecords', 'GetRecordById', 'DescribeRecord', 'GetDomain']
+
+Get supported resultType's:
+
+.. code-block:: python
+
+  >>> csw.getdomain('GetRecords.resultType')
+  >>> csw.results
+  {'values': ['results', 'validate', 'hits'], 'parameter': 'GetRecords.resultType', 'type': 'csw:DomainValuesType'}
+  >>> 
+
+Search for casino data:
+
+.. code-block:: python
+
+  >>> csw.getrecords(keywords=['casino'], maxrecords=20)
+  >>> csw.results    
+  {'matches': 5, 'nextrecord': 0, 'returned': 5}
+  >>> for rec in csw.records:
+  ...     print csw.records[rec].title    
+  ... 
+  CasinoSites
+  Parcels_North
+  Parcels
+  Parcels_East
+  Parcels_South
+  >>> 
+
+Search for casino data in Canada:
+
+.. code-block:: python
+
+  >>> csw.getrecords(keywords=['casino'],bbox=[-141,42,-52,84])
+  >>> csw.results
+  {'matches': 0, 'nextrecord': 0, 'returned': 0}
+  >>> 
+
+Search for 'casino' or 'bar'
+
+.. code-block:: python
+
+  >>> csw.getrecords(keywords=['casino', 'bar'])
+  >>> csw.results
+  {'matches': 11, 'nextrecord': 11, 'returned': 10}
+  >>> 
+
+Search for a specific record:
+
+.. code-block:: python
+
+  >>> csw.getrecordbyid(id=['http://capita.wustl.edu/DataspaceMetadata_ISO/CIRA.VIEWS.dv.xml'])
+  >>> csw.records['http://capita.wustl.edu/DataspaceMetadata_ISO/CIRA.VIEWS.dv.xml'].title
+  'VIEWS.dv'
+
+Search with a CQL query
+
+.. code-block:: python
+
+  >>> csw.getrecords(cql='csw:AnyText like "%bar%"')
+
+Transaction: insert
+
+.. code-block:: python
+
+  >>> csw.transaction(ttype='insert', typename='gmd:MD_Metadata', record=open(file.xml).read())
+
+Transaction: update
+
+.. code-block:: python
+
+
+  >>> # update ALL records
+  >>> csw.transaction(ttype='update', typename='csw:Record', propertyname='dc:title', propertyvalue='New Title')
+  >>> # update records satisfying keywords filter
+  >>> csw.transaction(ttype='update', typename='csw:Record', propertyname='dc:title', propertyvalue='New Title', keywords=['casino','bar'])
+  >>> # update records satisfying BBOX filter
+  >>> csw.transaction(ttype='update', typename='csw:Record', propertyname='dc:title', propertyvalue='New Title', bbox=[-141,42,-52,84])
+
+Transaction: delete
+
+.. code-block:: python
+
+  >>> # delete ALL records
+  >>> csw.transaction(ttype='delete', typename='gmd:MD_Metadata')
+  >>> # delete records satisfying keywords filter
+  >>> csw.transaction(ttype='delete', typename='gmd:MD_Metadata', keywords=['casino','bar'])
+  >>> # delete records satisfying BBOX filter
+  >>> csw.transaction(ttype='delete', typename='gmd:MD_Metadata', bbox=[-141,42,-52,84])
+
+Harvest a resource
+
+.. code-block:: python
+
+  >>> csw.harvest('http://host/url.xml', 'http://www.isotc211.org/2005/gmd')
+
+
+
+

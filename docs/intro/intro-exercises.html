@@ -80,7 +80,17 @@
               <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
   <ul class="dropdown-menu localtoc"><ul>
-<li><a class="reference internal" href="#">Exercises</a></li>
+<li><a class="reference internal" href="#">Exercises</a><ul>
+<li><a class="reference internal" href="#install-pycsw">Install pycsw</a></li>
+<li><a class="reference internal" href="#upgrade-pycsw">Upgrade pycsw</a></li>
+<li><a class="reference internal" href="#tester-application">Tester Application</a></li>
+<li><a class="reference internal" href="#capabilities-document">Capabilities Document</a></li>
+<li><a class="reference internal" href="#setup-service-metadata">Setup service metadata</a></li>
+<li><a class="reference internal" href="#create-new-database">Create new database</a></li>
+<li><a class="reference internal" href="#load-demo-metadata">Load demo metadata</a></li>
+<li><a class="reference internal" href="#metadata-creation">Metadata Creation</a></li>
+</ul>
+</li>
 </ul>
 </ul>
 </li>
@@ -116,6 +126,164 @@
   
   <div class="section" id="exercises">
 <span id="introexercises"></span><h1>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="install-pycsw">
+<h2>Install pycsw<a class="headerlink" href="#install-pycsw" title="Permalink to this headline">¶</a></h2>
+<p>If you are using OSGeoLive, pycsw is already included.
+To check your current version:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>sudo apt-cache show python-pycsw
+</pre></div>
+</div>
+<p>To install pycsw on a fresh Ubuntu installation:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>sudo apt-get install python-pycsw pycsw-cgi
+</pre></div>
+</div>
+<p>This will also install dependencies (lxml, Shapely, pyproj, SQLAlchemy, OWSLib)</p>
+</div>
+<div class="section" id="upgrade-pycsw">
+<h2>Upgrade pycsw<a class="headerlink" href="#upgrade-pycsw" title="Permalink to this headline">¶</a></h2>
+<p>In order to upgrade pycsw to current stable version:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>sudo apt-get upgrade python-pycsw pycsw-cgi
+</pre></div>
+</div>
+</div>
+<div class="section" id="tester-application">
+<h2>Tester Application<a class="headerlink" href="#tester-application" title="Permalink to this headline">¶</a></h2>
+<p>To run the pycsw tester, use the pycsw launcher from the Web Services group, or open Firefox and navigate to <tt class="docutils literal"><span class="pre">http://localhost/pycsw/tester/index.html</span></tt></p>
+<p>By selecting the left drop-down list, the user can see various predefined POST requests, encoded as XML, that can be sent to pycsw:</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/pycsw_tester_selection.png"><img alt="../../_images/pycsw_tester_selection.png" src="../../_images/pycsw_tester_selection.png" /></a>
+</div></blockquote>
+<p>For example, by selecting &#8220;apiso/DescribeRecord&#8221;, and pushing the &#8220;Send&#8221; button, a description of the ISO Application Profile record is presented on the right panel:</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/pycsw_tester_describe_record.png"><img alt="../../_images/pycsw_tester_describe_record.png" src="../../_images/pycsw_tester_describe_record.png" /></a>
+</div></blockquote>
+<p>By selecting &#8220;GetCapabilities-SOAP&#8221; and pushing the &#8220;Send&#8221; button, a SOAP request is sent to the server to advertise their web service capabilities:</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/pycsw_tester_soap_capabilities.png"><img alt="../../_images/pycsw_tester_soap_capabilities.png" src="../../_images/pycsw_tester_soap_capabilities.png" /></a>
+</div></blockquote>
+<p>Also, the user can search for data records, performing a spatial bounding box query, by selecting &#8220;GetRecords-filter-bbox&#8221; and editing the coordinates in the XML request:</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/pycsw_tester_bbox.png"><img alt="../../_images/pycsw_tester_bbox.png" src="../../_images/pycsw_tester_bbox.png" /></a>
+</div></blockquote>
+<p>By selecting &#8220;GetRecords-filter-anytext&#8221; and pushing the &#8220;Send&#8221; button, a full text search request is sent to the server:</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/pycsw_tester_any_text1.png"><img alt="../../_images/pycsw_tester_any_text1.png" src="../../_images/pycsw_tester_any_text1.png" /></a>
+</div></blockquote>
+<p>The user can go through all the available requests and perform various requests from this testing application.</p>
+</div>
+<div class="section" id="capabilities-document">
+<h2>Capabilities Document<a class="headerlink" href="#capabilities-document" title="Permalink to this headline">¶</a></h2>
+<p>The capabilities of the pycsw installation can be found at <tt class="docutils literal"><span class="pre">http://localhost/pycsw/csw.py?service=CSW&amp;version=2.0.2&amp;request=GetCapabilities</span></tt>.</p>
+</div>
+<div class="section" id="setup-service-metadata">
+<h2>Setup service metadata<a class="headerlink" href="#setup-service-metadata" title="Permalink to this headline">¶</a></h2>
+<p>pycsw&#8217;s runtime configuration is defined by <tt class="docutils literal"><span class="pre">default.cfg</span></tt>.  pycsw ships with a sample configuration (<tt class="docutils literal"><span class="pre">default-sample.cfg</span></tt>).</p>
+<p>To edit the web service metadata, included in the capabilities document, the user can modify the file <tt class="docutils literal"><span class="pre">/var/www/pycsw/default.cfg</span></tt> under the tag <tt class="docutils literal"><span class="pre">[metadata:main]</span></tt>.</p>
+<p><strong>[metadata:main]</strong></p>
+<ul class="simple">
+<li><strong>identification_title</strong>: the title of the service</li>
+<li><strong>identification_abstract</strong>: some descriptive text about the service</li>
+<li><strong>identification_keywords</strong>: comma delimited list of keywords about the service</li>
+<li><strong>identification_keywords_type</strong>: keyword type as per the <a class="reference external" href="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml">ISO 19115 MD_KeywordTypeCode codelist</a>).  Accepted values are <tt class="docutils literal"><span class="pre">discipline</span></tt>, <tt class="docutils literal"><span class="pre">temporal</span></tt>, <tt class="docutils literal"><span class="pre">place</span></tt>, <tt class="docutils literal"><span class="pre">theme</span></tt>, <tt class="docutils literal"><span class="pre">stratum</span></tt></li>
+<li><strong>identification_fees</strong>: fees associated with the service</li>
+<li><strong>identification_accessconstraints</strong>: access constraints associated with the service</li>
+<li><strong>provider_name</strong>: the name of the service provider</li>
+<li><strong>provider_url</strong>: the URL of the service provider</li>
+<li><strong>contact_name</strong>: the name of the provider contact</li>
+<li><strong>contact_position</strong>: the position title of the provider contact</li>
+<li><strong>contact_address</strong>: the address of the provider contact</li>
+<li><strong>contact_city</strong>: the city of the provider contact</li>
+<li><strong>contact_stateorprovince</strong>: the province or territory of the provider contact</li>
+<li><strong>contact_postalcode</strong>: the postal code of the provider contact</li>
+<li><strong>contact_country</strong>: the country of the provider contact</li>
+<li><strong>contact_phone</strong>: the phone number of the provider contact</li>
+<li><strong>contact_fax</strong>: the facsimile number of the provider contact</li>
+<li><strong>contact_email</strong>: the email address of the provider contact</li>
+<li><strong>contact_url</strong>: the URL to more information about the provider contact</li>
+<li><strong>contact_hours</strong>: the hours of service to contact the provider</li>
+<li><strong>contact_instructions</strong>: the how to contact the provider contact</li>
+<li><strong>contact_role</strong>: the role of the provider contact as per the <a class="reference external" href="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml">ISO 19115 CI_RoleCode codelist</a>).  Accepted values are <tt class="docutils literal"><span class="pre">author</span></tt>, <tt class="docutils literal"><span class="pre">processor</span></tt>, <tt class="docutils literal"><span class="pre">publisher</span></tt>, <tt class="docutils literal"><span class="pre">custodian</span></tt>, <tt class="docutils literal"><span class="pre">pointOfContact</span></tt>, <tt class="docutils literal"><span class="pre">distributor</span></tt>, <tt class="docutils literal"><span class="pre">user</span></tt>, <tt class="docutils literal"><span class="pre">resourceProvider</span></tt>, <tt class="docutils literal"><span class="pre">originator</span></tt>, <tt class="docutils literal"><span class="pre">owner</span></tt>, <tt class="docutils literal"><span class="pre">principalInvestigator</span></tt></li>
+</ul>
+</div>
+<div class="section" id="create-new-database">
+<h2>Create new database<a class="headerlink" href="#create-new-database" title="Permalink to this headline">¶</a></h2>
+<p>pycsw supports the following databases:</p>
+<ul class="simple">
+<li>SQLite3</li>
+<li>PostgreSQL</li>
+<li>PostgreSQL with PostGIS enabled</li>
+<li>MySQL</li>
+</ul>
+<p>In order to create a new SQLite database we need to:</p>
+<ol class="arabic simple">
+<li>Edit <tt class="docutils literal"><span class="pre">default.cfg</span></tt>:</li>
+</ol>
+<p><strong>[repository]</strong></p>
+<ul class="simple">
+<li><strong>database</strong>: the full file path to the metadata database, in database URL format (see <a class="reference external" href="http://docs.sqlalchemy.org/en/latest/core/engines.html#database-urls">http://docs.sqlalchemy.org/en/latest/core/engines.html#database-urls</a>)</li>
+<li><strong>table</strong>: the table name for metadata records (default is <tt class="docutils literal"><span class="pre">records</span></tt>)</li>
+</ul>
+<ol class="arabic simple" start="2">
+<li>Setup the database:</li>
+</ol>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span><span class="nb">cd</span> /var/www/pycsw
+<span class="nv">$ </span><span class="nb">export </span><span class="nv">PYTHONPATH</span><span class="o">=</span><span class="sb">`</span><span class="nb">pwd</span><span class="sb">`</span>
+<span class="nv">$ </span>python ./sbin/pycsw-admin.py -c setup_db -f default.cfg
+</pre></div>
+</div>
+<p>This will create the necessary tables and values for the repository.</p>
+<p>The database created is an <a class="reference external" href="http://www.opengeospatial.org/standards/sfs">OGC SFSQL</a> compliant database, and can be used with any implementing software.  For example, to use with <a class="reference external" href="http://www.gdal.org/ogr">OGR</a>:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>ogrinfo /path/to/records.db
+INFO: Open of <span class="s1">&#39;records.db&#39;</span>
+using driver <span class="s1">&#39;SQLite&#39;</span> successful.
+1: records <span class="o">(</span>Polygon<span class="o">)</span>
+<span class="nv">$ </span>ogrinfo -al /path/to/records.db
+<span class="c"># lots of output</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Don&#8217;t forget to test the configuration by sending a GetCapabilities request to the pycsw server.</p>
+</div>
+</div>
+<div class="section" id="load-demo-metadata">
+<h2>Load demo metadata<a class="headerlink" href="#load-demo-metadata" title="Permalink to this headline">¶</a></h2>
+<p>We will use some demo GIS data from the GeoNode project.
+The following will download the data archive and load all metadata xml files into our new database.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span><span class="nb">cd</span> ~
+<span class="nv">$ </span>wget https://github.com/GeoNode/gisdata/archive/master.zip
+<span class="nv">$ </span>unzip master.zip
+<span class="nv">$ </span><span class="nb">cd</span> /var/www/pycsw
+<span class="nv">$ </span>sudo ./sbin/pycsw-admin.py -c load_records -f default.cfg -p ~/gisdata-master/gisdata/metadata/good -r
+</pre></div>
+</div>
+</div>
+<div class="section" id="metadata-creation">
+<h2>Metadata Creation<a class="headerlink" href="#metadata-creation" title="Permalink to this headline">¶</a></h2>
+<p>Metadata files for a spatial dataset or a spatial web service can be created with a plain XML editor.
+Usually a specialized application is used to create metadata XML files, e.g. through the open source implementation of inspire directive for metadata, European Open Source Metadata Editor (EUOSME). This application can be found at <tt class="docutils literal"><span class="pre">http://inspire-geoportal.ec.europa.eu/editor/</span></tt>. Source code is available at <tt class="docutils literal"><span class="pre">https://joinup.ec.europa.eu/svn/euosme/trunk</span></tt></p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/pycsw_euosme_home.png"><img alt="../../_images/pycsw_euosme_home.png" src="../../_images/pycsw_euosme_home.png" /></a>
+</div></blockquote>
+<p>The user fills the mandatory metadata fields going through the application tabs, adding information like the name of the data owner, keywords, resource location on the web, geographic location (using a bounding box or the name of a country) etc.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/pycsw_euosme_map.png"><img alt="../../_images/pycsw_euosme_map.png" src="../../_images/pycsw_euosme_map.png" /></a>
+</div></blockquote>
+<p>After the user has added all the information available, must push the validation button on top of the page, so that a check to be performed for consistency with the INSPIRE directive.</p>
+<p>After a sucessful validation, the XML file can be saved to the local disk and viewed through a text editor or a browser.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/pycsw_euosme_save.png"><img alt="../../_images/pycsw_euosme_save.png" src="../../_images/pycsw_euosme_save.png" /></a>
+</div></blockquote>
+<p>Metadata editing alternatives include:</p>
+<ul class="simple">
+<li><a class="reference external" href="http://catmdedit.sourceforge.net/">CatMDEdit</a></li>
+<li><a class="reference external" href="http://sourceforge.net/projects/gimed/">GIMED</a></li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Try to create new XML files and then try to load them into the pycsw server as shown previously.</p>
+</div>
+</div>
 </div>
 
 
