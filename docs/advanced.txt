@@ -8,6 +8,8 @@ Contents:
 .. toctree::
    :maxdepth: 2
 
+   advanced/csw-t
+   advanced/transactions
    advanced/harvesting
    advanced/export
    advanced/tips-tricks

@@ -3,3 +3,15 @@
 Harvesting
 ==========
 
+- 'pull' metadata into repository from remote URL
+- pycsw supports many formats for harvesting
+
+  - WMS, WFS, WCS, WPS, WAF, SOS
+  - Dublin Core, FGDC, ISO, RDF
+  - even other CSW servers
+
+.. note::
+
+  Always optimize your database accordingly (``pycsw-admin.py -c optimize_db``, ``VACUUM ANALYZE``, etc.) when making changes to the repository
+
+

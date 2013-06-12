@@ -1,0 +1,27 @@
+.. _cst-t:
+
+CSW-T
+=====
+
+- CSW class for management functions
+- write access to repository
+- insert, update, delete
+- CSW has no authentication mechanism; left up to provider
+- push (``Transaction``) or pull (``Harvest``) operations
+
+.. warning::
+
+  Enabling CSW-T opens up for write access of your data via HTTP
+
+Enabling CSW-T in pycsw
+-----------------------
+
+- set ``manager.transactions`` to ``true``
+- pycsw uses IP authentication
+- limit read/write access to list of allowed IP addresses
+
+ - set in configuration (``manager.allowed_ips``)
+
+  - IP address like ``192.168.0.11``
+  - wildcards like ``192.168.0.*``
+  - CIDR like ``192.168.100.0/24``
