@@ -126,7 +126,7 @@ In order to create a new SQLite database we need to:
 
 .. code-block:: bash
 
-  $ cd /path/to/pycsw
+  $ cd /var/www/pycsw
   $ export PYTHONPATH=`pwd` 
   $ python ./sbin/pycsw-admin.py -c setup_db -f default.cfg
 
@@ -154,9 +154,11 @@ The following will download the data archive and load all metadata xml files int
 
 .. code-block:: bash
 
+  $ cd ~
   $ wget https://github.com/GeoNode/gisdata/archive/master.zip
   $ unzip master.zip
-  $ pycsw-admin.py -c load_records -f default.cfg -p gisdata/metadata/good -r
+  $ cd /var/www/pycsw
+  $ sudo ./sbin/pycsw-admin.py -c load_records -f default.cfg -p ~/gisdata-master/gisdata/metadata/good -r
 
 
 Metadata Creation
