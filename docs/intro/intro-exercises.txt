@@ -3,3 +3,161 @@
 Exercises
 =========
 
+Install pycsw
+-------------
+
+If you are using OSGeoLive, pycsw is already included.
+To check your current version:
+
+.. code-block:: bash
+
+  $ sudo apt-cache show python-pycsw
+
+To install pycsw on a fresh Ubuntu installation:
+
+.. code-block:: bash
+
+  $ sudo apt-get install python-pycsw pycsw-cgi
+
+This will also install dependencies (lxml, Shapely, pyproj, SQLAlchemy, OWSLib)
+
+
+Upgrade pycsw
+-------------
+
+In order to upgrade pycsw to current stable version:
+
+.. code-block:: bash
+
+  $ sudo apt-get upgrade python-pycsw pycsw-cgi
+
+Tester Application
+------------------
+
+To run the pycsw tester, use the pycsw launcher from the Web Services group, or open Firefox and navigate to ``http://localhost/pycsw/tester/index.html``
+
+By selecting the left drop-down list, the user can see various predefined POST requests, encoded as XML, that can be sent to pycsw: 
+
+  .. image:: ../../_static/pycsw_tester_selection.png
+     :scale: 60 %
+
+For example, by selecting "apiso/DescribeRecord", and pushing the "Send" button, a description of the ISO Application Profile record is presented on the right panel:
+
+  .. image:: ../../_static/pycsw_tester_describe_record.png
+     :scale: 60 %
+
+By selecting "GetCapabilities-SOAP" and pushing the "Send" button, a SOAP request is sent to the server to advertise their web service capabilities:
+
+  .. image:: ../../_static/pycsw_tester_soap_capabilities.png
+     :scale: 60 %
+
+Also, the user can search for data records, performing a spatial bounding box query, by selecting "GetRecords-filter-bbox" and editing the coordinates in the XML request:
+
+  .. image:: ../../_static/pycsw_tester_bbox.png
+     :scale: 60 %
+
+By selecting "GetRecords-filter-anytext" and pushing the "Send" button, a full text search request is sent to the server:
+
+  .. image:: ../../_static/pycsw_tester_any_text.png
+     :scale: 60 %
+
+The user can go through all the available requests and perform various requests from this testing application.
+
+
+Capabilities Document
+---------------------
+
+The capabilities of the pycsw installation can be found at ``http://localhost/pycsw/csw.py?service=CSW&version=2.0.2&request=GetCapabilities``.
+
+
+Setup service metadata
+----------------------
+
+pycsw's runtime configuration is defined by ``default.cfg``.  pycsw ships with a sample configuration (``default-sample.cfg``).
+
+To edit the web service metadata, included in the capabilities document, the user can modify the file ``/var/www/pycsw/default.cfg`` under the tag ``[metadata:main]``.
+
+**[metadata:main]**
+
+- **identification_title**: the title of the service
+- **identification_abstract**: some descriptive text about the service
+- **identification_keywords**: comma delimited list of keywords about the service
+- **identification_keywords_type**: keyword type as per the `ISO 19115 MD_KeywordTypeCode codelist <http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_KeywordTypeCode>`_).  Accepted values are ``discipline``, ``temporal``, ``place``, ``theme``, ``stratum``
+- **identification_fees**: fees associated with the service
+- **identification_accessconstraints**: access constraints associated with the service
+- **provider_name**: the name of the service provider
+- **provider_url**: the URL of the service provider
+- **contact_name**: the name of the provider contact
+- **contact_position**: the position title of the provider contact
+- **contact_address**: the address of the provider contact
+- **contact_city**: the city of the provider contact
+- **contact_stateorprovince**: the province or territory of the provider contact
+- **contact_postalcode**: the postal code of the provider contact
+- **contact_country**: the country of the provider contact
+- **contact_phone**: the phone number of the provider contact
+- **contact_fax**: the facsimile number of the provider contact
+- **contact_email**: the email address of the provider contact
+- **contact_url**: the URL to more information about the provider contact
+- **contact_hours**: the hours of service to contact the provider
+- **contact_instructions**: the how to contact the provider contact
+- **contact_role**: the role of the provider contact as per the `ISO 19115 CI_RoleCode codelist <http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode>`_).  Accepted values are ``author``, ``processor``, ``publisher``, ``custodian``, ``pointOfContact``, ``distributor``, ``user``, ``resourceProvider``, ``originator``, ``owner``, ``principalInvestigator``
+
+
+Create new database
+-------------------
+
+pycsw supports the following databases:
+
+- SQLite3
+- PostgreSQL
+- PostgreSQL with PostGIS enabled
+- MySQL
+
+In order to create a new SQLite database we need to:
+
+Edit ``default.cfg``:
+^^^^^^^^^^^^^^^^^^^^^
+
+**[repository]**
+
+- **database**: the full file path to the metadata database, in database URL format (see http://docs.sqlalchemy.org/en/latest/core/engines.html#database-urls)
+- **table**: the table name for metadata records (default is ``records``)
+
+Setup the database:
+^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: bash
+
+  $ cd /path/to/pycsw
+  $ export PYTHONPATH=`pwd` 
+  $ python ./sbin/pycsw-admin.py -c setup_db -f default.cfg
+
+This will create the necessary tables and values for the repository.
+
+The database created is an `OGC SFSQL`_ compliant database, and can be used with any implementing software.  For example, to use with `OGR`_:
+
+.. code-block:: bash
+
+  $ ogrinfo /path/to/records.db
+  INFO: Open of 'records.db'
+  using driver 'SQLite' successful.
+  1: records (Polygon)
+  $ ogrinfo -al /path/to/records.db
+  # lots of output
+
+.. note::
+  Don't forget to test the configuration by sending a GetCapabilities request to the pycsw server.
+
+Load demo metadata
+------------------
+
+We will use some demo GIS data from the GeoNode project.
+The following will download the data archive and load all metadata xml files into our new database.
+
+.. code-block:: bash
+
+  $ wget https://github.com/GeoNode/gisdata/archive/master.zip
+  $ unzip master.zip
+  $ pycsw-admin.py -c load_records -f default.cfg -p gisdata/metadata/good -r
+
+
