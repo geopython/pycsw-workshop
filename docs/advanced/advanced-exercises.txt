@@ -62,3 +62,137 @@ Discovery of data can be also performed through the Tester application by settin
 
   .. image:: ../../_static/pycsw_tester_any_text.png
      :scale: 60 %
+
+
+OWSLib CSW client installation
+------------------------------
+
+For this exercise we will use the `OWSLib <http://geopython.github.io/OWSLib/>`_ Python library.
+
+OWSLib is a Python package for client programming with Open Geospatial Consortium (OGC) web service (hence OWS) interface standards, and their related content models.
+
+OWSLib is already installed in OSGeoLive as a pycsw dependency.
+
+For installation on another system:
+
+.. code-block:: bash
+
+  $ easy_install OWSLib
+
+or in Ubuntu:
+
+.. code-block:: bash
+
+  $ sudo apt-get install python-owslib
+
+
+Data Discovery through OWSLib and Python
+----------------------------------------
+
+Connect to local pycsw server, and inspect its properties:
+
+.. code-block:: python
+
+  >>> from owslib.csw import CatalogueServiceWeb
+  >>> csw = CatalogueServiceWeb('http://localhost/pycsw/csw.py')
+  >>> csw.identification.type
+  'CSW'
+  >>> [op.name for op in csw.operations]
+  ['GetCapabilities', 'GetRecords', 'GetRecordById', 'DescribeRecord', 'GetDomain']
+
+Get supported resultType's:
+
+.. code-block:: python
+
+  >>> csw.getdomain('GetRecords.resultType')
+  >>> csw.results
+  {'values': ['results', 'validate', 'hits'], 'parameter': 'GetRecords.resultType', 'type': 'csw:DomainValuesType'}
+  >>> 
+
+Search for casino data:
+
+.. code-block:: python
+
+  >>> csw.getrecords(keywords=['casino'], maxrecords=20)
+  >>> csw.results    
+  {'matches': 5, 'nextrecord': 0, 'returned': 5}
+  >>> for rec in csw.records:
+  ...     print csw.records[rec].title    
+  ... 
+  CasinoSites
+  Parcels_North
+  Parcels
+  Parcels_East
+  Parcels_South
+  >>> 
+
+Search for casino data in Canada:
+
+.. code-block:: python
+
+  >>> csw.getrecords(keywords=['casino'],bbox=[-141,42,-52,84])
+  >>> csw.results
+  {'matches': 0, 'nextrecord': 0, 'returned': 0}
+  >>> 
+
+Search for 'casino' or 'bar'
+
+.. code-block:: python
+
+  >>> csw.getrecords(keywords=['casino', 'bar'])
+  >>> csw.results
+  {'matches': 11, 'nextrecord': 11, 'returned': 10}
+  >>> 
+
+Search for a specific record:
+
+.. code-block:: python
+
+  >>> csw.getrecordbyid(id=['http://capita.wustl.edu/DataspaceMetadata_ISO/CIRA.VIEWS.dv.xml'])
+  >>> csw.records['http://capita.wustl.edu/DataspaceMetadata_ISO/CIRA.VIEWS.dv.xml'].title
+  'VIEWS.dv'
+
+Search with a CQL query
+
+.. code-block:: python
+
+  >>> csw.getrecords(cql='csw:AnyText like "%bar%"')
+
+Transaction: insert
+
+.. code-block:: python
+
+  >>> csw.transaction(ttype='insert', typename='gmd:MD_Metadata', record=open(file.xml).read())
+
+Transaction: update
+
+.. code-block:: python
+
+
+  >>> # update ALL records
+  >>> csw.transaction(ttype='update', typename='csw:Record', propertyname='dc:title', propertyvalue='New Title')
+  >>> # update records satisfying keywords filter
+  >>> csw.transaction(ttype='update', typename='csw:Record', propertyname='dc:title', propertyvalue='New Title', keywords=['casino','bar'])
+  >>> # update records satisfying BBOX filter
+  >>> csw.transaction(ttype='update', typename='csw:Record', propertyname='dc:title', propertyvalue='New Title', bbox=[-141,42,-52,84])
+
+Transaction: delete
+
+.. code-block:: python
+
+  >>> # delete ALL records
+  >>> csw.transaction(ttype='delete', typename='gmd:MD_Metadata')
+  >>> # delete records satisfying keywords filter
+  >>> csw.transaction(ttype='delete', typename='gmd:MD_Metadata', keywords=['casino','bar'])
+  >>> # delete records satisfying BBOX filter
+  >>> csw.transaction(ttype='delete', typename='gmd:MD_Metadata', bbox=[-141,42,-52,84])
+
+Harvest a resource
+
+.. code-block:: python
+
+  >>> csw.harvest('http://host/url.xml', 'http://www.isotc211.org/2005/gmd')
+
+
+
+
