@@ -10,6 +10,12 @@ Initially conceived in 2010, the overal vision of the development team was to:
    .. image:: ../../_static/python-logo.gif
       :width: 211px
       :height: 71px
+      :target: http://www.python.org/
+      
+   .. image:: ../../_static/opensource_logo.png
+      :width: 80px
+      :height: 90px
+      :target: http://opensource.org/     
       
    Many other metadata publishing options exist, but mostly in Java.  Python is 
    an Open Source scripting language, that is supported on all major platforms,
@@ -35,3 +41,7 @@ Initially conceived in 2010, the overal vision of the development team was to:
       :width: 549px
       :height: 242px
       :scale: 50
+      
+.. note::
+    The initial pycsw 'manifesto' is still available `here <http://www.kralidis.ca/blog/2011/02/04/help-wanted-baking-a-csw-server-in-python/>`__.
+    It is a nice way to understand the project's vision.
