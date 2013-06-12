@@ -3,3 +3,62 @@
 Exercises
 =========
 
+QGIS CSW Client Installation
+----------------------------
+
+The HTTP request/response mechanism is not friendly enough to the end user in order to perform queries to the Catalogue Service.
+For this workshop, we will use the `QGIS <http://www.qgis.org/>` `OGC Catalogue Service Client <https://sourceforge.net/apps/trac/qgiscommunitypl/wiki/qgcsw>`_ plugin.
+
+To install the plugin in OSGeoLive:
+
+.. code-block:: bash
+
+  $ cd /usr/share/qgis/python/plugins
+  $ sudo svn co https://qgiscommunitypl.svn.sourceforge.net/svnroot/qgiscommunitypl/python/plugins/qgcsw/trunk/ qgcsw
+
+.. note::
+  Remember that the root password in OSGeoLive is "user".
+
+
+Data Discovery in QGIS
+----------------------
+
+Start QGIS from the Desktop GIS group and go to "Manage Plugins".
+
+Enable the CSW plugin (version 0.0.9) from the list
+
+  .. image:: ../../_static/pycsw_qgis_install_csw.png
+     :scale: 60 %
+
+Then select the CSW button from the toolbar and launch CSW Client
+
+  .. image:: ../../_static/pycsw_qgis_start.png
+     :scale: 60 %
+
+Add the pycsw server by pressing the "New" button and type in ``http://localhost/pycsw/csw.py``
+
+  .. image:: ../../_static/pycsw_qgis_add.png
+     :scale: 60 %
+
+The user can add some default servers using the "Add default servers" button and also get the capabilities of the server using "Server info" button
+
+  .. image:: ../../_static/pycsw_qgis_capabilities.png
+     :scale: 60 %
+
+Raw server responces are available through the "GetCapabilities" button.
+
+  .. image:: ../../_static/pycsw_qgis_capabilities2.png
+     :scale: 60 %
+
+.. note::
+  The button name is not correct right now. It will show the last server responce even if it is not a GetCapabilities responce.
+
+Perform search using the catalogue, either by a string value or with a bounding box
+
+  .. image:: ../../_static/pycsw_qgis_search.png
+     :scale: 60 %
+
+Discovery of data can be also performed through the Tester application by setting the appropriate requests eg. any text search with the string "imagery" leads to discovering XML metadata including the word "imagery". 
+
+  .. image:: ../../_static/pycsw_tester_any_text.png
+     :scale: 60 %
