@@ -185,6 +185,9 @@ Metadata editing alternatives include:
 - `CatMDEdit`_
 - `GIMED`_
 
+.. note::
+  Try to create new XML files and then try to load them into the pycsw server as shown previously.
+
 .. _`OGR`: http://www.gdal.org/ogr
 .. _`OGC SFSQL`: http://www.opengeospatial.org/standards/sfs
 .. _`CatMDEdit`: http://catmdedit.sourceforge.net/
