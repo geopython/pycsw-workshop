@@ -115,16 +115,14 @@ pycsw supports the following databases:
 
 In order to create a new SQLite database we need to:
 
-Edit ``default.cfg``:
-^^^^^^^^^^^^^^^^^^^^^
+1. Edit ``default.cfg``:
 
 **[repository]**
 
 - **database**: the full file path to the metadata database, in database URL format (see http://docs.sqlalchemy.org/en/latest/core/engines.html#database-urls)
 - **table**: the table name for metadata records (default is ``records``)
 
-Setup the database:
-^^^^^^^^^^^^^^^^^^^
+2. Setup the database:
 
 .. code-block:: bash
 
@@ -161,5 +159,33 @@ The following will download the data archive and load all metadata xml files int
   $ pycsw-admin.py -c load_records -f default.cfg -p gisdata/metadata/good -r
 
 
+Metadata Creation
+-----------------
+
+Metadata files for a spatial dataset or a spatial web service can be created with a plain XML editor.
+Usually a specialized application is used to create metadata XML files, e.g. through the open source implementation of inspire directive for metadata, European Open Source Metadata Editor (EUOSME). This application can be found at ``http://inspire-geoportal.ec.europa.eu/editor/``. Source code is available at ``https://joinup.ec.europa.eu/svn/euosme/trunk``
+
+  .. image:: ../../_static/pycsw_euosme_home.png
+     :scale: 60 %
+
+The user fills the mandatory metadata fields going through the application tabs, adding information like the name of the data owner, keywords, resource location on the web, geographic location (using a bounding box or the name of a country) etc. 
+
+  .. image:: ../../_static/pycsw_euosme_map.png
+     :scale: 60 %
+
+After the user has added all the information available, must push the validation button on top of the page, so that a check to be performed for consistency with the INSPIRE directive. 
+
+After a sucessful validation, the XML file can be saved to the local disk and viewed through a text editor or a browser.
+
+  .. image:: ../../_static/pycsw_euosme_save.png
+     :scale: 60 %
+
+Metadata editing alternatives include:
+
+- `CatMDEdit`_
+- `GIMED`_
+
 .. _`OGR`: http://www.gdal.org/ogr
 .. _`OGC SFSQL`: http://www.opengeospatial.org/standards/sfs
+.. _`CatMDEdit`: http://catmdedit.sourceforge.net/
+.. _`GIMED`: http://sourceforge.net/projects/gimed/
