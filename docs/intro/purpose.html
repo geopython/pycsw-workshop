@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 
 
@@ -64,12 +65,12 @@
      class="dropdown-toggle"
      data-toggle="dropdown">Site <b class="caret"></b></a>
   <ul class="dropdown-menu globaltoc"
-    ><ul class="current">
+    ><ul>
 <li class="toctree-l1"><a class="reference internal" href="../background.html">Background</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../requirements.html">Workshop Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../metadata.html">Metadata Background</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../spec.html">OGC CSW Specification</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../introduction.html">Introduction to pycsw</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction to pycsw</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../advanced.html">Advanced pycsw</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../open-data.html">pycsw and Open Data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../future.html">pycsw Future Development</a></li>
@@ -115,6 +116,32 @@
   
   <div class="section" id="goals">
 <span id="purpose"></span><h1>Goals<a class="headerlink" href="#goals" title="Permalink to this headline">¶</a></h1>
+<p>Initially conceived in 2010, the overal vision of the development team was to:</p>
+<ol class="arabic">
+<li><p class="first"><strong>Create an Open Source standalone metadata publisher in Python</strong></p>
+<a class="reference external image-reference" href="http://www.python.org/"><img alt="../../_images/python-logo.gif" src="../../_images/python-logo.gif" style="width: 211px; height: 71px;" /></a>
+<a class="reference external image-reference" href="http://opensource.org/"><img alt="../../_images/opensource_logo.png" src="../../_images/opensource_logo.png" style="width: 80px; height: 90px;" /></a>
+<p>Many other metadata publishing options exist, but mostly in Java.  Python is
+an Open Source scripting language, that is supported on all major platforms,
+and is very popular in the geospatial world today.</p>
+</li>
+<li><p class="first"><strong>Make it lightweight and easy to configure: focused on one task, publishing</strong></p>
+<p>Keep the goals of the project to simple metadata publishing; don&#8217;t get into
+other tasks such as metadata editing and acquisition.  Rather than a bloated
+&#8220;kitchen sink&#8221; concept. limit the software to easy metadata publishing.</p>
+<a class="reference internal image-reference" href="../../_images/kitchen-sink.png"><img alt="../../_images/kitchen-sink.png" src="../../_images/kitchen-sink.png" style="width: 212.5px; height: 160.0px;" /></a>
+</li>
+<li><p class="first"><strong>Design so additional metadata formats can be easily supported.</strong></p>
+<p>Although initially the core metadata model was Dublic Core, design the sofware
+so that many other metadata formats can be plugged in.</p>
+<a class="reference internal image-reference" href="../../_images/plug.jpg"><img alt="../../_images/plug.jpg" src="../../_images/plug.jpg" style="width: 274.5px; height: 121.0px;" /></a>
+</li>
+</ol>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The initial pycsw &#8216;manifesto&#8217; is still available <a class="reference external" href="http://www.kralidis.ca/blog/2011/02/04/help-wanted-baking-a-csw-server-in-python/">here</a>.
+It is a nice way to understand the project&#8217;s vision.</p>
+</div>
 </div>
 
 
@@ -127,7 +154,7 @@
     </p>
     <p>
         &copy; Copyright 2013, Jeff McKenna, Tom Kralidis, Angelos Tzotsos.<br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2b1.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.<br/>
     </p>
   </div>
 </footer>

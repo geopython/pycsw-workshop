@@ -4,7 +4,7 @@ Tips and Tricks
 ===============
 
 Importing Metadata Recursively
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+------------------------------
 
 - use the ``pycsw-admin.py`` ``-r`` switch
 
@@ -13,7 +13,7 @@ Importing Metadata Recursively
   $ pycsw-admin.py -c load_records -f path/to/default.cfg -p /path/to/metadata -r
 
 Making CSW XML POST requests
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+----------------------------
 
 - different from traditional HTTP POST
 
@@ -33,13 +33,13 @@ Using curl:
   $ curl -H "Content-Type: text/xml" -X POST -d @request_file.xml http://labs.gatewaygeomatics.com/csw
 
 JSON Output
-^^^^^^^^^^^
+-----------
 
 - for DescribeRecord, GetRecordById, GetRecords
 - set ``outputformat`` to ``application/json`` as part of request
 
 Get Raw Metadata
-^^^^^^^^^^^^^^^^
+----------------
 
 - use ``GetRepositoryItem`` (based on ebRIM profile)
 
@@ -47,14 +47,22 @@ Get Raw Metadata
 
   $ GET "http://labs.gatewaygeomatics.com/csw?service=CSW&version=2.0.2&request=GetRepositoryItem&id=urn:uuid:9a669547-b69b-469f-a11f-2d875366bbdc"
 
+Optimizing the Repository
+-------------------------
+
+.. code-block:: bash
+
+  $ pycsw-admin.py -c optimize_db
+
+
 Dependency Tracing
-^^^^^^^^^^^^^^^^^^
+------------------
 
 - use ``pycsw-admin.py -c get_sysprof``
 - valuable when multiple versions of pycsw and / or supporting libraries are on the same system
 
 Debugging Issues
-^^^^^^^^^^^^^^^^^
+-----------------
 
 - turn on logging (set ``server.loglevel`` to ``DEBUG`` and ``server.logfile`` to a writable file)
 - set ``server.pretty_print`` to ``true``

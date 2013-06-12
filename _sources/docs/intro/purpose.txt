@@ -3,3 +3,45 @@
 Goals
 =====
 
+Initially conceived in 2010, the overal vision of the development team was to:
+
+1. **Create an Open Source standalone metadata publisher in Python**
+  
+   .. image:: ../../_static/python-logo.gif
+      :width: 211px
+      :height: 71px
+      :target: http://www.python.org/
+      
+   .. image:: ../../_static/opensource_logo.png
+      :width: 80px
+      :height: 90px
+      :target: http://opensource.org/     
+      
+   Many other metadata publishing options exist, but mostly in Java.  Python is 
+   an Open Source scripting language, that is supported on all major platforms,
+   and is very popular in the geospatial world today.
+     
+2. **Make it lightweight and easy to configure: focused on one task, publishing**
+
+   Keep the goals of the project to simple metadata publishing; don't get into
+   other tasks such as metadata editing and acquisition.  Rather than a bloated
+   "kitchen sink" concept. limit the software to easy metadata publishing.
+   
+   .. image:: ../../_static/kitchen-sink.png
+      :width: 425px
+      :height: 320px 
+      :scale: 50      
+      
+3. **Design so additional metadata formats can be easily supported.**
+
+   Although initially the core metadata model was Dublic Core, design the sofware
+   so that many other metadata formats can be plugged in.
+   
+   .. image:: ../../_static/plug.jpg
+      :width: 549px
+      :height: 242px
+      :scale: 50
+      
+.. note::
+    The initial pycsw 'manifesto' is still available `here <http://www.kralidis.ca/blog/2011/02/04/help-wanted-baking-a-csw-server-in-python/>`__.
+    It is a nice way to understand the project's vision.
