@@ -120,7 +120,7 @@ Connect to local pycsw server, and inspect its properties:
   >>> [op.name for op in csw.operations]
   ['GetCapabilities', 'GetRecords', 'GetRecordById', 'DescribeRecord', 'GetDomain']
 
-You can try to use the following deployment for more content:
+You can try to use the following demo deployment for more content:
 http://geo.gov.ckan.org/csw
 
 Get supported resultType's:
