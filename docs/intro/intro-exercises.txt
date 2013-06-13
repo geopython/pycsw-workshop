@@ -190,6 +190,29 @@ Metadata editing alternatives include:
 .. note::
   Try to create new XML files and then try to load them into the pycsw server as shown previously.
 
+
+Metadata Harvesting
+-------------------
+
+We can harvest a working WMS service with the following:
+
+.. code-block:: xml
+
+  <?xml version="1.0" encoding="UTF-8"?>
+  <Harvest xmlns="http://www.opengis.net/cat/csw/2.0.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.opengis.net/cat/csw/2.0.2 http://schemas.opengis.net/csw/2.0.2/CSW-publication.xsd" service="CSW" version="2.0.2">
+    <Source>http://webservices.nationalatlas.gov/wms/1million</Source>
+    <ResourceType>http://www.opengis.net/wms</ResourceType>
+    <ResourceFormat>application/xml</ResourceFormat>
+  </Harvest>
+
+Save the file to something like "post.xml" and run:
+
+.. code-block:: bash
+
+  $ cd /var/www/pycsw
+  $ python ./sbin/pycsw-admin.py -c post_xml -u http://localhost/pycsw/csw.py -x ~/post.xml
+
+
 .. _`OGR`: http://www.gdal.org/ogr
 .. _`OGC SFSQL`: http://www.opengeospatial.org/standards/sfs
 .. _`CatMDEdit`: http://catmdedit.sourceforge.net/
