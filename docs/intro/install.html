@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 
 
@@ -65,12 +64,12 @@
      class="dropdown-toggle"
      data-toggle="dropdown">Site <b class="caret"></b></a>
   <ul class="dropdown-menu globaltoc"
-    ><ul>
+    ><ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../background.html">Background</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../requirements.html">Workshop Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../metadata.html">Metadata Background</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../spec.html">OGC CSW Specification</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction to pycsw</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../introduction.html">Introduction to pycsw</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../advanced.html">Advanced pycsw</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../open-data.html">pycsw and Open Data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../future.html">pycsw Future Development</a></li>
@@ -81,7 +80,11 @@
   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
   <ul class="dropdown-menu localtoc"><ul>
 <li><a class="reference internal" href="#">Installing</a><ul>
-<li><a class="reference internal" href="#software-architecture">Software Architecture</a></li>
+<li><a class="reference internal" href="#software-architecture">Software Architecture</a><ul>
+<li><a class="reference internal" href="#osgeo-live-dvd">OSGeo Live DVD</a></li>
+<li><a class="reference internal" href="#the-4-minute-install">The 4 minute install</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -124,6 +127,25 @@
 <blockquote>
 <div><a class="reference internal image-reference" href="../../_images/pycsw-software-architecture.jpg"><img alt="../../_images/pycsw-software-architecture.jpg" src="../../_images/pycsw-software-architecture.jpg" style="width: 480.0px; height: 360.0px;" /></a>
 </div></blockquote>
+<div class="section" id="osgeo-live-dvd">
+<h3>OSGeo Live DVD<a class="headerlink" href="#osgeo-live-dvd" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="the-4-minute-install">
+<h3>The 4 minute install<a class="headerlink" href="#the-4-minute-install" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>virtualenv pycsw <span class="o">&amp;&amp;</span> <span class="nb">cd </span>pycsw <span class="o">&amp;&amp;</span> . bin/activate
+<span class="nv">$ </span>git clone git@github.com:geopython/pycsw.git <span class="o">&amp;&amp;</span> <span class="nb">cd </span>pycsw
+<span class="nv">$ </span>pip install -e . <span class="o">&amp;&amp;</span> pip install -r requirements.txt
+<span class="nv">$ </span>cp default-sample.cfg default.cfg
+<span class="nv">$ </span>vi default.cfg
+<span class="c"># adjust paths in</span>
+<span class="c"># - server.home</span>
+<span class="c"># - repository.database</span>
+<span class="c"># set server.url to http://localhost:8000/</span>
+<span class="nv">$ </span>python csw.wsgi
+<span class="nv">$ </span>curl http://localhost:8000/?service<span class="o">=</span>CSW&amp;version<span class="o">=</span>2.0.2&amp;request<span class="o">=</span>GetCapabilities
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 
@@ -137,7 +159,7 @@
     </p>
     <p>
         &copy; Copyright 2013, Jeff McKenna, Tom Kralidis, Angelos Tzotsos.<br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2b1.<br/>
     </p>
   </div>
 </footer>

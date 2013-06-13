@@ -3,3 +3,11 @@
 Configuring
 ===========
 
+- copy ``default-sample.cfg`` to ``default.cfg``
+- key configuration parameters
+
+  - ``server.home``: absolute path of where pycsw is located
+  - ``server.url``: the public base URL of the service, which is advertised in Capabilities XML
+  - ``manager.transactions``: ``true`` or ``false`` (more on CSW-T later)
+  - ``metadata:main``: service metadata!
+  - ``repository.database``: database connection string
