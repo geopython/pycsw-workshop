@@ -7,7 +7,7 @@ QGIS CSW Client Installation
 ----------------------------
 
 The HTTP request/response mechanism is not friendly enough to the end user in order to perform queries to the Catalogue Service.
-For this workshop, we will use the `QGIS <http://www.qgis.org/>` `OGC Catalogue Service Client <https://sourceforge.net/apps/trac/qgiscommunitypl/wiki/qgcsw>`_ plugin.
+For this workshop, we will use the `QGIS <http://www.qgis.org/>` `OGC Catalogue Service Client <http://sourceforge.net/apps/trac/qgiscommunitypl/wiki/qgcsw>`_ plugin.
 
 To install the plugin in OSGeoLive:
 
