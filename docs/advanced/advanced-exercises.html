@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 
 
@@ -65,13 +64,13 @@
      class="dropdown-toggle"
      data-toggle="dropdown">Site <b class="caret"></b></a>
   <ul class="dropdown-menu globaltoc"
-    ><ul>
+    ><ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../background.html">Background</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../requirements.html">Workshop Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../metadata.html">Metadata Background</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../spec.html">OGC CSW Specification</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction to pycsw</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../advanced.html">Advanced pycsw</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../advanced.html">Advanced pycsw</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../open-data.html">pycsw and Open Data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../future.html">pycsw Future Development</a></li>
 </ul>
@@ -142,23 +141,23 @@ For this workshop, we will use the <cite>QGIS &lt;http://www.qgis.org/&gt;</cite
 <p>Start QGIS from the Desktop GIS group and go to &#8220;Manage Plugins&#8221;.</p>
 <p>Enable the CSW plugin (version 0.0.9) from the list</p>
 <blockquote>
-<div><a class="reference internal image-reference" href="../../_images/pycsw_qgis_install_csw.png"><img alt="../../_images/pycsw_qgis_install_csw.png" src="../../_images/pycsw_qgis_install_csw.png" /></a>
+<div><a class="reference internal image-reference" href="../../_images/pycsw_qgis_install_csw.png"><img alt="../../_images/pycsw_qgis_install_csw.png" src="../../_images/pycsw_qgis_install_csw.png" style="width: 337.2px; height: 244.8px;" /></a>
 </div></blockquote>
 <p>Then select the CSW button from the toolbar and launch CSW Client</p>
 <blockquote>
-<div><a class="reference internal image-reference" href="../../_images/pycsw_qgis_start.png"><img alt="../../_images/pycsw_qgis_start.png" src="../../_images/pycsw_qgis_start.png" /></a>
+<div><a class="reference internal image-reference" href="../../_images/pycsw_qgis_start.png"><img alt="../../_images/pycsw_qgis_start.png" src="../../_images/pycsw_qgis_start.png" style="width: 819.0px; height: 408.6px;" /></a>
 </div></blockquote>
 <p>Add the pycsw server by pressing the &#8220;New&#8221; button and type in <tt class="docutils literal"><span class="pre">http://localhost/pycsw/csw.py</span></tt></p>
 <blockquote>
-<div><a class="reference internal image-reference" href="../../_images/pycsw_qgis_add.png"><img alt="../../_images/pycsw_qgis_add.png" src="../../_images/pycsw_qgis_add.png" /></a>
+<div><a class="reference internal image-reference" href="../../_images/pycsw_qgis_add.png"><img alt="../../_images/pycsw_qgis_add.png" src="../../_images/pycsw_qgis_add.png" style="width: 819.0px; height: 391.2px;" /></a>
 </div></blockquote>
 <p>The user can add some default servers using the &#8220;Add default servers&#8221; button and also get the capabilities of the server using &#8220;Server info&#8221; button</p>
 <blockquote>
-<div><a class="reference internal image-reference" href="../../_images/pycsw_qgis_capabilities.png"><img alt="../../_images/pycsw_qgis_capabilities.png" src="../../_images/pycsw_qgis_capabilities.png" /></a>
+<div><a class="reference internal image-reference" href="../../_images/pycsw_qgis_capabilities.png"><img alt="../../_images/pycsw_qgis_capabilities.png" src="../../_images/pycsw_qgis_capabilities.png" style="width: 819.6px; height: 391.8px;" /></a>
 </div></blockquote>
 <p>Raw server responces are available through the &#8220;GetCapabilities&#8221; button.</p>
 <blockquote>
-<div><a class="reference internal image-reference" href="../../_images/pycsw_qgis_capabilities2.png"><img alt="../../_images/pycsw_qgis_capabilities2.png" src="../../_images/pycsw_qgis_capabilities2.png" /></a>
+<div><a class="reference internal image-reference" href="../../_images/pycsw_qgis_capabilities2.png"><img alt="../../_images/pycsw_qgis_capabilities2.png" src="../../_images/pycsw_qgis_capabilities2.png" style="width: 587.4px; height: 298.8px;" /></a>
 </div></blockquote>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
@@ -166,11 +165,11 @@ For this workshop, we will use the <cite>QGIS &lt;http://www.qgis.org/&gt;</cite
 </div>
 <p>Perform search using the catalogue, either by a string value or with a bounding box</p>
 <blockquote>
-<div><a class="reference internal image-reference" href="../../_images/pycsw_qgis_search.png"><img alt="../../_images/pycsw_qgis_search.png" src="../../_images/pycsw_qgis_search.png" /></a>
+<div><a class="reference internal image-reference" href="../../_images/pycsw_qgis_search.png"><img alt="../../_images/pycsw_qgis_search.png" src="../../_images/pycsw_qgis_search.png" style="width: 631.2px; height: 390.0px;" /></a>
 </div></blockquote>
 <p>Discovery of data can be also performed through the Tester application by setting the appropriate requests eg. any text search with the string &#8220;imagery&#8221; leads to discovering XML metadata including the word &#8220;imagery&#8221;.</p>
 <blockquote>
-<div><a class="reference internal image-reference" href="../../_images/pycsw_tester_any_text.png"><img alt="../../_images/pycsw_tester_any_text.png" src="../../_images/pycsw_tester_any_text.png" /></a>
+<div><a class="reference internal image-reference" href="../../_images/pycsw_tester_any_text.png"><img alt="../../_images/pycsw_tester_any_text.png" src="../../_images/pycsw_tester_any_text.png" style="width: 600.0px; height: 390.6px;" /></a>
 </div></blockquote>
 </div>
 <div class="section" id="data-discovery-through-geoext">
@@ -260,29 +259,153 @@ Such functionality is available through <a class="reference external" href="http
 </pre></div>
 </div>
 <p>Transaction: insert</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">csw</span><span class="o">.</span><span class="n">transaction</span><span class="p">(</span><span class="n">ttype</span><span class="o">=</span><span class="s">&#39;insert&#39;</span><span class="p">,</span> <span class="n">typename</span><span class="o">=</span><span class="s">&#39;gmd:MD_Metadata&#39;</span><span class="p">,</span> <span class="n">record</span><span class="o">=</span><span class="nb">open</span><span class="p">(</span><span class="nb">file</span><span class="o">.</span><span class="n">xml</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">urllib2</span> <span class="kn">import</span> <span class="n">urlopen</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">content</span> <span class="o">=</span> <span class="n">urlopen</span><span class="p">(</span><span class="s">&#39;http://demo.pycsw.org/waf/Clause_10.2.5.3.2_Example03_Full.xml&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">csw</span><span class="o">.</span><span class="n">transaction</span><span class="p">(</span><span class="n">ttype</span><span class="o">=</span><span class="s">&#39;insert&#39;</span><span class="p">,</span> <span class="n">typename</span><span class="o">=</span><span class="s">&#39;csw:Record&#39;</span><span class="p">,</span> <span class="n">record</span><span class="o">=</span><span class="n">content</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">csw</span><span class="o">.</span><span class="n">response</span>
+<span class="go">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;</span>
+<span class="go">&lt;csw:TransactionResponse xmlns:dc=&quot;http://purl.org/dc/elements/1.1/&quot; xmlns:inspire_common=&quot;http://inspire.ec.europa.eu/schemas/common/1.0&quot; xmlns:atom=&quot;http://www.w3.org/2005/Atom&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:dct=&quot;http://purl.org/dc/terms/&quot; xmlns:ows=&quot;http://www.opengis.net/ows&quot; xmlns:apiso=&quot;http://www.opengis.net/cat/csw/apiso/1.0&quot; xmlns:gml=&quot;http://www.opengis.net/gml&quot; xmlns:dif=&quot;http://gcmd.gsfc.nasa.gov/Aboutus/xml/dif/&quot; xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; xmlns:gco=&quot;http://www.isotc211.org/2005/gco&quot; xmlns:gmd=&quot;http://www.isotc211.org/2005/gmd&quot; xmlns:rdf=&quot;http://www.w3.org/1999/02/22-rdf-syntax-ns#&quot; xmlns:srv=&quot;http://www.isotc211.org/2005/srv&quot; xmlns:ogc=&quot;http://www.opengis.net/ogc&quot; xmlns:fgdc=&quot;http://www.opengis.net/cat/csw/csdgm&quot; xmlns:inspire_ds=&quot;http://inspire.ec.europa.eu/schemas/inspire_ds/1.0&quot; xmlns:csw=&quot;http://www.opengis.net/cat/csw/2.0.2&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:os=&quot;http://a9.com/-/spec/opensearch/1.1/&quot; xmlns:soapenv=&quot;http://www.w3.org/2003/05/soap-envelope&quot; xmlns:sitemap=&quot;http://www.sitemaps.org/schemas/sitemap/0.9&quot; version=&quot;2.0.2&quot; xsi:schemaLocation=&quot;http://www.opengis.net/cat/csw/2.0.2 http://schemas.opengis.net/csw/2.0.2/CSW-publication.xsd&quot;&gt;</span>
+<span class="go">  &lt;csw:TransactionSummary&gt;</span>
+<span class="go">    &lt;csw:totalInserted&gt;1&lt;/csw:totalInserted&gt;</span>
+<span class="go">    &lt;csw:totalUpdated&gt;0&lt;/csw:totalUpdated&gt;</span>
+<span class="go">    &lt;csw:totalDeleted&gt;0&lt;/csw:totalDeleted&gt;</span>
+<span class="go">  &lt;/csw:TransactionSummary&gt;</span>
+<span class="go">  &lt;csw:InsertResult&gt;</span>
+<span class="go">    &lt;csw:BriefRecord&gt;</span>
+<span class="go">      &lt;dc:identifier&gt;00180e67-b7cf-40a3-861d-b3a09337b174&lt;/dc:identifier&gt;</span>
+<span class="go">      &lt;dc:title&gt;Image2000 Product 1 (at1) Multispectral&lt;/dc:title&gt;</span>
+<span class="go">    &lt;/csw:BriefRecord&gt;</span>
+<span class="go">  &lt;/csw:InsertResult&gt;</span>
+<span class="go">&lt;/csw:TransactionResponse&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c"># search</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">csw</span><span class="o">.</span><span class="n">getrecords</span><span class="p">(</span><span class="n">keywords</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;image2000&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">csw</span><span class="o">.</span><span class="n">response</span>
+<span class="go">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;</span>
+<span class="go">&lt;csw:GetRecordsResponse xmlns:dc=&quot;http://purl.org/dc/elements/1.1/&quot; xmlns:inspire_common=&quot;http://inspire.ec.europa.eu/schemas/common/1.0&quot; xmlns:atom=&quot;http://www.w3.org/2005/Atom&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:dct=&quot;http://purl.org/dc/terms/&quot; xmlns:ows=&quot;http://www.opengis.net/ows&quot; xmlns:apiso=&quot;http://www.opengis.net/cat/csw/apiso/1.0&quot; xmlns:gml=&quot;http://www.opengis.net/gml&quot; xmlns:dif=&quot;http://gcmd.gsfc.nasa.gov/Aboutus/xml/dif/&quot; xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; xmlns:gco=&quot;http://www.isotc211.org/2005/gco&quot; xmlns:gmd=&quot;http://www.isotc211.org/2005/gmd&quot; xmlns:rdf=&quot;http://www.w3.org/1999/02/22-rdf-syntax-ns#&quot; xmlns:srv=&quot;http://www.isotc211.org/2005/srv&quot; xmlns:ogc=&quot;http://www.opengis.net/ogc&quot; xmlns:fgdc=&quot;http://www.opengis.net/cat/csw/csdgm&quot; xmlns:inspire_ds=&quot;http://inspire.ec.europa.eu/schemas/inspire_ds/1.0&quot; xmlns:csw=&quot;http://www.opengis.net/cat/csw/2.0.2&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:os=&quot;http://a9.com/-/spec/opensearch/1.1/&quot; xmlns:soapenv=&quot;http://www.w3.org/2003/05/soap-envelope&quot; xmlns:sitemap=&quot;http://www.sitemaps.org/schemas/sitemap/0.9&quot; version=&quot;2.0.2&quot; xsi:schemaLocation=&quot;http://www.opengis.net/cat/csw/2.0.2 http://schemas.opengis.net/csw/2.0.2/CSW-discovery.xsd&quot;&gt;</span>
+<span class="go">  &lt;csw:SearchStatus timestamp=&quot;2013-06-13T08:37:07Z&quot;/&gt;</span>
+<span class="go">  &lt;csw:SearchResults nextRecord=&quot;0&quot; numberOfRecordsMatched=&quot;1&quot; numberOfRecordsReturned=&quot;1&quot; recordSchema=&quot;http://www.opengis.net/cat/csw/2.0.2&quot; elementSet=&quot;summary&quot;&gt;</span>
+<span class="go">    &lt;csw:SummaryRecord&gt;</span>
+<span class="go">      &lt;dc:identifier&gt;00180e67-b7cf-40a3-861d-b3a09337b174&lt;/dc:identifier&gt;</span>
+<span class="go">      &lt;dc:title&gt;Image2000 Product 1 (at1) Multispectral&lt;/dc:title&gt;</span>
+<span class="go">      &lt;dc:type&gt;dataset&lt;/dc:type&gt;</span>
+<span class="go">      &lt;dc:subject&gt;imagery&lt;/dc:subject&gt;</span>
+<span class="go">      &lt;dc:subject&gt;baseMaps&lt;/dc:subject&gt;</span>
+<span class="go">      &lt;dc:subject&gt;earthCover&lt;/dc:subject&gt;</span>
+<span class="go">      &lt;dc:format&gt;BIL&lt;/dc:format&gt;</span>
+<span class="go">      &lt;dct:modified&gt;2004-10-04 00:00:00&lt;/dct:modified&gt;</span>
+<span class="go">      &lt;dct:abstract&gt;IMAGE2000 product 1 individual orthorectified scenes. IMAGE2000 was  produced from ETM+ Landsat 7 satellite data and provides a consistent European coverage of individual orthorectified scenes in national map projection systems.&lt;/dct:abstract&gt;</span>
+<span class="go">    &lt;/csw:SummaryRecord&gt;</span>
+<span class="go">  &lt;/csw:SearchResults&gt;</span>
+<span class="go">&lt;/csw:GetRecordsResponse&gt;</span>
 </pre></div>
 </div>
 <p>Transaction: update</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="c"># update ALL records</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">csw</span><span class="o">.</span><span class="n">transaction</span><span class="p">(</span><span class="n">ttype</span><span class="o">=</span><span class="s">&#39;update&#39;</span><span class="p">,</span> <span class="n">typename</span><span class="o">=</span><span class="s">&#39;csw:Record&#39;</span><span class="p">,</span> <span class="n">propertyname</span><span class="o">=</span><span class="s">&#39;dc:title&#39;</span><span class="p">,</span> <span class="n">propertyvalue</span><span class="o">=</span><span class="s">&#39;New Title&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="c"># update records satisfying keywords filter</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">csw</span><span class="o">.</span><span class="n">transaction</span><span class="p">(</span><span class="n">ttype</span><span class="o">=</span><span class="s">&#39;update&#39;</span><span class="p">,</span> <span class="n">typename</span><span class="o">=</span><span class="s">&#39;csw:Record&#39;</span><span class="p">,</span> <span class="n">propertyname</span><span class="o">=</span><span class="s">&#39;dc:title&#39;</span><span class="p">,</span> <span class="n">propertyvalue</span><span class="o">=</span><span class="s">&#39;New Title&#39;</span><span class="p">,</span> <span class="n">keywords</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;casino&#39;</span><span class="p">,</span><span class="s">&#39;bar&#39;</span><span class="p">])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="c"># update records satisfying BBOX filter</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">csw</span><span class="o">.</span><span class="n">transaction</span><span class="p">(</span><span class="n">ttype</span><span class="o">=</span><span class="s">&#39;update&#39;</span><span class="p">,</span> <span class="n">typename</span><span class="o">=</span><span class="s">&#39;csw:Record&#39;</span><span class="p">,</span> <span class="n">propertyname</span><span class="o">=</span><span class="s">&#39;dc:title&#39;</span><span class="p">,</span> <span class="n">propertyvalue</span><span class="o">=</span><span class="s">&#39;New Title&#39;</span><span class="p">,</span> <span class="n">bbox</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">141</span><span class="p">,</span><span class="mi">42</span><span class="p">,</span><span class="o">-</span><span class="mi">52</span><span class="p">,</span><span class="mi">84</span><span class="p">])</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="c"># upload an updated version of that metadata</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">content2</span> <span class="o">=</span> <span class="n">content</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;Image2000&#39;</span><span class="p">,</span> <span class="s">&#39;footitle&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">csw</span><span class="o">.</span><span class="n">transaction</span><span class="p">(</span><span class="n">ttype</span><span class="o">=</span><span class="s">&#39;update&#39;</span><span class="p">,</span> <span class="n">record</span><span class="o">=</span><span class="n">content2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">csw</span><span class="o">.</span><span class="n">response</span>  <span class="c"># raw</span>
+<span class="go">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;</span>
+<span class="go">&lt;csw:TransactionResponse xmlns:dc=&quot;http://purl.org/dc/elements/1.1/&quot; xmlns:inspire_common=&quot;http://inspire.ec.europa.eu/schemas/common/1.0&quot; xmlns:atom=&quot;http://www.w3.org/2005/Atom&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:dct=&quot;http://purl.org/dc/terms/&quot; xmlns:ows=&quot;http://www.opengis.net/ows&quot; xmlns:apiso=&quot;http://www.opengis.net/cat/csw/apiso/1.0&quot; xmlns:gml=&quot;http://www.opengis.net/gml&quot; xmlns:dif=&quot;http://gcmd.gsfc.nasa.gov/Aboutus/xml/dif/&quot; xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; xmlns:gco=&quot;http://www.isotc211.org/2005/gco&quot; xmlns:gmd=&quot;http://www.isotc211.org/2005/gmd&quot; xmlns:rdf=&quot;http://www.w3.org/1999/02/22-rdf-syntax-ns#&quot; xmlns:srv=&quot;http://www.isotc211.org/2005/srv&quot; xmlns:ogc=&quot;http://www.opengis.net/ogc&quot; xmlns:fgdc=&quot;http://www.opengis.net/cat/csw/csdgm&quot; xmlns:inspire_ds=&quot;http://inspire.ec.europa.eu/schemas/inspire_ds/1.0&quot; xmlns:csw=&quot;http://www.opengis.net/cat/csw/2.0.2&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:os=&quot;http://a9.com/-/spec/opensearch/1.1/&quot; xmlns:soapenv=&quot;http://www.w3.org/2003/05/soap-envelope&quot; xmlns:sitemap=&quot;http://www.sitemaps.org/schemas/sitemap/0.9&quot; version=&quot;2.0.2&quot; xsi:schemaLocation=&quot;http://www.opengis.net/cat/csw/2.0.2 http://schemas.opengis.net/csw/2.0.2/CSW-publication.xsd&quot;&gt;</span>
+<span class="go">  &lt;csw:TransactionSummary&gt;</span>
+<span class="go">    &lt;csw:totalInserted&gt;0&lt;/csw:totalInserted&gt;</span>
+<span class="go">    &lt;csw:totalUpdated&gt;1&lt;/csw:totalUpdated&gt;</span>
+<span class="go">    &lt;csw:totalDeleted&gt;0&lt;/csw:totalDeleted&gt;</span>
+<span class="go">  &lt;/csw:TransactionSummary&gt;</span>
+<span class="go">&lt;/csw:TransactionResponse&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">csw</span><span class="o">.</span><span class="n">results</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">{</span><span class="s">&#39;deleted&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s">&#39;insertresults&#39;</span><span class="p">:</span> <span class="p">[],</span> <span class="s">&#39;updated&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s">&#39;inserted&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s">&#39;requestid&#39;</span><span class="p">:</span> <span class="bp">None</span><span class="p">}</span>
 </pre></div>
 </div>
 <p>Transaction: delete</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="c"># delete ALL records</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">csw</span><span class="o">.</span><span class="n">transaction</span><span class="p">(</span><span class="n">ttype</span><span class="o">=</span><span class="s">&#39;delete&#39;</span><span class="p">,</span> <span class="n">typename</span><span class="o">=</span><span class="s">&#39;gmd:MD_Metadata&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="c"># delete records satisfying keywords filter</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">csw</span><span class="o">.</span><span class="n">transaction</span><span class="p">(</span><span class="n">ttype</span><span class="o">=</span><span class="s">&#39;delete&#39;</span><span class="p">,</span> <span class="n">typename</span><span class="o">=</span><span class="s">&#39;gmd:MD_Metadata&#39;</span><span class="p">,</span> <span class="n">keywords</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;casino&#39;</span><span class="p">,</span><span class="s">&#39;bar&#39;</span><span class="p">])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="c"># delete records satisfying BBOX filter</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">csw</span><span class="o">.</span><span class="n">transaction</span><span class="p">(</span><span class="n">ttype</span><span class="o">=</span><span class="s">&#39;delete&#39;</span><span class="p">,</span> <span class="n">typename</span><span class="o">=</span><span class="s">&#39;gmd:MD_Metadata&#39;</span><span class="p">,</span> <span class="n">bbox</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">141</span><span class="p">,</span><span class="mi">42</span><span class="p">,</span><span class="o">-</span><span class="mi">52</span><span class="p">,</span><span class="mi">84</span><span class="p">])</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="c"># delete record we inserted</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">csw</span><span class="o">.</span><span class="n">transaction</span><span class="p">(</span><span class="n">ttype</span><span class="o">=</span><span class="s">&#39;delete&#39;</span><span class="p">,</span> <span class="n">identifier</span><span class="o">=</span><span class="s">&#39;00180e67-b7cf-40a3-861d-b3a09337b174&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span><span class="o">.</span><span class="n">results</span>
+<span class="go">{&#39;deleted&#39;: 1, &#39;insertresults&#39;: [], &#39;updated&#39;: 0, &#39;inserted&#39;: 0, &#39;requestid&#39;: None}</span>
 </pre></div>
 </div>
 <p>Harvest a resource</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">csw</span><span class="o">.</span><span class="n">harvest</span><span class="p">(</span><span class="s">&#39;http://host/url.xml&#39;</span><span class="p">,</span> <span class="s">&#39;http://www.isotc211.org/2005/gmd&#39;</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">help</span><span class="p">(</span><span class="n">csw</span><span class="o">.</span><span class="n">harvest</span><span class="p">)</span>
+
+<span class="go">Help on method harvest in module owslib.csw:</span>
+
+<span class="go">harvest(self, source, resourcetype, resourceformat=None, harvestinterval=None, responsehandler=None) method of owslib.csw.CatalogueServiceWeb instance</span>
+<span class="go">    Construct and process a Harvest request</span>
+
+<span class="go">  Parameters</span>
+<span class="go">  ----------</span>
+
+<span class="go">    - source: a URI to harvest</span>
+<span class="go">    - resourcetype: namespace identifying the type of resource</span>
+<span class="go">    - resourceformat: MIME type of the resource</span>
+<span class="go">    - harvestinterval: frequency of harvesting, in ISO8601</span>
+<span class="go">    - responsehandler: endpoint that CSW should responsd to with response</span>
+<span class="go">(END)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">csw</span><span class="o">.</span><span class="n">harvest</span><span class="p">(</span><span class="s">&#39;http://webservices.nationalatlas.gov/wms/1million&#39;</span><span class="p">,</span> <span class="n">resourcetype</span><span class="o">=</span><span class="s">&#39;http://www.opengis.net/wms&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">csw</span><span class="o">.</span><span class="n">response</span>
+<span class="go">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;</span>
+<span class="go">&lt;csw:HarvestResponse xmlns:dc=&quot;http://purl.org/dc/elements/1.1/&quot; xmlns:inspire_common=&quot;http://inspire.ec.europa.eu/schemas/common/1.0&quot; xmlns:atom=&quot;http://www.w3.org/2005/Atom&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:dct=&quot;http://purl.org/dc/terms/&quot; xmlns:ows=&quot;http://www.opengis.net/ows&quot; xmlns:apiso=&quot;http://www.opengis.net/cat/csw/apiso/1.0&quot; xmlns:gml=&quot;http://www.opengis.net/gml&quot; xmlns:dif=&quot;http://gcmd.gsfc.nasa.gov/Aboutus/xml/dif/&quot; xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; xmlns:gco=&quot;http://www.isotc211.org/2005/gco&quot; xmlns:gmd=&quot;http://www.isotc211.org/2005/gmd&quot; xmlns:rdf=&quot;http://www.w3.org/1999/02/22-rdf-syntax-ns#&quot; xmlns:srv=&quot;http://www.isotc211.org/2005/srv&quot; xmlns:ogc=&quot;http://www.opengis.net/ogc&quot; xmlns:fgdc=&quot;http://www.opengis.net/cat/csw/csdgm&quot; xmlns:inspire_ds=&quot;http://inspire.ec.europa.eu/schemas/inspire_ds/1.0&quot; xmlns:csw=&quot;http://www.opengis.net/cat/csw/2.0.2&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:os=&quot;http://a9.com/-/spec/opensearch/1.1/&quot; xmlns:soapenv=&quot;http://www.w3.org/2003/05/soap-envelope&quot; xmlns:sitemap=&quot;http://www.sitemaps.org/schemas/sitemap/0.9&quot; xsi:schemaLocation=&quot;http://www.opengis.net/cat/csw/2.0.2 http://schemas.opengis.net/csw/2.0.2/CSW-publication.xsd&quot;&gt;</span>
+<span class="go">  &lt;csw:TransactionResponse version=&quot;2.0.2&quot;&gt;</span>
+<span class="go">    &lt;csw:TransactionSummary&gt;</span>
+<span class="go">      &lt;csw:totalInserted&gt;13&lt;/csw:totalInserted&gt;</span>
+<span class="go">      &lt;csw:totalUpdated&gt;0&lt;/csw:totalUpdated&gt;</span>
+<span class="go">      &lt;csw:totalDeleted&gt;0&lt;/csw:totalDeleted&gt;</span>
+<span class="go">    &lt;/csw:TransactionSummary&gt;</span>
+<span class="go">    &lt;csw:InsertResult&gt;</span>
+<span class="go">      &lt;csw:BriefRecord&gt;</span>
+<span class="go">        &lt;dc:identifier&gt;urn:uuid:8ed68189-c33e-43c8-9ac0-59ade5cbf682&lt;/dc:identifier&gt;</span>
+<span class="go">        &lt;dc:title&gt;1 Million Scale WMS Layers from the National Atlas of the United States&lt;/dc:title&gt;</span>
+<span class="go">      &lt;/csw:BriefRecord&gt;</span>
+<span class="go">      &lt;csw:BriefRecord&gt;</span>
+<span class="go">        &lt;dc:identifier&gt;urn:uuid:8ed68189-c33e-43c8-9ac0-59ade5cbf682-ports1m&lt;/dc:identifier&gt;</span>
+<span class="go">        &lt;dc:title&gt;1 Million Scale - Ports&lt;/dc:title&gt;</span>
+<span class="go">      &lt;/csw:BriefRecord&gt;</span>
+<span class="go">      &lt;csw:BriefRecord&gt;</span>
+<span class="go">        &lt;dc:identifier&gt;urn:uuid:8ed68189-c33e-43c8-9ac0-59ade5cbf682-national1m&lt;/dc:identifier&gt;</span>
+<span class="go">        &lt;dc:title&gt;1 Million Scale - National Boundary&lt;/dc:title&gt;</span>
+<span class="go">      &lt;/csw:BriefRecord&gt;</span>
+<span class="go">      &lt;csw:BriefRecord&gt;</span>
+<span class="go">        &lt;dc:identifier&gt;urn:uuid:8ed68189-c33e-43c8-9ac0-59ade5cbf682-impervious&lt;/dc:identifier&gt;</span>
+<span class="go">        &lt;dc:title&gt;1 Million Scale - Impervious Surface 100 Meter Resolution&lt;/dc:title&gt;</span>
+<span class="go">      &lt;/csw:BriefRecord&gt;</span>
+<span class="go">      &lt;csw:BriefRecord&gt;</span>
+<span class="go">        &lt;dc:identifier&gt;urn:uuid:8ed68189-c33e-43c8-9ac0-59ade5cbf682-coast1m&lt;/dc:identifier&gt;</span>
+<span class="go">        &lt;dc:title&gt;1 Million Scale - Coastlines&lt;/dc:title&gt;</span>
+<span class="go">      &lt;/csw:BriefRecord&gt;</span>
+<span class="go">      &lt;csw:BriefRecord&gt;</span>
+<span class="go">        &lt;dc:identifier&gt;urn:uuid:8ed68189-c33e-43c8-9ac0-59ade5cbf682-cdl&lt;/dc:identifier&gt;</span>
+<span class="go">        &lt;dc:title&gt;1 Million Scale - 113th Congressional Districts&lt;/dc:title&gt;</span>
+<span class="go">      &lt;/csw:BriefRecord&gt;</span>
+<span class="go">      &lt;csw:BriefRecord&gt;</span>
+<span class="go">        &lt;dc:identifier&gt;urn:uuid:8ed68189-c33e-43c8-9ac0-59ade5cbf682-landcov100m&lt;/dc:identifier&gt;</span>
+<span class="go">        &lt;dc:title&gt;1 Million Scale - Land Cover 100 Meter Resolution&lt;/dc:title&gt;</span>
+<span class="go">      &lt;/csw:BriefRecord&gt;</span>
+<span class="go">      &lt;csw:BriefRecord&gt;</span>
+<span class="go">        &lt;dc:identifier&gt;urn:uuid:8ed68189-c33e-43c8-9ac0-59ade5cbf682-cdp&lt;/dc:identifier&gt;</span>
+<span class="go">        &lt;dc:title&gt;1 Million Scale - 113th Congressional Districts by Party&lt;/dc:title&gt;</span>
+<span class="go">      &lt;/csw:BriefRecord&gt;</span>
+<span class="go">      &lt;csw:BriefRecord&gt;</span>
+<span class="go">        &lt;dc:identifier&gt;urn:uuid:8ed68189-c33e-43c8-9ac0-59ade5cbf682-amtrak1m&lt;/dc:identifier&gt;</span>
+<span class="go">        &lt;dc:title&gt;1 Million Scale - Railroad and Bus Passenger Stations&lt;/dc:title&gt;</span>
+<span class="go">      &lt;/csw:BriefRecord&gt;</span>
+<span class="go">      &lt;csw:BriefRecord&gt;</span>
+<span class="go">        &lt;dc:identifier&gt;urn:uuid:8ed68189-c33e-43c8-9ac0-59ade5cbf682-airports1m&lt;/dc:identifier&gt;</span>
+<span class="go">        &lt;dc:title&gt;1 Million Scale - Airports&lt;/dc:title&gt;</span>
+<span class="go">      &lt;/csw:BriefRecord&gt;</span>
+<span class="go">      &lt;csw:BriefRecord&gt;</span>
+<span class="go">        &lt;dc:identifier&gt;urn:uuid:8ed68189-c33e-43c8-9ac0-59ade5cbf682-one_million&lt;/dc:identifier&gt;</span>
+<span class="go">        &lt;dc:title&gt;1 Million Scale WMS Layers from the National Atlas of the United States&lt;/dc:title&gt;</span>
+<span class="go">      &lt;/csw:BriefRecord&gt;</span>
+<span class="go">      &lt;csw:BriefRecord&gt;</span>
+<span class="go">        &lt;dc:identifier&gt;urn:uuid:8ed68189-c33e-43c8-9ac0-59ade5cbf682-states1m&lt;/dc:identifier&gt;</span>
+<span class="go">        &lt;dc:title&gt;1 Million Scale - States&lt;/dc:title&gt;</span>
+<span class="go">      &lt;/csw:BriefRecord&gt;</span>
+<span class="go">      &lt;csw:BriefRecord&gt;</span>
+<span class="go">        &lt;dc:identifier&gt;urn:uuid:8ed68189-c33e-43c8-9ac0-59ade5cbf682-treecanopy&lt;/dc:identifier&gt;</span>
+<span class="go">        &lt;dc:title&gt;1 Million Scale - Tree Canopy 100 Meter Resolution&lt;/dc:title&gt;</span>
+<span class="go">      &lt;/csw:BriefRecord&gt;</span>
+<span class="go">    &lt;/csw:InsertResult&gt;</span>
+<span class="go">  &lt;/csw:TransactionResponse&gt;</span>
+<span class="go">&lt;/csw:HarvestResponse&gt;</span>
 </pre></div>
 </div>
 </div>
@@ -298,7 +421,7 @@ Such functionality is available through <a class="reference external" href="http
     </p>
     <p>
         &copy; Copyright 2013, Jeff McKenna, Tom Kralidis, Angelos Tzotsos.<br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2b1.<br/>
     </p>
   </div>
 </footer>
