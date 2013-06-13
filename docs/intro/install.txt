@@ -114,7 +114,7 @@ Windows
 - Start CSW server
 
   - python.exe csw.wsgi
-  - open web browser to http://localhost:8000/?service=CSW&version=2.0.2&request=GetCapabilities
+  - open web browser to ``http://localhost:8000/?service=CSW&version=2.0.2&request=GetCapabilities``
 
 
 
