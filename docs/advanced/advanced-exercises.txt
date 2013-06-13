@@ -20,8 +20,8 @@ To install the plugin in OSGeoLive:
   Remember that the root password in OSGeoLive is "user".
 
 
-Data Discovery in QGIS
-----------------------
+Data Discovery through QGIS
+---------------------------
 
 Start QGIS from the Desktop GIS group and go to "Manage Plugins".
 
@@ -62,6 +62,23 @@ Discovery of data can be also performed through the Tester application by settin
 
   .. image:: ../../_static/pycsw_tester_any_text.png
      :scale: 60 %
+
+
+Data Discovery through GeoExt
+-----------------------------
+
+Another way to use a pycsw server is through a web application, acting like a CSW client.
+Such functionality is available through `OpenLayers <http://openlayers.org/>`_ and `GeoExt <http://www.geoext.org/>`_ Javascript libraries.
+
+For this workshop we have hacked a small demonstration in GeoExt (thanks Bart and Tom) using a demo pycsw installation at http://demo.pycsw.org/services/csw: 
+
+- Go to http://demo.pycsw.org/demos/gxp/examples/catalogue.html
+- Click icon "find layers"
+- Enter "airports" (without double quotes)
+- Click "search" or hit Enter
+- See results
+- Click the "add to map" icon beside the last result on that result set ("1 Million Scale - Airports")
+- See layer added to map panel
 
 
 OWSLib CSW client installation
