@@ -153,7 +153,7 @@ html_static_path = ['_static']
 #html_show_sourcelink = True
 
 # ignore localhost links
-linkcheck_ignore = [r'http://localhost/', r'http://localhost:\d+/']
+linkcheck_ignore = ['http://localhost(:\d+)?']
 
 # If true, "Created using Sphinx" is shown in the HTML footer. Default is True.
 #html_show_sphinx = True
