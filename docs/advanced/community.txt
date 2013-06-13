@@ -31,3 +31,10 @@ OGC
      :target: http://www.pycsw.org/
 
 - OGC `Reference Implementation <http://cite.opengeospatial.org/reference>`_
+
+Professional Support / Service Providers
+----------------------------------------
+
+Commercial Open Source vendors exist offering professional support for pycsw. 
+The list of providers will be maintained through the `OSGeo Service Providers <http://www.osgeo.org/search_profile>`__ 
+portal.
