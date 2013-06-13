@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 
 
@@ -5,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Exercises &mdash; pycsw Workshop 1.4.1 documentation</title>
+    <title>Exercises &mdash; pycsw Workshop 1.4.2 documentation</title>
     
     <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -16,7 +17,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.4.1',
+        VERSION:     '1.4.2',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -30,7 +31,7 @@
     <script type="text/javascript" src="../../_static/bootstrap-2.3.1/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
-    <link rel="top" title="pycsw Workshop 1.4.1 documentation" href="../../index.html" />
+    <link rel="top" title="pycsw Workshop 1.4.2 documentation" href="../../index.html" />
     <link rel="up" title="Introduction to pycsw" href="../introduction.html" />
     <link rel="next" title="Advanced pycsw" href="../advanced.html" />
     <link rel="prev" title="Configuring" href="configure.html" />
@@ -64,12 +65,12 @@
      class="dropdown-toggle"
      data-toggle="dropdown">Site <b class="caret"></b></a>
   <ul class="dropdown-menu globaltoc"
-    ><ul class="current">
+    ><ul>
 <li class="toctree-l1"><a class="reference internal" href="../background.html">Background</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../requirements.html">Workshop Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../metadata.html">Metadata Background</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../spec.html">OGC CSW Specification</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../introduction.html">Introduction to pycsw</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction to pycsw</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../advanced.html">Advanced pycsw</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../open-data.html">pycsw and Open Data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../future.html">pycsw Future Development</a></li>
@@ -151,23 +152,23 @@ To check your current version:</p>
 <p>To run the pycsw tester, use the pycsw launcher from the Web Services group, or open Firefox and navigate to <tt class="docutils literal"><span class="pre">http://localhost/pycsw/tester/index.html</span></tt></p>
 <p>By selecting the left drop-down list, the user can see various predefined POST requests, encoded as XML, that can be sent to pycsw:</p>
 <blockquote>
-<div><a class="reference internal image-reference" href="../../_images/pycsw_tester_selection.png"><img alt="../../_images/pycsw_tester_selection.png" src="../../_images/pycsw_tester_selection.png" style="width: 601.8px; height: 390.6px;" /></a>
+<div><a class="reference internal image-reference" href="../../_images/pycsw_tester_selection.png"><img alt="../../_images/pycsw_tester_selection.png" src="../../_images/pycsw_tester_selection.png" /></a>
 </div></blockquote>
 <p>For example, by selecting &#8220;apiso/DescribeRecord&#8221;, and pushing the &#8220;Send&#8221; button, a description of the ISO Application Profile record is presented on the right panel:</p>
 <blockquote>
-<div><a class="reference internal image-reference" href="../../_images/pycsw_tester_describe_record.png"><img alt="../../_images/pycsw_tester_describe_record.png" src="../../_images/pycsw_tester_describe_record.png" style="width: 600.0px; height: 390.6px;" /></a>
+<div><a class="reference internal image-reference" href="../../_images/pycsw_tester_describe_record.png"><img alt="../../_images/pycsw_tester_describe_record.png" src="../../_images/pycsw_tester_describe_record.png" /></a>
 </div></blockquote>
 <p>By selecting &#8220;GetCapabilities-SOAP&#8221; and pushing the &#8220;Send&#8221; button, a SOAP request is sent to the server to advertise their web service capabilities:</p>
 <blockquote>
-<div><a class="reference internal image-reference" href="../../_images/pycsw_tester_soap_capabilities.png"><img alt="../../_images/pycsw_tester_soap_capabilities.png" src="../../_images/pycsw_tester_soap_capabilities.png" style="width: 600.6px; height: 391.8px;" /></a>
+<div><a class="reference internal image-reference" href="../../_images/pycsw_tester_soap_capabilities.png"><img alt="../../_images/pycsw_tester_soap_capabilities.png" src="../../_images/pycsw_tester_soap_capabilities.png" /></a>
 </div></blockquote>
 <p>Also, the user can search for data records, performing a spatial bounding box query, by selecting &#8220;GetRecords-filter-bbox&#8221; and editing the coordinates in the XML request:</p>
 <blockquote>
-<div><a class="reference internal image-reference" href="../../_images/pycsw_tester_bbox.png"><img alt="../../_images/pycsw_tester_bbox.png" src="../../_images/pycsw_tester_bbox.png" style="width: 600.6px; height: 390.6px;" /></a>
+<div><a class="reference internal image-reference" href="../../_images/pycsw_tester_bbox.png"><img alt="../../_images/pycsw_tester_bbox.png" src="../../_images/pycsw_tester_bbox.png" /></a>
 </div></blockquote>
 <p>By selecting &#8220;GetRecords-filter-anytext&#8221; and pushing the &#8220;Send&#8221; button, a full text search request is sent to the server:</p>
 <blockquote>
-<div><a class="reference internal image-reference" href="../../_images/pycsw_tester_any_text1.png"><img alt="../../_images/pycsw_tester_any_text1.png" src="../../_images/pycsw_tester_any_text1.png" style="width: 600.0px; height: 390.6px;" /></a>
+<div><a class="reference internal image-reference" href="../../_images/pycsw_tester_any_text1.png"><img alt="../../_images/pycsw_tester_any_text1.png" src="../../_images/pycsw_tester_any_text1.png" /></a>
 </div></blockquote>
 <p>The user can go through all the available requests and perform various requests from this testing application.</p>
 </div>
@@ -263,16 +264,16 @@ The following will download the data archive and load all metadata xml files int
 <p>Metadata files for a spatial dataset or a spatial web service can be created with a plain XML editor.
 Usually a specialized application is used to create metadata XML files, e.g. through the open source implementation of inspire directive for metadata, European Open Source Metadata Editor (EUOSME). This application can be found at <tt class="docutils literal"><span class="pre">http://inspire-geoportal.ec.europa.eu/editor/</span></tt>. Source code is available at <tt class="docutils literal"><span class="pre">https://joinup.ec.europa.eu/svn/euosme/trunk</span></tt></p>
 <blockquote>
-<div><a class="reference internal image-reference" href="../../_images/pycsw_euosme_home.png"><img alt="../../_images/pycsw_euosme_home.png" src="../../_images/pycsw_euosme_home.png" style="width: 630.0px; height: 542.4px;" /></a>
+<div><a class="reference internal image-reference" href="../../_images/pycsw_euosme_home.png"><img alt="../../_images/pycsw_euosme_home.png" src="../../_images/pycsw_euosme_home.png" /></a>
 </div></blockquote>
 <p>The user fills the mandatory metadata fields going through the application tabs, adding information like the name of the data owner, keywords, resource location on the web, geographic location (using a bounding box or the name of a country) etc.</p>
 <blockquote>
-<div><a class="reference internal image-reference" href="../../_images/pycsw_euosme_map.png"><img alt="../../_images/pycsw_euosme_map.png" src="../../_images/pycsw_euosme_map.png" style="width: 630.6px; height: 543.6px;" /></a>
+<div><a class="reference internal image-reference" href="../../_images/pycsw_euosme_map.png"><img alt="../../_images/pycsw_euosme_map.png" src="../../_images/pycsw_euosme_map.png" /></a>
 </div></blockquote>
 <p>After the user has added all the information available, must push the validation button on top of the page, so that a check to be performed for consistency with the INSPIRE directive.</p>
 <p>After a sucessful validation, the XML file can be saved to the local disk and viewed through a text editor or a browser.</p>
 <blockquote>
-<div><a class="reference internal image-reference" href="../../_images/pycsw_euosme_save.png"><img alt="../../_images/pycsw_euosme_save.png" src="../../_images/pycsw_euosme_save.png" style="width: 630.0px; height: 544.2px;" /></a>
+<div><a class="reference internal image-reference" href="../../_images/pycsw_euosme_save.png"><img alt="../../_images/pycsw_euosme_save.png" src="../../_images/pycsw_euosme_save.png" /></a>
 </div></blockquote>
 <p>Metadata editing alternatives include:</p>
 <ul class="simple">
@@ -313,7 +314,7 @@ Usually a specialized application is used to create metadata XML files, e.g. thr
     </p>
     <p>
         &copy; Copyright 2013, Jeff McKenna, Tom Kralidis, Angelos Tzotsos.<br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2b1.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.<br/>
     </p>
   </div>
 </footer>
