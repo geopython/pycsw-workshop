@@ -7,6 +7,7 @@ pycsw and Open Data
 - metadata editing / management done with portal
 - portal exposes CSW service automagically
 - easy integration into existing apps/workflows
+- pycsw is planed for `data.gov <http://geo.gov.ckan.org/csw?service=CSW&version=2.0.2&request=GetRecords&typenames=csw:Record&elementsetname=full>`_ CKAN deployment  
 
 Contents:
 

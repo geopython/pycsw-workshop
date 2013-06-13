@@ -165,7 +165,10 @@ Metadata Creation
 -----------------
 
 Metadata files for a spatial dataset or a spatial web service can be created with a plain XML editor.
-Usually a specialized application is used to create metadata XML files, e.g. through the open source implementation of inspire directive for metadata, European Open Source Metadata Editor (EUOSME). This application can be found at ``http://inspire-geoportal.ec.europa.eu/editor/``. Source code is available at ``https://joinup.ec.europa.eu/svn/euosme/trunk``
+Usually a specialized application is used to create metadata XML files, e.g. through the open source 
+implementation of inspire directive for metadata, European Open Source Metadata Editor (EUOSME). 
+This application can be found at http://inspire-geoportal.ec.europa.eu/editor/. 
+Source code is available at https://joinup.ec.europa.eu/svn/euosme/trunk
 
   .. image:: ../../_static/pycsw_euosme_home.png
      :scale: 60 %
