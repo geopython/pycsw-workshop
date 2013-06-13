@@ -29,7 +29,7 @@ In order to upgrade pycsw to current stable version:
 
 .. code-block:: bash
 
-  $ sudo apt-get upgrade python-pycsw pycsw-cgi
+  $ sudo apt-get install python-pycsw pycsw-cgi
 
 Tester Application
 ------------------
