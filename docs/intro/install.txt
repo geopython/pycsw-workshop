@@ -28,7 +28,7 @@ Database
   Used to handle coordinate transformations.
   
 `Shapely <https://pypi.python.org/pypi/Shapely>`__
-  Used for spatial operations
+  Used for spatial operations.
 
 Software Architecture
 ---------------------
@@ -39,10 +39,10 @@ Software Architecture
      :scale: 50
 
 OSGeo Live DVD
-^^^^^^^^^^^^^^
+--------------
 
 The 4 minute install
-^^^^^^^^^^^^^^^^^^^^
+********************
 
 .. code-block:: bash
 
@@ -57,6 +57,64 @@ The 4 minute install
   # set server.url to http://localhost:8000/
   $ python csw.wsgi
   $ curl http://localhost:8000/?service=CSW&version=2.0.2&request=GetCapabilities
+  
+Windows
+-------
+
+.. NOTE::
+   The following steps were performed on a Windows Vista machine.
+
+- Install Python:
+  
+  - in my case I already have Python installed locally (2.6 series)
+  - http://python.org/download/
+
+- Install Package Management Tools
+
+  - download http://python-distribute.org/distribute_setup.py
+  - C:\\Python26\\python.exe distribute_setup.py
+
+- Install Virtual Environment
+
+  - highly recommended
+  - read more on its usage: https://pypi.python.org/pypi/virtualenv  
+  - C:\\Python26\\Scripts\\easy_install.exe virtualenv
+
+    - Create virtual environment
+    
+      - C:\\Python26\\Scripts\\virtualenv.exe pycsw-workshop
+      - cd pycsw-workshop
+      - scripts\\activate.exe
+
+- Install pycsw Dependencies
+
+  - C:\\Python26\\Scripts\\easy_install.exe lxml==2.2.8
+  - C:\\Python26\\Scripts\\easy_install.exe pyproj==1.9.2
+  - C:\\Python26\\Scripts\\easy_install.exe Shapely==1.2.17
+  - C:\\Python26\\Scripts\\easy_install.exe SQLAlchemy>=0.6
+  - C:\\Python26\\Scripts\\easy_install.exe OWSLib==0.7.1
+
+- Install pycsw
+
+  - Download pycsw from http://pycsw.org/download.html and unzip into pycsw-workshop/ folder
+  - cd pycsw-1.4.1
+  - copy default-sample.cfg default.cfg
+  - edit default-sample.cfg 
+  
+  ::
+
+     server.home (e.g. home=C:/Python26/Scripts/pycsw-workshop/pycsw-1.4.1)
+     server.url to url=http://localhost:8000/
+     repository.database (e.g. database=sqlite:///C:\\Python26\\Scripts\\pycsw-workshop\\pycsw-1.4.1\\data\\cite\\records.db)
+
+  .. NOTE::
+     Read more on the `database=` syntax for PostgreSQL `here <http://docs.sqlalchemy.org/en/latest/core/engines.html#postgresql>`__, 
+     or SQLite `here <http://docs.sqlalchemy.org/en/latest/dialects/sqlite.html#connect-strings>`__.
+
+- Start CSW server
+
+  - python.exe csw.wsgi
+  - open web browser to http://localhost:8000/?service=CSW&version=2.0.2&request=GetCapabilities
 
 
 
