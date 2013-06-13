@@ -3,3 +3,5 @@
 Community
 =========
 
+- in OSGeo `Incubation <https://github.com/geopython/pycsw/wiki/OSGeo-Incubation>`_
+- OGC `Reference Implementation <http://cite.opengeospatial.org/reference>`_
