@@ -5,11 +5,11 @@ Use Cases
 
 - publishing against established metadata management workflow
 
- - pure desktop GIS environment
- - custom envrionments / processes / automation
- - publish with pycsw
+  - pure desktop GIS environment
+  - custom envrionments / processes / automation
+  - publish with pycsw
 
 - publishing against existing metadata database
 
- - bind pycsw to database with property -> column mappings
+  - bind pycsw to database with property -> column mappings
 
