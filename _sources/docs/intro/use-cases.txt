@@ -3,7 +3,7 @@
 Use Cases
 =========
 
-These are the common situations where pycsw thrives:
+These are common situations where pycsw thrives:
 
 **Case 1: Publishing against established metadata management workflow**
 

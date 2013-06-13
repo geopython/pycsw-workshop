@@ -81,11 +81,13 @@
   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
   <ul class="dropdown-menu localtoc"><ul>
 <li><a class="reference internal" href="#">Installing</a><ul>
-<li><a class="reference internal" href="#software-architecture">Software Architecture</a><ul>
-<li><a class="reference internal" href="#osgeo-live-dvd">OSGeo Live DVD</a></li>
+<li><a class="reference internal" href="#required-software">Required Software</a></li>
+<li><a class="reference internal" href="#software-architecture">Software Architecture</a></li>
+<li><a class="reference internal" href="#osgeo-live-dvd">OSGeo Live DVD</a><ul>
 <li><a class="reference internal" href="#the-4-minute-install">The 4 minute install</a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#windows">Windows</a></li>
 </ul>
 </li>
 </ul>
@@ -123,18 +125,35 @@
   
   <div class="section" id="installing">
 <span id="install"></span><h1>Installing<a class="headerlink" href="#installing" title="Permalink to this headline">¶</a></h1>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">OSGeo-Live users already have pycsw installed, at <cite>/var/www/pycsw/</cite></p>
+<div class="section" id="required-software">
+<h2>Required Software<a class="headerlink" href="#required-software" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt><a class="reference external" href="https://github.com/geopython/pycsw">pycsw</a></dt>
+<dd>Source home is on GitHub.</dd>
+<dt><a class="reference external" href="http://www.python.org/">Python</a></dt>
+<dd>Core language of pycsw.  Both 3.x and 2.x series are supported.</dd>
+<dt>Database</dt>
+<dd>Used to store metadata elements. (PostgreSQL/PostGIS, SQLite, MySQL)</dd>
+<dt><a class="reference external" href="http://www.sqlalchemy.org/">SQLAlchemy</a></dt>
+<dd>Used to bind database models to Python classes.</dd>
+<dt><a class="reference external" href="http://geopython.github.io/OWSLib/">OWSLib</a></dt>
+<dd>Used to parse XML formats.</dd>
+<dt><a class="reference external" href="http://lxml.de/">lxml</a></dt>
+<dd>Used to parse requests.</dd>
+<dt><a class="reference external" href="http://code.google.com/p/pyproj/">pyproj</a></dt>
+<dd>Used to handle coordinate transformations.</dd>
+<dt><a class="reference external" href="https://pypi.python.org/pypi/Shapely">Shapely</a></dt>
+<dd>Used for spatial operations.</dd>
+</dl>
 </div>
 <div class="section" id="software-architecture">
 <h2>Software Architecture<a class="headerlink" href="#software-architecture" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><a class="reference internal image-reference" href="../../_images/pycsw-software-architecture.jpg"><img alt="../../_images/pycsw-software-architecture.jpg" src="../../_images/pycsw-software-architecture.jpg" style="width: 480.0px; height: 360.0px;" /></a>
 </div></blockquote>
-<div class="section" id="osgeo-live-dvd">
-<h3>OSGeo Live DVD<a class="headerlink" href="#osgeo-live-dvd" title="Permalink to this headline">¶</a></h3>
 </div>
+<div class="section" id="osgeo-live-dvd">
+<h2>OSGeo Live DVD<a class="headerlink" href="#osgeo-live-dvd" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="the-4-minute-install">
 <h3>The 4 minute install<a class="headerlink" href="#the-4-minute-install" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>virtualenv pycsw <span class="o">&amp;&amp;</span> <span class="nb">cd </span>pycsw <span class="o">&amp;&amp;</span> . bin/activate
@@ -151,6 +170,74 @@
 </pre></div>
 </div>
 </div>
+</div>
+<div class="section" id="windows">
+<h2>Windows<a class="headerlink" href="#windows" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The following steps were performed on a Windows Vista machine.</p>
+</div>
+<ul>
+<li><p class="first">Install Python:</p>
+<ul class="simple">
+<li>in my case I already have Python installed locally (2.6 series)</li>
+<li><a class="reference external" href="http://python.org/download/">http://python.org/download/</a></li>
+</ul>
+</li>
+<li><p class="first">Install Package Management Tools</p>
+<ul class="simple">
+<li>download <a class="reference external" href="http://python-distribute.org/distribute_setup.py">http://python-distribute.org/distribute_setup.py</a></li>
+<li>C:\Python26\python.exe distribute_setup.py</li>
+</ul>
+</li>
+<li><p class="first">Install Virtual Environment</p>
+<ul class="simple">
+<li>highly recommended</li>
+<li>read more on its usage: <a class="reference external" href="https://pypi.python.org/pypi/virtualenv">https://pypi.python.org/pypi/virtualenv</a></li>
+<li>C:\Python26\Scripts\easy_install.exe virtualenv<ul>
+<li>Create virtual environment<ul>
+<li>C:\Python26\Scripts\virtualenv.exe pycsw-workshop</li>
+<li>cd pycsw-workshop</li>
+<li>scripts\activate.exe</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p class="first">Install pycsw Dependencies</p>
+<ul class="simple">
+<li>C:\Python26\Scripts\easy_install.exe lxml==2.2.8</li>
+<li>C:\Python26\Scripts\easy_install.exe pyproj==1.9.2</li>
+<li>C:\Python26\Scripts\easy_install.exe Shapely==1.2.17</li>
+<li>C:\Python26\Scripts\easy_install.exe SQLAlchemy&gt;=0.6</li>
+<li>C:\Python26\Scripts\easy_install.exe OWSLib==0.7.1</li>
+</ul>
+</li>
+<li><p class="first">Install pycsw</p>
+<ul class="simple">
+<li>Download pycsw from <a class="reference external" href="http://pycsw.org/download.html">http://pycsw.org/download.html</a> and unzip into pycsw-workshop/ folder</li>
+<li>cd pycsw-1.4.1</li>
+<li>copy default-sample.cfg default.cfg</li>
+<li>edit default-sample.cfg</li>
+</ul>
+<div class="highlight-python"><pre>server.home (e.g. home=C:/Python26/Scripts/pycsw-workshop/pycsw-1.4.1)
+server.url to url=http://localhost:8000/
+repository.database (e.g. database=sqlite:///C:\\Python26\\Scripts\\pycsw-workshop\\pycsw-1.4.1\\data\\cite\\records.db)</pre>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Read more on the <cite>database=</cite> syntax for PostgreSQL <a class="reference external" href="http://docs.sqlalchemy.org/en/latest/core/engines.html#postgresql">here</a>,
+or SQLite <a class="reference external" href="http://docs.sqlalchemy.org/en/latest/dialects/sqlite.html#connect-strings">here</a>.</p>
+</div>
+</li>
+<li><p class="first">Start CSW server</p>
+<ul class="simple">
+<li>python.exe csw.wsgi</li>
+<li>open web browser to <a class="reference external" href="http://localhost:8000/?service=CSW&amp;version=2.0.2&amp;request=GetCapabilities">http://localhost:8000/?service=CSW&amp;version=2.0.2&amp;request=GetCapabilities</a></li>
+</ul>
+</li>
+</ul>
 </div>
 </div>
 
