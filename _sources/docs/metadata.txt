@@ -39,13 +39,13 @@ Maintaining metadata for your datasets is important for several reasons:
 Standardized Metadata
 ---------------------
 
-With the growth of geographic information systems (GIS) in the 80's and 90's, geographic
+With the growth of geographic information systems (GIS) in the 1980's and 1990's, geographic
 datasets became a requirement for decision makers across the world.  The expansion of
-the Internet to share information through the late 90's and 2000's has now brought 
+the Internet to share information through the late 1990's and 2000's has now brought 
 'discovery' of geographic data into the hands of the average citizen.
 
 .. note::
-    Metadata standards have been introduced since the mid-90's with the goals of:
+    Metadata standards have been introduced since the mid 1990's with the goals of:
 
     - outlining specific required parameters
     - common terminology

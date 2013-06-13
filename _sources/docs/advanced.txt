@@ -13,5 +13,4 @@ Contents:
    advanced/harvesting
    advanced/export
    advanced/tips-tricks
-   advanced/community
    advanced/advanced-exercises

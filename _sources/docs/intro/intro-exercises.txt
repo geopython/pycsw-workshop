@@ -216,7 +216,7 @@ Save the file to something like "post.xml" and run:
   $ python ./sbin/pycsw-admin.py -c post_xml -u http://localhost/pycsw/csw.py -x ~/post.xml
 
 .. note::
-  In order to enable Harvesting, you need to edit ``default.cfg``and set ``transactions=true``.
+  In order to enable Harvesting, you need to edit ``default.cfg`` and set ``transactions=true``.
 
 .. note::
 

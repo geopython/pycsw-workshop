@@ -13,7 +13,7 @@ Required Software
   Core language of pycsw.  Both 3.x and 2.x series are supported.
   
 Database
-  Used to store metadata elements. (PostgreSQL/PostGIS, SQLite, MySQL) 
+  Used to store metadata elements (PostgreSQL/PostGIS, SQLite, MySQL).
   
 `SQLAlchemy <http://www.sqlalchemy.org/>`__
   Used to bind database models to Python classes.
@@ -40,6 +40,8 @@ Software Architecture
 
 OSGeo Live DVD
 --------------
+
+see :ref:`requirements`
 
 The 4 minute install
 ********************

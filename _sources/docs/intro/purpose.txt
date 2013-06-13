@@ -34,7 +34,7 @@ Initially conceived in 2010, the overal vision of the development team was to:
       
 3. **Design so additional metadata formats can be easily supported.**
 
-   Although initially the core metadata model was Dublic Core, design the sofware
+   Although initially the core metadata model was Dublin Core, design the sofware
    so that many other metadata formats can be plugged in.
    
    .. image:: ../../_static/plug.jpg
