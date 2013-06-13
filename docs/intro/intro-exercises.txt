@@ -215,6 +215,21 @@ Save the file to something like "post.xml" and run:
   $ cd /var/www/pycsw
   $ python ./sbin/pycsw-admin.py -c post_xml -u http://localhost/pycsw/csw.py -x ~/post.xml
 
+.. note::
+  In order to enable Harvesting, you need to edit ``default.cfg``and set ``transactions=true``.
+
+.. note::
+
+   For transactions to be functional when using SQLite3, the SQLite3 database file (**and its parent directory**) must be fully writable.  For example:
+
+.. code-block:: bash
+
+  $ mkdir /path/data
+  $ chmod 777 /path/data
+  $ chmod 666 test.db
+  $ mv test.db /path/data
+
+For CSW-T deployments, it is strongly advised that this directory reside in an area that is not accessible by HTTP.
 
 .. _`OGR`: http://www.gdal.org/ogr
 .. _`OGC SFSQL`: http://www.opengeospatial.org/standards/sfs
