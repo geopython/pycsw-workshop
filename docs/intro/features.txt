@@ -21,6 +21,14 @@ pycsw is a fully compliant CSW server.
      :width: 40px
      :height: 40px
      :align: left
+
+pycsw is flexible and headless; can be integrated into workflows without getting in the way,
+as well as seamless integration with Python environments.
+
+  .. image:: ../../_static/green_check.png
+     :width: 40px
+     :height: 40px
+     :align: left
      
 pycsw is able to pull and store ("harvest") layer information from other remote
 OGC services (WMS, WFS, WCS, WPS, WAF, CSW, SOS).
