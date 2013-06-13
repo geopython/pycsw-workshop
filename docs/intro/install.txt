@@ -3,6 +3,33 @@
 Installing
 ==========
 
+Required Software
+-----------------
+
+`pycsw <https://github.com/geopython/pycsw>`__
+  Source home is on GitHub.
+
+`Python <http://www.python.org/>`__
+  Core language of pycsw.  Both 3.x and 2.x series are supported.
+  
+Database
+  Used to store metadata elements. (PostgreSQL/PostGIS, SQLite, MySQL) 
+  
+`SQLAlchemy <http://www.sqlalchemy.org/>`__
+  Used to bind database models to Python classes.
+  
+`OWSLib <http://geopython.github.io/OWSLib/>`__
+  Used to parse XML formats.  
+  
+`lxml <http://lxml.de/>`__
+  Used to parse requests.
+  
+`pyproj <http://code.google.com/p/pyproj/>`__
+  Used to handle coordinate transformations.
+  
+`Shapely <https://pypi.python.org/pypi/Shapely>`__
+  Used for spatial operations
+
 Software Architecture
 ---------------------
 
