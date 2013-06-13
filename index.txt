@@ -27,4 +27,5 @@ publishing software.
    docs/introduction
    docs/advanced
    docs/open-data
+   docs/community
    docs/future

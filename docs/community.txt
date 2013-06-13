@@ -14,7 +14,7 @@ Growing community of government, academic institutions, and private sector.
 OSGeo
 -----
 
-  .. image:: ../../_static/osgeo.png
+  .. image:: ../_static/osgeo.png
      :width: 262px
      :height: 117px 
      :target: http://www.osgeo.org
@@ -25,7 +25,7 @@ OSGeo
 OGC
 ---
 
-  .. image:: ../../_static/Certified_OGC_Compliant_Logo_Web.gif
+  .. image:: ../_static/Certified_OGC_Compliant_Logo_Web.gif
      :width: 300px
      :height: 125px 
      :target: http://www.pycsw.org/
