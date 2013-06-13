@@ -148,7 +148,7 @@ To check your current version:</p>
 </div>
 <div class="section" id="tester-application">
 <h2>Tester Application<a class="headerlink" href="#tester-application" title="Permalink to this headline">¶</a></h2>
-<p>To run the pycsw tester, use the pycsw launcher from the Web Services group, or open Firefox and navigate to <tt class="docutils literal"><span class="pre">http://localhost/pycsw/tester/index.html</span></tt></p>
+<p>To run the pycsw tester, use the pycsw launcher from the Web Services group, or open Firefox and navigate to <a class="reference external" href="http://localhost/pycsw/tester/index.html">http://localhost/pycsw/tester/index.html</a></p>
 <p>By selecting the left drop-down list, the user can see various predefined POST requests, encoded as XML, that can be sent to pycsw:</p>
 <blockquote>
 <div><a class="reference internal image-reference" href="../../_images/pycsw_tester_selection.png"><img alt="../../_images/pycsw_tester_selection.png" src="../../_images/pycsw_tester_selection.png" style="width: 601.8px; height: 390.6px;" /></a>
@@ -173,7 +173,7 @@ To check your current version:</p>
 </div>
 <div class="section" id="capabilities-document">
 <h2>Capabilities Document<a class="headerlink" href="#capabilities-document" title="Permalink to this headline">¶</a></h2>
-<p>The capabilities of the pycsw installation can be found at <tt class="docutils literal"><span class="pre">http://localhost/pycsw/csw.py?service=CSW&amp;version=2.0.2&amp;request=GetCapabilities</span></tt>.</p>
+<p>The capabilities of the pycsw installation can be found at <a class="reference external" href="http://localhost/pycsw/csw.py?service=CSW&amp;version=2.0.2&amp;request=GetCapabilities">http://localhost/pycsw/csw.py?service=CSW&amp;version=2.0.2&amp;request=GetCapabilities</a>.</p>
 </div>
 <div class="section" id="setup-service-metadata">
 <h2>Setup service metadata<a class="headerlink" href="#setup-service-metadata" title="Permalink to this headline">¶</a></h2>
@@ -228,7 +228,7 @@ To check your current version:</p>
 </ol>
 <div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span><span class="nb">cd</span> /var/www/pycsw
 <span class="nv">$ </span><span class="nb">export </span><span class="nv">PYTHONPATH</span><span class="o">=</span><span class="sb">`</span><span class="nb">pwd</span><span class="sb">`</span>
-<span class="nv">$ </span>python ./sbin/pycsw-admin.py -c setup_db -f default.cfg
+<span class="nv">$ </span>sudo python ./sbin/pycsw-admin.py -c setup_db -f default.cfg
 </pre></div>
 </div>
 <p>This will create the necessary tables and values for the repository.</p>
@@ -303,6 +303,21 @@ Source code is available at <a class="reference external" href="https://joinup.e
 <span class="nv">$ </span>python ./sbin/pycsw-admin.py -c post_xml -u http://localhost/pycsw/csw.py -x ~/post.xml
 </pre></div>
 </div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">In order to enable Harvesting, you need to edit <tt class="docutils literal"><span class="pre">default.cfg``and</span> <span class="pre">set</span> <span class="pre">``transactions=true</span></tt>.</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">For transactions to be functional when using SQLite3, the SQLite3 database file (<strong>and its parent directory</strong>) must be fully writable.  For example:</p>
+</div>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>mkdir /path/data
+<span class="nv">$ </span>chmod 777 /path/data
+<span class="nv">$ </span>chmod 666 test.db
+<span class="nv">$ </span>mv test.db /path/data
+</pre></div>
+</div>
+<p>For CSW-T deployments, it is strongly advised that this directory reside in an area that is not accessible by HTTP.</p>
 </div>
 </div>
 

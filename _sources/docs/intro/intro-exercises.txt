@@ -34,7 +34,7 @@ In order to upgrade pycsw to current stable version:
 Tester Application
 ------------------
 
-To run the pycsw tester, use the pycsw launcher from the Web Services group, or open Firefox and navigate to ``http://localhost/pycsw/tester/index.html``
+To run the pycsw tester, use the pycsw launcher from the Web Services group, or open Firefox and navigate to http://localhost/pycsw/tester/index.html
 
 By selecting the left drop-down list, the user can see various predefined POST requests, encoded as XML, that can be sent to pycsw: 
 
@@ -67,7 +67,7 @@ The user can go through all the available requests and perform various requests 
 Capabilities Document
 ---------------------
 
-The capabilities of the pycsw installation can be found at ``http://localhost/pycsw/csw.py?service=CSW&version=2.0.2&request=GetCapabilities``.
+The capabilities of the pycsw installation can be found at http://localhost/pycsw/csw.py?service=CSW&version=2.0.2&request=GetCapabilities.
 
 
 Setup service metadata
@@ -128,7 +128,7 @@ In order to create a new SQLite database we need to:
 
   $ cd /var/www/pycsw
   $ export PYTHONPATH=`pwd` 
-  $ python ./sbin/pycsw-admin.py -c setup_db -f default.cfg
+  $ sudo python ./sbin/pycsw-admin.py -c setup_db -f default.cfg
 
 This will create the necessary tables and values for the repository.
 
@@ -215,6 +215,21 @@ Save the file to something like "post.xml" and run:
   $ cd /var/www/pycsw
   $ python ./sbin/pycsw-admin.py -c post_xml -u http://localhost/pycsw/csw.py -x ~/post.xml
 
+.. note::
+  In order to enable Harvesting, you need to edit ``default.cfg``and set ``transactions=true``.
+
+.. note::
+
+   For transactions to be functional when using SQLite3, the SQLite3 database file (**and its parent directory**) must be fully writable.  For example:
+
+.. code-block:: bash
+
+  $ mkdir /path/data
+  $ chmod 777 /path/data
+  $ chmod 666 test.db
+  $ mv test.db /path/data
+
+For CSW-T deployments, it is strongly advised that this directory reside in an area that is not accessible by HTTP.
 
 .. _`OGR`: http://www.gdal.org/ogr
 .. _`OGC SFSQL`: http://www.opengeospatial.org/standards/sfs
