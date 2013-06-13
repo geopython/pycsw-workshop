@@ -109,7 +109,8 @@ Windows
 
   .. NOTE::
      Read more on the `database=` syntax for PostgreSQL `here <http://docs.sqlalchemy.org/en/latest/core/engines.html#postgresql>`__, 
-     or SQLite `here <http://docs.sqlalchemy.org/en/latest/dialects/sqlite.html#connect-strings>`__.
+     SQLite `here <http://docs.sqlalchemy.org/en/latest/dialects/sqlite.html#connect-strings>`__, or
+     MySQL `here <http://docs.sqlalchemy.org/en/latest/core/engines.html#mysql>`__.
 
 - Start CSW server
 

@@ -11,3 +11,8 @@ Configuring
   - ``manager.transactions``: ``true`` or ``false`` (more on CSW-T later)
   - ``metadata:main``: service metadata!
   - ``repository.database``: database connection string
+  
+    .. NOTE::
+       Read more on the `database=` syntax for PostgreSQL `here <http://docs.sqlalchemy.org/en/latest/core/engines.html#postgresql>`__, 
+       SQLite `here <http://docs.sqlalchemy.org/en/latest/dialects/sqlite.html#connect-strings>`__, or
+       MySQL `here <http://docs.sqlalchemy.org/en/latest/core/engines.html#mysql>`__.
