@@ -128,7 +128,7 @@ In order to create a new SQLite database we need to:
 
   $ cd /var/www/pycsw
   $ export PYTHONPATH=`pwd` 
-  $ python ./sbin/pycsw-admin.py -c setup_db -f default.cfg
+  $ sudo python ./sbin/pycsw-admin.py -c setup_db -f default.cfg
 
 This will create the necessary tables and values for the repository.
 
