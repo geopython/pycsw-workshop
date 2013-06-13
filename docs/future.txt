@@ -14,7 +14,7 @@ pycsw Future Development
 1.8 / 2.0
 ^^^^^^^^^
 - CSW 3.0
-- OPeNDAP integration via `pydap <http://pydap.org>`_
+- OPeNDAP integration via `pydap <http://www.pydap.org>`_
 - THREDDS catalog harvesting
 - CKAN integration
 - native spatial databases
