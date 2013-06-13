@@ -249,7 +249,7 @@ Transaction: delete
 
   >>> # delete record we inserted
   >>> csw.transaction(ttype='delete', identifier='00180e67-b7cf-40a3-861d-b3a09337b174')
-  >>> c.results
+  >>> csw.results
   {'deleted': 1, 'insertresults': [], 'updated': 0, 'inserted': 0, 'requestid': None}
 
 Harvest a resource
