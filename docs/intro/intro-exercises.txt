@@ -34,7 +34,7 @@ In order to upgrade pycsw to current stable version:
 Tester Application
 ------------------
 
-To run the pycsw tester, use the pycsw launcher from the Web Services group, or open Firefox and navigate to ``http://localhost/pycsw/tester/index.html``
+To run the pycsw tester, use the pycsw launcher from the Web Services group, or open Firefox and navigate to http://localhost/pycsw/tester/index.html
 
 By selecting the left drop-down list, the user can see various predefined POST requests, encoded as XML, that can be sent to pycsw: 
 
@@ -67,7 +67,7 @@ The user can go through all the available requests and perform various requests 
 Capabilities Document
 ---------------------
 
-The capabilities of the pycsw installation can be found at ``http://localhost/pycsw/csw.py?service=CSW&version=2.0.2&request=GetCapabilities``.
+The capabilities of the pycsw installation can be found at http://localhost/pycsw/csw.py?service=CSW&version=2.0.2&request=GetCapabilities.
 
 
 Setup service metadata
