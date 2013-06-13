@@ -3,6 +3,9 @@
 Installing
 ==========
 
+.. NOTE::
+   OSGeo-Live users already have pycsw installed, at `/var/www/pycsw/`
+
 Software Architecture
 ---------------------
 
