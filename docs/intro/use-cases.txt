@@ -3,13 +3,20 @@
 Use Cases
 =========
 
-- publishing against established metadata management workflow
+These are the common situations where pycsw thrives:
 
-  - pure desktop GIS environment
-  - custom envrionments / processes / automation
-  - publish with pycsw
+**Case 1: Publishing against established metadata management workflow**
 
-- publishing against existing metadata database
+- existing desktop GIS environment
+- already utilizing custom environments / processes / automation
+- implement pycsw on top of environment to publish
+- **Examples: ArcGIS, GeoNode**
 
-  - bind pycsw to database with property -> column mappings
+**Case 2: Publishing against existing metadata database**
+
+- bind pycsw to database with property -> column mappings
+
+  .. image:: ../../_static/postgres.png
+     :width: 85px
+     :height: 120px     
 
