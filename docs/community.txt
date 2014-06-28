@@ -9,7 +9,7 @@ Users
 Growing community of government, academic institutions, and private sector.
 
 .. NOTE::
-   Community user map is available `here <http://pycsw.org/community.html>`__
+   Community user map is available `here <http://pycsw.org/community>`__
 
 OSGeo
 -----
@@ -28,7 +28,7 @@ OGC
   .. image:: ../_static/Certified_OGC_Compliant_Logo_Web.gif
      :width: 300px
      :height: 125px 
-     :target: http://www.pycsw.org/
+     :target: http://pycsw.org/
 
 - OGC `Reference Implementation <http://cite.opengeospatial.org/reference>`_
 

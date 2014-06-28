@@ -231,7 +231,7 @@ Save the file to something like "post.xml" and run:
 
 For CSW-T deployments, it is strongly advised that this directory reside in an area that is not accessible by HTTP.
 
-.. _`OGR`: http://www.gdal.org/ogr
+.. _`OGR`: http://www.gdal.org/
 .. _`OGC SFSQL`: http://www.opengeospatial.org/standards/sfs
 .. _`CatMDEdit`: http://catmdedit.sourceforge.net/
 .. _`GIMED`: http://sourceforge.net/projects/gimed/

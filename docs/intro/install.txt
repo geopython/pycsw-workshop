@@ -9,7 +9,7 @@ Required Software
 `pycsw <https://github.com/geopython/pycsw>`__
   Source home is on GitHub.
 
-`Python <http://www.python.org/>`__
+`Python <https://www.python.org/>`__
   Core language of pycsw.  Both 3.x and 2.x series are supported.
   
 Database
@@ -69,7 +69,7 @@ Windows
 - Install Python:
   
   - in this case Python was already installed locally (2.6 series)
-  - http://python.org/download/
+  - https://www.python.org/download/
 
 - Install Package Management Tools
 
@@ -98,7 +98,7 @@ Windows
 
 - Install pycsw
 
-  - Download pycsw from http://pycsw.org/download.html and unzip into pycsw-workshop/ folder
+  - Download pycsw from http://pycsw.org/download and unzip into pycsw-workshop/ folder
   - cd pycsw-1.4.1
   - copy default-sample.cfg default.cfg
   - edit default-sample.cfg 

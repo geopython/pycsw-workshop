@@ -4,7 +4,7 @@ pycsw Workshop
 ==============
 
 Welcome to the pycsw workshop.  This workshop is a hands-on workshop that will
-give you an introduction to the popular `pycsw <http://www.pycsw.org/>`__ metadata 
+give you an introduction to the popular `pycsw <http://pycsw.org/>`__ metadata 
 publishing software.
 
 .. note::

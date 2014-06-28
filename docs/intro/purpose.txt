@@ -10,7 +10,7 @@ Initially conceived in 2010, the overal vision of the development team was to:
    .. image:: ../../_static/python-logo.gif
       :width: 211px
       :height: 71px
-      :target: http://www.python.org/
+      :target: https://www.python.org/
       
    .. image:: ../../_static/opensource_logo.png
       :width: 80px

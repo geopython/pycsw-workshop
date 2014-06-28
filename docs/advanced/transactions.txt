@@ -21,7 +21,7 @@ Insert
 
   - if absent, pycsw sets identifier
 
-- example: https://raw.github.com/geopython/pycsw/master/tests/suites/manager/post/Transaction-dc-01-insert.xml
+- example: https://raw.githubusercontent.com/geopython/pycsw/master/tests/suites/manager/post/Transaction-dc-01-insert.xml
 
 .. note::
 
@@ -35,7 +35,7 @@ Update (full)
 
   - if no identifier, pycsw will insert as a new record
 
-- example: https://raw.github.com/geopython/pycsw/master/tests/suites/manager/post/Transaction-dc-02-update-full.xml
+- example: https://raw.githubusercontent.com/geopython/pycsw/master/tests/suites/manager/post/Transaction-dc-02-update-full.xml
 
 Update (property)
 -----------------
@@ -48,7 +48,7 @@ Update (property)
 
   - like ``update table set foo="bar" where identifier=12345``
 
-- example: https://raw.github.com/geopython/pycsw/master/tests/suites/manager/post/Transaction-iso-03-update-recprop.xml
+- example: https://raw.githubusercontent.com/geopython/pycsw/master/tests/suites/manager/post/Transaction-iso-03-update-recprop.xml
 
 Delete
 ------
@@ -57,5 +57,5 @@ Delete
 
   - like ``delete from table where identifier=12345``
 
-- example: https://raw.github.com/geopython/pycsw/master/tests/suites/manager/post/Transaction-iso-05-delete.xml
+- example: https://raw.githubusercontent.com/geopython/pycsw/master/tests/suites/manager/post/Transaction-iso-05-delete.xml
 
