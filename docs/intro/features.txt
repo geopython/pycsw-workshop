@@ -67,7 +67,7 @@ pycsw includes a commandline utility to administer the metadata repository.
 
 .. NOTE::
    A detailed list of features and standards is maintained in the pycsw documentation 
-   `here <http://www.pycsw.org/docs/introduction.html#features>`__.
+   `here <http://docs.pycsw.org/en/latest/introduction.html#features>`__.
 
 Component Architecture
 ----------------------
