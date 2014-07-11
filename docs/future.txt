@@ -4,7 +4,7 @@ pycsw Future Development
 ========================
 
 1.10.0 (August 2014)
-^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^
 - OGC OpenSearch Geo and Time Extensions
 - enhanced OGC filter support
 
