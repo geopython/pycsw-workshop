@@ -43,23 +43,31 @@ OSGeo Live DVD
 
 see :ref:`requirements`
 
-The 4 minute install
-********************
+The 4 minute install (http://pycsw.org/#deploy-in-4-minutes)
+************************************************************
 
 .. code-block:: bash
 
   $ virtualenv pycsw && cd pycsw && . bin/activate
-  $ git clone git@github.com:geopython/pycsw.git && cd pycsw
-  $ pip install -e . && pip install -r requirements.txt
+  # Grab the pycsw source code:
+  $ git clone https://github.com/geopython/pycsw.git && cd pycsw
+  $ pip install -e . && pip install -r requirements-standalone.txt
+  # Create and adjust a configuration file:
   $ cp default-sample.cfg default.cfg
   $ vi default.cfg
   # adjust paths in
   # - server.home
   # - repository.database
   # set server.url to http://localhost:8000/
+  # Setup the database:
+  $ pycsw-admin.py -c setup_db -f default.cfg
+  # Load records by indicating a directory of XML files, use -r for recursive:
+  $ pycsw-admin.py -c load_records -f default.cfg -p /path/to/xml/
+  # Run the server:
   $ python csw.wsgi
+  # See that it works!
   $ curl http://localhost:8000/?service=CSW&version=2.0.2&request=GetCapabilities
-  
+
 Windows
 -------
 
@@ -110,15 +118,11 @@ Windows
      repository.database (e.g. database=sqlite:///C:\\Python26\\Scripts\\pycsw-workshop\\pycsw-1.4.1\\data\\cite\\records.db)
 
   .. NOTE::
-     Read more on the `database=` syntax for PostgreSQL `here <http://docs.sqlalchemy.org/en/latest/core/engines.html#postgresql>`__, 
-     SQLite `here <http://docs.sqlalchemy.org/en/latest/dialects/sqlite.html#connect-strings>`__, or
-     MySQL `here <http://docs.sqlalchemy.org/en/latest/core/engines.html#mysql>`__.
+     Read more on the `database=` syntax for `PostgreSQL <http://docs.sqlalchemy.org/en/latest/core/engines.html#postgresql>`__, 
+     `SQLite <http://docs.sqlalchemy.org/en/latest/dialects/sqlite.html#connect-strings>`__, or
+     `MySQL <http://docs.sqlalchemy.org/en/latest/core/engines.html#mysql>`__.
 
 - Start CSW server
 
   - python.exe csw.wsgi
   - open web browser to http://localhost:8000/?service=CSW&version=2.0.2&request=GetCapabilities
-
-
-
-

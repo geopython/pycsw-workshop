@@ -10,7 +10,7 @@ These are common situations where pycsw thrives:
 - existing desktop GIS environment
 - already utilizing custom environments / processes / automation
 - implement pycsw on top of environment to publish
-- **Examples: ArcGIS, GeoNode**
+- **Examples: ArcGIS, GeoNode, CKAN**
 
 **Case 2: Publishing against existing metadata database**
 

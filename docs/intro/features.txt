@@ -63,11 +63,19 @@ pycsw allows for additional profiles/metadata formats to be plugged in.
      
 pycsw includes a commandline utility to administer the metadata repository.
 
+
+  .. image:: ../../_static/green_check.png
+     :width: 40px
+     :height: 40px
+     :align: left
+     
+pycsw supports full text search / indexing.
+
 .
 
 .. NOTE::
-   A detailed list of features and standards is maintained in the pycsw documentation 
-   `here <http://docs.pycsw.org/en/latest/introduction.html#features>`__.
+   A detailed list of features and standards is maintained in the `pycsw documentation 
+   <http://docs.pycsw.org/en/latest/introduction.html#features>`__.
 
 Component Architecture
 ----------------------

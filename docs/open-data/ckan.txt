@@ -1,0 +1,16 @@
+.. _ckan:
+
+CKAN
+====
+
+- Open Source Data Management System / Data Portal
+
+ - data / metadata management
+ - data visualization and analytics
+ - extensible
+ - strong geospatial support via ckanext-spatial extension
+
+- pycsw powers CSW component of via ckanext-spatial
+
+ - embedded CSW
+ - synchronization of metadata records

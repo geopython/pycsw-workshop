@@ -7,6 +7,6 @@ Open Data Catalog
 - open data publishing
 - pycsw enabled out of the box
 
- - CSW embdedded
+ - CSW embedded
 
 .. _`Code for America`: http://commons.codeforamerica.org/apps/open-data-catalog

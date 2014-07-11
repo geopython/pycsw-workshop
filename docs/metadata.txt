@@ -70,9 +70,9 @@ Example:
 
   <head profile="http://dublincore.org">
   ..
-  <meta name="DC.Identifier" schema="DCterms:URI"
-  content="http://tutorialsonline.info/Common/DublinCore.html" />
-  <meta name="DC.Format" schema="DCterms:IMT" content="text/html" /> <meta name="DC.Title" xml:lang="EN" content="Dublin Core Tutorial" />
+  <meta name="DC.Identifier" schema="DCterms:URI" content="http://tutorialsonline.info/Common/DublinCore.html" />
+  <meta name="DC.Format" schema="DCterms:IMT" content="text/html" />
+  <meta name="DC.Title" xml:lang="EN" content="Dublin Core Tutorial" />
   <meta name="DC.Creator" content="Alan Kelsey" />
   <meta name="DC.Subject" xml:lang="EN" content="Dublin Core Meta Tags" />
   <meta name="DC.Publisher" content="Alan Kelsey, Ltd." />

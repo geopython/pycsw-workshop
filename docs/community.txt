@@ -9,7 +9,7 @@ Users
 Growing community of government, academic institutions, and private sector.
 
 .. NOTE::
-   Community user map is available `here <http://pycsw.org/community>`__
+   Check out the `community user map <http://pycsw.org/community>`__
 
 OSGeo
 -----

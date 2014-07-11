@@ -43,5 +43,5 @@ Initially conceived in 2010, the overal vision of the development team was to:
       :scale: 50
       
 .. note::
-    The initial pycsw 'manifesto' is still available `here <http://www.kralidis.ca/blog/2011/02/04/help-wanted-baking-a-csw-server-in-python/>`__.
-    It is a nice way to understand the project's vision.
+    The initial pycsw `manifesto <http://www.kralidis.ca/blog/2011/02/04/help-wanted-baking-a-csw-server-in-python/>`__
+    provides a nice way to understand the project's vision.

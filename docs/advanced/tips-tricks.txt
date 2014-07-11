@@ -32,6 +32,9 @@ Using curl:
 
   $ curl -H "Content-Type: text/xml" -X POST -d @request_file.xml http://labs.gatewaygeomatics.com/csw
 
+.. note::
+  See http://pycsw.org/faq/#how-can-i-make-csw-post-xml-requests for more examples 
+
 JSON Output
 -----------
 
@@ -74,5 +77,5 @@ Debugging Issues
 - turn on logging (set ``server.loglevel`` to ``DEBUG`` and ``server.logfile`` to a writable file)
 - set ``server.pretty_print`` to ``true``
 - monitor logfile when testing (i.e. ``tailf /path/to/pycsw-log.txt``)
-- report issues / bugs to pycsw issue tracker / mailing list
+- report issues / bugs to pycsw `issue tracker <https://github.com/geopython/pycsw/issues/new>`__ / mailing list
 - specify environment and supporting libraries (i.e. ``pycsw-admin.py -c get_sysprof``)
