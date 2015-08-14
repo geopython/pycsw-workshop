@@ -13,6 +13,6 @@ Configuring
   - ``repository.database``: database connection string
   
     .. NOTE::
-       Read more on the `database=` syntax for `PostgreSQL <http://docs.sqlalchemy.org/en/latest/core/engines.html#postgresql>`__, 
+       Read more on the ``repository.database`` syntax for `PostgreSQL <http://docs.sqlalchemy.org/en/latest/core/engines.html#postgresql>`__,
        `SQLite <http://docs.sqlalchemy.org/en/latest/dialects/sqlite.html#connect-strings>`__, or
        `MySQL <http://docs.sqlalchemy.org/en/latest/core/engines.html#mysql>`__.

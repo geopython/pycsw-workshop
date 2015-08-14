@@ -7,7 +7,7 @@ QGIS CSW Client Installation
 ----------------------------
 
 The HTTP request/response mechanism is not friendly enough to the end user in order to perform queries to the Catalogue Service.
-For this workshop, we will use the `QGIS <http://www.qgis.org/>`__ `MetaSearch Catalogue Client <http://geopython.github.io/MetaSearch>`__.
+For this workshop, we will use the `QGIS <http://www.qgis.org/>`__ `MetaSearch Catalogue Client <https://hub.qgis.org/projects/MetaSearch>`__.
 MetaSearch is included by default as of QGIS 2.4.
 
 Data Discovery through QGIS
@@ -77,7 +77,7 @@ For this workshop we have hacked a small demonstration in GeoExt (thanks `Bart v
 OWSLib CSW client installation
 ------------------------------
 
-For this exercise we will use the `OWSLib <http://geopython.github.io/OWSLib/>`_ Python library.
+For this exercise we will use the `OWSLib <https://geopython.github.io/OWSLib/>`_ Python library.
 
 OWSLib is a Python package for client programming with Open Geospatial Consortium (OGC) web service (hence OWS) interface standards, and their related content models.
 
@@ -87,13 +87,13 @@ For installation on another system:
 
 .. code-block:: bash
 
-  $ easy_install OWSLib
+  easy_install OWSLib
 
 or in Ubuntu:
 
 .. code-block:: bash
 
-  $ sudo apt-get install python-owslib
+  sudo apt-get install python-owslib
 
 
 Data Discovery through OWSLib and Python

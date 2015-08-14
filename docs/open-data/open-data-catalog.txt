@@ -9,4 +9,4 @@ Open Data Catalog
 
  - CSW embedded
 
-.. _`Code for America`: http://commons.codeforamerica.org/apps/open-data-catalog
+.. _`Code for America`: https://github.com/azavea/Open-Data-Catalog
