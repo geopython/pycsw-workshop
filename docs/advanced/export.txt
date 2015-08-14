@@ -8,7 +8,7 @@ Exporting
 
 .. code-block:: bash
 
-  $ pycsw-admin.py -c export_records -f /path/to/default.cfg -p /tmp/metadata
+  pycsw-admin.py -c export_records -f /path/to/default.cfg -p /tmp/metadata
 
 - creates files in /tmp/metadata
 - files are named by metadata record identifier
@@ -17,5 +17,5 @@ Exporting
 
 .. code-block:: bash
 
-  $ pycsw-admin.py -c setup_db -f /path/to/default.cfg
-  $ pycsw-admin.py -c load_records -f /path/to/default.cfg -p /tmp/metadata
+  pycsw-admin.py -c setup_db -f /path/to/default.cfg
+  pycsw-admin.py -c load_records -f /path/to/default.cfg -p /tmp/metadata

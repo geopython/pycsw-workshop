@@ -10,7 +10,7 @@ Importing Metadata Recursively
 
 .. code-block:: bash
 
-  $ pycsw-admin.py -c load_records -f path/to/default.cfg -p /path/to/metadata -r
+  pycsw-admin.py -c load_records -f path/to/default.cfg -p /path/to/metadata -r
 
 Making CSW XML POST requests
 ----------------------------
@@ -24,13 +24,13 @@ Using ``pycsw-admin.py``:
 
 .. code-block:: bash
 
-  $ pycsw-admin.py -c post_xml -u http://labs.gatewaygeomatics.com/csw -x /path/to/request.xml
+  pycsw-admin.py -c post_xml -u http://demo.pycsw.org/cite/csw -x /path/to/request.xml
 
 Using curl:
 
 .. code-block:: bash
 
-  $ curl -H "Content-Type: text/xml" -X POST -d @request_file.xml http://labs.gatewaygeomatics.com/csw
+  curl -H "Content-Type: text/xml" -X POST -d @request_file.xml http://demo.pycsw.org/cite/csw
 
 .. note::
   See http://pycsw.org/faq/#how-can-i-make-csw-post-xml-requests for more examples 
@@ -48,14 +48,14 @@ Get Raw Metadata
 
 .. code-block:: bash
 
-  $ GET "http://labs.gatewaygeomatics.com/csw?service=CSW&version=2.0.2&request=GetRepositoryItem&id=urn:uuid:9a669547-b69b-469f-a11f-2d875366bbdc"
+  GET "http://demo.pycsw.org/cite/csw?service=CSW&version=2.0.2&request=GetRepositoryItem&id=urn:uuid:9a669547-b69b-469f-a11f-2d875366bbdc"
 
 Optimizing the Repository
 -------------------------
 
 .. code-block:: bash
 
-  $ pycsw-admin.py -c optimize_db
+  pycsw-admin.py -c optimize_db
 
 
 Dependency Tracing
@@ -77,5 +77,5 @@ Debugging Issues
 - turn on logging (set ``server.loglevel`` to ``DEBUG`` and ``server.logfile`` to a writable file)
 - set ``server.pretty_print`` to ``true``
 - monitor logfile when testing (i.e. ``tailf /path/to/pycsw-log.txt``)
-- report issues / bugs to pycsw `issue tracker <https://github.com/geopython/pycsw/issues/new>`__ / mailing list
+- report issues / bugs to pycsw `issue tracker <https://github.com/geopython/pycsw/issues>`__ / mailing list
 - specify environment and supporting libraries (i.e. ``pycsw-admin.py -c get_sysprof``)

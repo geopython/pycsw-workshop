@@ -15,4 +15,4 @@ pycsw Future Development
 - THREDDS catalog harvesting
 - backends (GeoCouch)
 - PostgreSQL full text search (FTS)
-- Open Data `metadata <http://project-open-data.github.io/schema/>`_ `JSON <http://project-open-data.github.io/metadata-resources/>`_ summary format
+- Open Data `metadata <https://project-open-data.cio.gov/schema/>`_ `JSON <https://project-open-data.cio.gov/metadata-resources/>`_ summary format

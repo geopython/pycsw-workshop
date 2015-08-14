@@ -10,7 +10,7 @@ All workshop materials are maintained openly through a GitHub repository:
 `https://github.com/geopython/pycsw-workshop <https://github.com/geopython/pycsw-workshop>`__.
 Contributions are always welcome.
 
-The canonical location of the live workshop is always at `http://geopython.github.io/pycsw-workshop/ <http://geopython.github.io/pycsw-workshop/>`__.
+The canonical location of the live workshop is always at `https://geopython.github.io/pycsw-workshop/ <https://geopython.github.io/pycsw-workshop/>`__.
 
 History
 -------
