@@ -136,11 +136,11 @@ The database created is an `OGC SFSQL`_ compliant database, and can be used with
 
 .. code-block:: bash
 
-  ogrinfo /path/to/records.db
-  INFO: Open of 'records.db'
+  ogrinfo /path/to/cite.db
+  INFO: Open of 'cite.db'
   using driver 'SQLite' successful.
   1: records (Polygon)
-  ogrinfo -al /path/to/records.db
+  ogrinfo -al /path/to/cite.db
   # lots of output
 
 .. note::
