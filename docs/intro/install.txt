@@ -119,7 +119,7 @@ Windows
 
      server.home (e.g. home=C:/Python26/Scripts/pycsw-workshop/pycsw-1.4.1)
      server.url to url=http://localhost:8000/
-     repository.database (e.g. database=sqlite:///C:\\Python26\\Scripts\\pycsw-workshop\\pycsw-1.4.1\\data\\cite\\records.db)
+     repository.database (e.g. database=sqlite:///C:\\Python26\\Scripts\\pycsw-workshop\\pycsw-1.4.1\\data\\cite\\cite.db)
 
   .. note::
      Read more on the `database=` syntax for `PostgreSQL <http://docs.sqlalchemy.org/en/latest/core/engines.html#postgresql>`__, 
